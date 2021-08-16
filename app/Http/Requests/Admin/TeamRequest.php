@@ -16,7 +16,7 @@ use Illuminate\Validation\Rule;
  * Class ProjectRequest
  * @package App\Http\Requests\Admin
  */
-class BlogRequest extends FormRequest
+class TeamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -41,11 +41,9 @@ class BlogRequest extends FormRequest
         }
 
         return [
-            config('translatable.fallback_locale') . '.title' => 'required',
-            config('translatable.fallback_locale') . '.description' => 'required',
-            config('translatable.fallback_locale') . '.content' => 'required',
-            'category_id' => 'required|numeric|exists:categories,id',
-            'video_link' => 'nullable|string',
+            config('translatable.fallback_locale') . '.name' => 'required|string',
+            config('translatable.fallback_locale') . '.position' => 'required|string',
+            config('translatable.fallback_locale') . '.content' => 'required|string',
         ];
     }
 }

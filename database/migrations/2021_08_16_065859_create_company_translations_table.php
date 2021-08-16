@@ -18,9 +18,9 @@ class CreateCompanyTranslationsTable extends Migration
             $table->bigInteger('company_id')->unsigned();
             $table->string('locale')->index();
 
-            $table->string('title');
-            $table->longText('content_1');
-            $table->longText('content_2');
+            $table->string('title')->nullable();
+            $table->longText('content_1')->nullable();
+            $table->longText('content_2')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keyword')->nullable();

@@ -1,7 +1,7 @@
 {{-- extend layout --}}
 @extends('admin.layout.contentLayoutMaster')
 {{-- page title --}}
-@section('title', $blog->category_id ? __('admin.blog-update') : 'admin.blog-create')
+@section('title', $team->id ? __('admin.team-update') : 'admin.team-create')
 
 @section('vendor-style')
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/select2/select2.min.css')}}">
@@ -17,9 +17,9 @@
         <div class="col s12 m12 12">
             <div id="basic-form" class="card card card-default scrollspy">
                 <div class="card-content">
-                    <input name="old-images[]" id="old_images" hidden disabled value="{{$blog->files}}">
-                    <h4 class="card-title">{{$blog->category_id ? __('admin.blog-update') : __('admin.blog-create')}}</h4>
-                    {!! Form::model($blog,['url' => $url, 'method' => $method,'files' => true]) !!}
+                    <input name="old-images[]" id="old_images" hidden disabled value="{{$team->files}}">
+                    <h4 class="card-title">{{$team->id ? __('admin.team-update') : __('admin.team-create')}}</h4>
+                    {!! Form::model($team,['url' => $url, 'method' => $method,'files' => true]) !!}
                     <div class="row">
                         <div class="col s12 m6 8">
                             <div class="row">
@@ -33,9 +33,9 @@
                                 @foreach(config('translatable.locales') as $locale)
                                     <div id="lang-{{$locale}}" class="col s12  mt-5">
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[title]',$blog->translate($locale)->title ?? '',['class' => 'validate '. $errors->has($locale.'.title') ? '' : 'valid']) !!}
-                                            {!! Form::label($locale.'[title]',__('admin.title')) !!}
-                                            @error($locale.'.title')
+                                            {!! Form::text($locale.'[name]',$team->translate($locale)->name ?? '',['class' => 'validate '. $errors->has($locale.'.name') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[name]',__('admin.name')) !!}
+                                            @error($locale.'.name')
                                             <small class="errorTxt4">
                                                 <div class="error">
                                                     {{$message}}
@@ -44,9 +44,9 @@
                                             @enderror
                                         </div>
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[description]',$blog->translate($locale)->description ?? '',['class' => 'validate '. $errors->has($locale.'.description') ? '' : 'valid']) !!}
-                                            {!! Form::label($locale.'[description]',__('admin.description')) !!}
-                                            @error($locale.'.description')
+                                            {!! Form::text($locale.'[position]',$team->translate($locale)->position ?? '',['class' => 'validate '. $errors->has($locale.'.position') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[position]',__('admin.position')) !!}
+                                            @error($locale.'.position')
                                             <small class="errorTxt4">
                                                 <div class="error">
                                                     {{$message}}
@@ -57,7 +57,7 @@
 
                                         <div class="input-field">
                                             <h5 for="content">@lang('admin.content')</h5>
-                                            {!! Form::textarea($locale.'[content]',$blog->translate($locale)->content ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content') ? '' : 'valid')]) !!}
+                                            {!! Form::textarea($locale.'[content]',$team->translate($locale)->content ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content') ? '' : 'valid')]) !!}
                                             @error($locale.'.content')
                                             <small class="errorTxt4">
                                                 <div class="error">
@@ -72,48 +72,11 @@
                         </div>
                         <div class="col s12 m6 8">
                             <div class="row">
-                                <div class="input-field col s12">
-
-                                    <select name="category_id" class="select2 js-example-programmatic browser-default">
-                                        <optgroup>
-                                            @foreach($categories as $key => $category)
-                                                <option
-                                                    value="{{$category->id}}" {{$key === 0 ? 'selected' : ''}} {{$blog->category_id === $category->id ? 'selected' : ''}}>
-                                                    {{$category->title}}
-                                                </option>
-                                            @endforeach
-                                        </optgroup>
-                                    </select>
-
-                                    <label class="active" for="category_id">{{__('admin.category')}}</label>
-
-                                    @error('category_id')
-                                    <small class="errorTxt4">
-                                        <div class="error">
-                                            {{$message}}
-                                        </div>
-                                    </small>
-                                    @enderror
-                                </div>
-
-                                <div class="input-field col s12">
-                                    <label for="video_link">{{__('admin.video_link')}}</label>
-
-                                    {!! Form::text('video_link',$blog->video_link ?? '',['class' => 'validate '. $errors->has('video_link') ? '' : 'valid']) !!}
-                                    @error('video_link')
-                                    <small class="errorTxt4">
-                                        <div class="error">
-                                            {{$message}}
-                                        </div>
-                                    </small>
-                                    @enderror
-                                </div>
                                 <div class="input-field"></div>
-
                                 <div class="col s12 mt-3 mb-3">
                                     <label>
                                         <input type="checkbox" name="status"
-                                               value="true" {{$blog->status ? 'checked' : ''}}>
+                                               value="true" {{$team->status ? 'checked' : ''}}>
                                         <span>{{__('admin.status')}}</span>
                                     </label>
                                 </div>
@@ -130,7 +93,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            {!! Form::submit($blog->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn cyan waves-effect waves-light ']) !!}
+                            {!! Form::submit($team->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn cyan waves-effect waves-light ']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}

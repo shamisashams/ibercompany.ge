@@ -1,7 +1,7 @@
 {{-- extend layout --}}
 @extends('admin.layout.contentLayoutMaster')
 {{-- page title --}}
-@section('title', $project->category_id ? __('admin.project-update') : 'admin.project-create')
+@section('title', $project->id? __('admin.project-update') : 'admin.project-create')
 
 @section('vendor-style')
     <link rel="stylesheet" type="text/css" href="{{asset('vendors/select2/select2.min.css')}}">
@@ -18,7 +18,7 @@
             <div id="basic-form" class="card card card-default scrollspy">
                 <div class="card-content">
                     <input name="old-images[]" id="old_images" hidden disabled value="{{$project->files}}">
-                    <h4 class="card-title">{{$project->category_id ? __('admin.project-update') : __('admin.project-create')}}</h4>
+                    <h4 class="card-title">{{$project->id ? __('admin.project-update') : __('admin.project-create')}}</h4>
                     {!! Form::model($project,['url' => $url, 'method' => $method,'files' => true]) !!}
                     <div class="row">
                         <div class="col s12 m6 8">
@@ -110,6 +110,18 @@
                                     {!! Form::text('slug',$project->slug,['class' => 'validate '. $errors->has('slug') ? '' : 'valid']) !!}
                                     {!! Form::label('slug',__('admin.slug')) !!}
                                     @error('slug')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+                                <div class="input-field col s12">
+                                    <label for="video_link">{{__('admin.video_link')}}</label>
+
+                                    {!! Form::text('video_link',$project->video_link ?? '',['class' => 'validate '. $errors->has('video_link') ? '' : 'valid']) !!}
+                                    @error('video_link')
                                     <small class="errorTxt4">
                                         <div class="error">
                                             {{$message}}

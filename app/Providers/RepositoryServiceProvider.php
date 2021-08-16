@@ -25,6 +25,7 @@ use App\Repositories\Eloquent\ProjectRepository;
 use App\Repositories\Eloquent\SettingRepository;
 use App\Repositories\Eloquent\ServiceRepository;
 use App\Repositories\Eloquent\SliderRepository;
+use App\Repositories\Eloquent\TeamRepository;
 use App\Repositories\Eloquent\TranslationRepository;
 use App\Repositories\LanguageRepositoryInterface;
 use App\Repositories\PageRepositoryInterface;
@@ -33,6 +34,7 @@ use App\Repositories\ProjectRepositoryInterface;
 use App\Repositories\SettingRepositoryInterface;
 use App\Repositories\ServiceRepositoryInterface;
 use App\Repositories\SliderRepositoryInterface;
+use App\Repositories\TeamRepositoryInterface;
 use App\Repositories\TranslationRepositoryInterface;
 use Carbon\Laravel\ServiceProvider;
 
@@ -70,6 +72,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(PageRepositoryInterface::class, PageRepository::class);
         $this->app->bind(SettingRepositoryInterface::class, SettingRepository::class);
         $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
+        $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
 
 
     }

@@ -1,7 +1,7 @@
 {{-- extend layout --}}
 @extends('admin.layout.contentLayoutMaster')
 {{-- page title --}}
-@section('title', $blog->title)
+@section('title', $team->title)
 
 
 
@@ -13,17 +13,17 @@
                 <div class="display-flex media">
                     <div class="media-body">
                         <h6 class="media-heading">
-                            <span class="users-view-name">{{$blog->title}} </span>
+                            <span class="users-view-name">{{$team->title}} </span>
                         </h6>
                     </div>
                 </div>
             </div>
             <div class="col s12 m5 quick-action-btns display-flex justify-content-end align-items-center pt-2">
-                <a href="{{locale_route('blog.edit',$blog->id)}}" class="btn-small indigo">
+                <a href="{{locale_route('team.edit',$team->id)}}" class="btn-small indigo">
                     @lang('admin.edit')
                 </a>
                 <a class="btn-small -settings waves-effect -light -btn right ml-3"
-                   href="{{locale_route('blog.destroy',$blog->id)}}"
+                   href="{{locale_route('team.destroy',$team->id)}}"
                    onclick="return confirm('Are you sure?')">
                     <span class="hide-on-small-onl">
                         @lang('admin.delete')
@@ -41,7 +41,7 @@
                         <tr>
                             <td>@lang('admin.status'):</td>
                             <td>
-                                @if($blog->status)
+                                @if($team->status)
                                     <span class="chip green lighten-5 green-text">@lang('admin.active')</span>
                                 @else
                                     <span class="chip red lighten-5 red-text">@lang('admin.not_active')</span>
@@ -49,18 +49,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>@lang('admin.video_link'):</td>
-                            <td>
-                               {{$blog->video_link}}
-                            </td>
-                        </tr>
-                        <tr>
                             <td>@lang('admin.created_at')</td>
-                            <td>{{\Carbon\Carbon::parse($blog->created_at)}}</td>
+                            <td>{{\Carbon\Carbon::parse($team->created_at)}}</td>
                         </tr>
                         <tr>
                             <td>@lang('admin.updated_at')</td>
-                            <td>{{\Carbon\Carbon::parse($blog->updated_at)}}</td>
+                            <td>{{\Carbon\Carbon::parse($team->updated_at)}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -85,16 +79,16 @@
                                 <table class="striped">
                                     <tbody>
                                     <tr>
-                                        <td>@lang('admin.title'):</td>
-                                        <td>{{$blog->translate($locale)->title ?? ''}}</td>
+                                        <td>@lang('admin.name'):</td>
+                                        <td>{{$team->translate($locale)->name ?? ''}}</td>
                                     </tr>
                                     <tr>
-                                        <td>@lang('admin.description'):</td>
-                                        <td>{{$blog->translate($locale)->description ?? ''}}</td>
+                                        <td>@lang('admin.position'):</td>
+                                        <td>{{$team->translate($locale)->position ?? ''}}</td>
                                     </tr>
                                     <tr>
                                         <td>@lang('admin.content'):</td>
-                                        <td>{!!$blog->translate($locale)->content ?? ''!!}</td>
+                                        <td>{!!$team->translate($locale)->content ?? ''!!}</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -111,7 +105,7 @@
                 <div class="popup-gallery">
                     <div class="gallery-sizer"></div>
                     <div class="row">
-                        @foreach($blog->files as $file)
+                        @foreach($team->files as $file)
                             <div class="col s12 m6 l4 xl2">
                                 <div>
                                     <a href="{{asset($file->path.'/'.$file->title)}}" target="_blank"

@@ -17,6 +17,7 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->boolean('status')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

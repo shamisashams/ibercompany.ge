@@ -22,6 +22,13 @@
             "slug": "blog"
         },
         {
+            "url": "team.index",
+            "name": "team",
+            "i18n": "team",
+            "icon": "language",
+            "slug": "team"
+        },
+        {
             "url": "page.index",
             "name": "page",
             "i18n": "page",

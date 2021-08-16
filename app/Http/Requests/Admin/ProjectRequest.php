@@ -44,7 +44,7 @@ class ProjectRequest extends FormRequest
             'slug' => ['required', 'alpha_dash', Rule::unique('projects', 'slug')->ignore($this->project)],
             config('translatable.fallback_locale') . '.title' => 'required',
             config('translatable.fallback_locale') . '.content' => 'required',
-//            'category_id' => 'required|numeric|exists:categories,id'
+            'video_link' => 'nullable|string',
         ];
     }
 }

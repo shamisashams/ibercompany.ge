@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TranslationController;
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\Client\HomeController;
@@ -39,7 +40,7 @@ Route::prefix('{locale?}')
             Route::middleware('auth')->group(function () {
                 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-                Route::redirect('', '/admin/product',);
+                Route::redirect('', '/admin/project',);
 
                 // Language
                 Route::resource('language', LanguageController::class);
@@ -60,6 +61,9 @@ Route::prefix('{locale?}')
                 Route::resource('blog', BlogController::class);
                 Route::get('blog/{blog}/destroy', [BlogController::class, 'destroy'])->name('blog.destroy');
 
+                // Team
+                Route::resource('team', TeamController::class);
+                Route::get('team/{team}/destroy', [TeamController::class, 'destroy'])->name('team.destroy');
 
                 // Slider
                 Route::resource('slider', SliderController::class);

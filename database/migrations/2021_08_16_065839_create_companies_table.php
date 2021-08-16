@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->string('slug')->unique();
             $table->string('website_link', 1024)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
