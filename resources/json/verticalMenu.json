@@ -1,0 +1,53 @@
+{
+    "menu": [
+        {
+            "url": "category.index",
+            "name": "category",
+            "i18n": "category",
+            "icon": "language",
+            "slug": "category"
+        },
+        {
+            "url": "project.index",
+            "name": "project",
+            "i18n": "project",
+            "icon": "language",
+            "slug": "project"
+        },
+        {
+            "url": "page.index",
+            "name": "page",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
+        },
+        {
+            "url": "slider.index",
+            "name": "slider",
+            "i18n": "slider",
+            "icon": "language",
+            "slug": "slider"
+        },
+        {
+            "url": "language.index",
+            "name": "language",
+            "i18n": "language",
+            "icon": "language",
+            "slug": "language"
+        },
+        {
+            "url": "setting.index",
+            "name": "setting",
+            "i18n": "setting",
+            "icon": "language",
+            "slug": "setting"
+        },
+        {
+            "url": "translation.index",
+            "name": "translation",
+            "i18n": "translation",
+            "icon": "g_translate",
+            "slug": "translation"
+        }
+    ]
+}
