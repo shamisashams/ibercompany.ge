@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->boolean('status')->default(true);
+            $table->string('video_link', 1024);
             $table->timestamps();
             $table->softDeletes();
 

@@ -97,17 +97,6 @@ trait ScopeFilter
 
     /**
      * @param $query
-     * @param $name
-     *
-     * @return mixed
-     */
-    public function scopeTitle($query, $title)
-    {
-        return $query->where('title', 'like', '%' . $title . '%');
-    }
-
-    /**
-     * @param $query
      * @param $locale
      *
      * @return mixed
@@ -173,6 +162,33 @@ trait ScopeFilter
             return $query->where('title', 'like', '%' . $title . '%');
         });
     }
+
+    /**
+     * @param $query
+     * @param $description
+     *
+     * @return mixed
+     */
+    public function scopeDescriptionTranslation($query, $description)
+    {
+        return $query->whereHas('translations', function ($query) use ($description) {
+            return $query->where('description', 'like', '%' . $description . '%');
+        });
+    }
+
+    /**
+     * @param $query
+     * @param $content
+     *
+     * @return mixed
+     */
+    public function scopeContentTranslation($query, $content)
+    {
+        return $query->whereHas('translations', function ($query) use ($content) {
+            return $query->where('content', 'like', '%' . $content . '%');
+        });
+    }
+
 
     /**
      * @param $query

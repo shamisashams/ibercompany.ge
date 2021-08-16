@@ -5,8 +5,6 @@
     0 => 'ge',
     1 => 'en',
     2 => 'ru',
-    3 => 'tg',
-    4 => 'uu',
   ),
   'locale_separator' => '-',
   'locale' => NULL,

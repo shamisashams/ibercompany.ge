@@ -15,6 +15,13 @@
             "slug": "project"
         },
         {
+            "url": "blog.index",
+            "name": "blog",
+            "i18n": "blog",
+            "icon": "language",
+            "slug": "blog"
+        },
+        {
             "url": "page.index",
             "name": "page",
             "i18n": "page",

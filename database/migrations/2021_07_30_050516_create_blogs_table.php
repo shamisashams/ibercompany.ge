@@ -24,6 +24,7 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->bigInteger('category_id')->unsigned();
             $table->boolean('status');
+            $table->string('video_link',1024);
             $table->timestamps();
             $table->softDeletes();
 

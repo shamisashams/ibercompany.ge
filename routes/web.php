@@ -8,6 +8,7 @@
  */
 
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\LanguageController;
@@ -51,13 +52,14 @@ Route::prefix('{locale?}')
                 Route::resource('category', CategoryController::class);
                 Route::get('category/{category}/destroy', [CategoryController::class, 'destroy'])->name('category.destroy');
 
-                // Product
-                Route::resource('product', ProductController::class);
-                Route::get('product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
-
                 // Project
                 Route::resource('project', ProjectController::class);
                 Route::get('project/{project}/destroy', [ProjectController::class, 'destroy'])->name('project.destroy');
+
+                // Blog
+                Route::resource('blog', BlogController::class);
+                Route::get('blog/{blog}/destroy', [BlogController::class, 'destroy'])->name('blog.destroy');
+
 
                 // Slider
                 Route::resource('slider', SliderController::class);
@@ -71,14 +73,6 @@ Route::prefix('{locale?}')
                 Route::resource('setting', SettingController::class);
                 Route::get('setting/{setting}/destroy', [SettingController::class, 'destroy'])->name('setting.destroy');
 
-
-                // Service
-                Route::resource('service', \App\Http\Controllers\Admin\ServiceController::class);
-                Route::get('service/{service}/destroy', [\App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('service.destroy');
-
-                // Certificate
-                Route::resource('certificate', CertificateController::class);
-                Route::get('certificate/{certificate}/destroy', [CertificateController::class, 'destroy'])->name('certificate.destroy');
 
             });
         });
