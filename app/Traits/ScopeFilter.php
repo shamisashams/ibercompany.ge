@@ -178,6 +178,32 @@ trait ScopeFilter
 
     /**
      * @param $query
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function scopeNameTranslation($query, $name)
+    {
+        return $query->whereHas('translations', function ($query) use ($name) {
+            return $query->where('name', 'like', '%' . $name . '%');
+        });
+    }
+
+    /**
+     * @param $query
+     * @param $position
+     *
+     * @return mixed
+     */
+    public function scopePositionTranslation($query, $position)
+    {
+        return $query->whereHas('translations', function ($query) use ($position) {
+            return $query->where('position', 'like', '%' . $position . '%');
+        });
+    }
+
+    /**
+     * @param $query
      * @param $content
      *
      * @return mixed

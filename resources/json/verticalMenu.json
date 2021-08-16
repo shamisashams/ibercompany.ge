@@ -29,6 +29,13 @@
             "slug": "team"
         },
         {
+            "url": "company.index",
+            "name": "company",
+            "i18n": "company",
+            "icon": "language",
+            "slug": "company"
+        },
+        {
             "url": "page.index",
             "name": "page",
             "i18n": "page",

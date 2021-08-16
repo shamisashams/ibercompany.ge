@@ -89,13 +89,17 @@ class Team extends Model implements Searchable
                 'hasParam' => true,
                 'scopeMethod' => 'id'
             ],
+            'status' => [
+                'hasParam' => true,
+                'scopeMethod' => 'status'
+            ],
             'name' => [
                 'hasParam' => true,
-                'scopeMethod' => 'name'
+                'scopeMethod' => 'nameTranslation'
             ],
             'position' => [
                 'hasParam' => true,
-                'scopeMethod' => 'position'
+                'scopeMethod' => 'positionTranslation'
             ],
             'content' => [
                 'hasParam' => true,

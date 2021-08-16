@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
@@ -64,6 +65,10 @@ Route::prefix('{locale?}')
                 // Team
                 Route::resource('team', TeamController::class);
                 Route::get('team/{team}/destroy', [TeamController::class, 'destroy'])->name('team.destroy');
+
+                // Company
+                Route::resource('company', CompanyController::class);
+                Route::get('company/{company}/destroy', [CompanyController::class, 'destroy'])->name('company.destroy');
 
                 // Slider
                 Route::resource('slider', SliderController::class);

@@ -13,11 +13,13 @@ use App\Http\Requests\Admin\BlogRequest;
 use App\Repositories\BlogRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\CertificateRepositoryInterface;
+use App\Repositories\CompanyRepositoryInterface;
 use App\Repositories\Eloquent\Base\BaseRepository;
 use App\Repositories\Eloquent\Base\EloquentRepositoryInterface;
 use App\Repositories\Eloquent\BlogRepository;
 use App\Repositories\Eloquent\CategoryRepository;
 use App\Repositories\Eloquent\CertificateRepository;
+use App\Repositories\Eloquent\CompanyRepository;
 use App\Repositories\Eloquent\LanguageRepository;
 use App\Repositories\Eloquent\PageRepository;
 use App\Repositories\Eloquent\ProductRepository;
@@ -73,6 +75,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SettingRepositoryInterface::class, SettingRepository::class);
         $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
         $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
+        $this->app->bind(CompanyRepositoryInterface::class, CompanyRepository::class);
 
 
     }

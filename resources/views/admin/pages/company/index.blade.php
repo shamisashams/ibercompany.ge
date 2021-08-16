@@ -2,7 +2,7 @@
 @extends('admin.layout.contentLayoutMaster')
 
 {{-- page title --}}
-@section('title',__('admin.team'))
+@section('title',__('admin.company'))
 
 
 @section('content')
@@ -12,10 +12,10 @@
 
                 <div class="card-content">
                     <a class="btn-floating btn-large primary-text gradient-shadow compose-email-trigger "
-                       href="{{locale_route('team.create')}}">
+                       href="{{locale_route('company.create')}}">
                         <i class="material-icons">add</i>
                     </a>
-                    <h4 class="card-title mt-2">@lang('admin.team')</h4>
+                    <h4 class="card-title mt-2">@lang('admin.company')</h4>
                     <div class="row">
                         <div class="col s12">
                             <form class="mr-0 p-0">
@@ -24,8 +24,7 @@
                                     <tr>
                                         <th>@lang('admin.id')</th>
                                         <th>@lang('admin.status')</th>
-                                        <th>@lang('admin.name')</th>
-                                        <th>@lang('admin.position')</th>
+                                        <th>@lang('admin.title')</th>
                                         <th>@lang('admin.actions')</th>
                                     </tr>
                                     </thead>
@@ -43,24 +42,19 @@
                                             </select>
                                         </th>
                                         <th>
-                                            <input type="text" name="name" onchange="this.form.submit()"
-                                                   value="{{Request::get('name')}}"
-                                                   class="validate {{$errors->has('name') ? '' : 'valid'}}">
-                                        </th>
-                                        <th>
-                                            <input type="text" name="position" onchange="this.form.submit()"
-                                                   value="{{Request::get('position')}}"
-                                                   class="validate {{$errors->has('position') ? '' : 'valid'}}">
+                                            <input type="text" name="title" onchange="this.form.submit()"
+                                                   value="{{Request::get('title')}}"
+                                                   class="validate {{$errors->has('title') ? '' : 'valid'}}">
                                         </th>
                                         <th></th>
                                     </tr>
                                     <tbody>
-                                    @if($teams)
-                                        @foreach($teams as $team)
+                                    @if($companies)
+                                        @foreach($companies as $company)
                                             <tr>
-                                                <td>{{$team->id}}</td>
+                                                <td>{{$company->id}}</td>
                                                 <td>
-                                                    @if($team->status)
+                                                    @if($company->status)
                                                         <span class="green-text">@lang('admin.active')</span>
                                                     @else
                                                         <span class="red-text">@lang('admin.not_active')</span>
@@ -72,7 +66,7 @@
                                                             <ul class="tabs">
                                                                 @foreach(config('translatable.locales') as $locale)
                                                                     <li class="tab ">
-                                                                        <a href="#cat-{{$locale}}-{{$team->id}}">
+                                                                        <a href="#cat-{{$locale}}-{{$company->id}}">
                                                                             {{$locale}}
                                                                         </a>
                                                                     </li>
@@ -81,46 +75,23 @@
                                                         </div>
                                                         <div class="col sm12 mt-2">
                                                             @foreach(config('translatable.locales') as $locale)
-                                                                <div id="cat-{{$locale}}-{{$team->id}}"
+                                                                <div id="cat-{{$locale}}-{{$company->id}}"
                                                                      class="">
-                                                                    {{$team->translate($locale)->name ?? ''}}
+                                                                    {{$company->translate($locale)->title ?? ''}}
                                                                 </div>
                                                             @endforeach
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="row">
-                                                        <div class="col s12">
-                                                            <ul class="tabs">
-                                                                @foreach(config('translatable.locales') as $locale)
-                                                                    <li class="tab ">
-                                                                        <a href="#position-{{$locale}}-{{$team->id}}">
-                                                                            {{$locale}}
-                                                                        </a>
-                                                                    </li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col sm12 mt-2">
-                                                            @foreach(config('translatable.locales') as $locale)
-                                                                <div id="position-{{$locale}}-{{$team->id}}"
-                                                                     class="">
-                                                                    {{$team->translate($locale)->position ?? ''}}
-                                                                </div>
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <a href="{{locale_route('team.show',$team->id)}}">
+                                                    <a href="{{locale_route('company.show',$company->id)}}">
                                                         <i class="material-icons">remove_red_eye</i>
                                                     </a>
-                                                    <a href="{{locale_route('team.edit',$team->id)}}"
+                                                    <a href="{{locale_route('company.edit',$company->id)}}"
                                                        class="pl-3">
                                                         <i class="material-icons">edit</i>
                                                     </a>
-                                                    <a href="{{locale_route('team.destroy',$team->id)}}"
+                                                    <a href="{{locale_route('company.destroy',$company->id)}}"
                                                        onclick="return confirm('Are you sure?')" class="pl-3">
                                                         <i class="material-icons">delete</i>
                                                     </a>
@@ -131,7 +102,7 @@
                                     </tbody>
                                 </table>
                             </form>
-                            {{ $teams->appends(request()->input())->links('admin.vendor.pagination.material') }}
+                            {{ $companies->appends(request()->input())->links('admin.vendor.pagination.material') }}
                         </div>
                     </div>
                 </div>

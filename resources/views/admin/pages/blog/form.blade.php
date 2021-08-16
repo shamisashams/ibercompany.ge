@@ -57,7 +57,7 @@
 
                                         <div class="input-field">
                                             <h5 for="content">@lang('admin.content')</h5>
-                                            {!! Form::textarea($locale.'[content]',$blog->translate($locale)->content ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content') ? '' : 'valid')]) !!}
+                                            {!! Form::textarea($locale.'[content]',$blog->translate($locale)->content ?? '',['class' => 'form-control validate '. ($errors->has($locale.'.content') ? '' : 'valid'),'id'=>'content-'.$locale]) !!}
                                             @error($locale.'.content')
                                             <small class="errorTxt4">
                                                 <div class="error">
@@ -154,11 +154,16 @@
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
+
+
         @foreach(config('translatable.locales') as $locale)
+
         CKEDITOR.replace('content-{{$locale}}', {
             filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
+            filebrowserUploadMethod: 'form',
         });
         @endforeach
+
+
     </script>
 @endsection
