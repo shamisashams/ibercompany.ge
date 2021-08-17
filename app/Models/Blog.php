@@ -32,7 +32,6 @@ class Blog extends Model implements Searchable
     protected $fillable = [
         'category_id',
         'status',
-        'video_link'
     ];
 
     /** @var string */

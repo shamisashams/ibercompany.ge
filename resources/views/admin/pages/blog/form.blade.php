@@ -96,18 +96,6 @@
                                     @enderror
                                 </div>
 
-                                <div class="input-field col s12">
-                                    <label for="video_link">{{__('admin.video_link')}}</label>
-
-                                    {!! Form::text('video_link',$blog->video_link ?? '',['class' => 'validate '. $errors->has('video_link') ? '' : 'valid']) !!}
-                                    @error('video_link')
-                                    <small class="errorTxt4">
-                                        <div class="error">
-                                            {{$message}}
-                                        </div>
-                                    </small>
-                                    @enderror
-                                </div>
                                 <div class="input-field"></div>
 
                                 <div class="col s12 mt-3 mb-3">

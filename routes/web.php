@@ -115,6 +115,10 @@ Route::prefix('{locale?}')
             // Service Page
             Route::get('/service', [ServiceController::class, "index"])->name('client.service.index');
         });
+
+        Route::get('/home', [HomeController::class, 'index'])->name('client.home.index');
+
     });
+
 
 

@@ -6,6 +6,7 @@
  * Time: 10:35
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
+
 namespace App\Repositories;
 
 
@@ -22,4 +23,8 @@ interface CompanyRepositoryInterface
      * @return mixed
      */
     public function getData(CompanyRequest $request, array $with = []);
+
+    public function create(array $attributes = [], array $projects = null);
+
+    public function update(int $id, array $attributes = [], array $projects = null);
 }

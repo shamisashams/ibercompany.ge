@@ -119,10 +119,10 @@
                                     @enderror
                                 </div>
                                 <div class="input-field col s12">
-                                    <label for="video_link">{{__('admin.video_link')}}</label>
+                                    <label for="website_link">{{__('admin.website_link')}}</label>
 
-                                    {!! Form::text('video_link',$company->video_link ?? '',['class' => 'validate '. $errors->has('video_link') ? '' : 'valid']) !!}
-                                    @error('video_link')
+                                    {!! Form::text('website_link',$company->website_link ?? '',['class' => 'validate '. $errors->has('website_link') ? '' : 'valid']) !!}
+                                    @error('website_link')
                                     <small class="errorTxt4">
                                         <div class="error">
                                             {{$message}}
@@ -130,27 +130,50 @@
                                     </small>
                                     @enderror
                                 </div>
-{{--                                <div class="col">--}}
-{{--                                    <label for="category_id">{{__('admin.category')}}</label>--}}
-{{--                                </div>--}}
-{{--                                <div class="input-field col s12">--}}
-{{--                                    <select name="category_id" class="select2 js-example-programmatic browser-default">--}}
-{{--                                        <optgroup>--}}
-{{--                                            @foreach($categories as $key => $category)--}}
-{{--                                                 <option value="{{$category->id}}" {{$key === 0 ? 'selected' : ''}} {{$company->category_id === $category->id ? 'selected' : ''}}>--}}
-{{--                                                    {{$category->title}}--}}
-{{--                                                </option>--}}
-{{--                                            @endforeach--}}
-{{--                                        </optgroup>--}}
-{{--                                    </select>--}}
-{{--                                    @error('category_id')--}}
-{{--                                    <small class="errorTxt4">--}}
-{{--                                        <div class="error">--}}
-{{--                                            {{$message}}--}}
-{{--                                        </div>--}}
-{{--                                    </small>--}}
-{{--                                    @enderror--}}
-{{--                                </div>--}}
+                                <div class="input-field col s12">
+                                    <select class="select2 browser-default"
+                                            multiple="multiple"
+                                            id="select2-customize-result"
+                                            name="projects[]">
+                                        @foreach($projects as $project)
+                                            <option
+                                                {{isset($companyProjects) && in_array($project->id,$companyProjects)?"selected":""}} value="{{$project->id}}">
+                                                {{$project->translate(app()->getLocale())->title ?? ''}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    <label class="active" for="category_id">{{__('admin.category')}}</label>
+
+                                    @error('project[].*')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+                                {{--                                <div class="col">--}}
+                                {{--                                    <label for="category_id">{{__('admin.category')}}</label>--}}
+                                {{--                                </div>--}}
+                                {{--                                <div class="input-field col s12">--}}
+                                {{--                                    <select name="category_id" class="select2 js-example-programmatic browser-default">--}}
+                                {{--                                        <optgroup>--}}
+                                {{--                                            @foreach($categories as $key => $category)--}}
+                                {{--                                                 <option value="{{$category->id}}" {{$key === 0 ? 'selected' : ''}} {{$company->category_id === $category->id ? 'selected' : ''}}>--}}
+                                {{--                                                    {{$category->title}}--}}
+                                {{--                                                </option>--}}
+                                {{--                                            @endforeach--}}
+                                {{--                                        </optgroup>--}}
+                                {{--                                    </select>--}}
+                                {{--                                    @error('category_id')--}}
+                                {{--                                    <small class="errorTxt4">--}}
+                                {{--                                        <div class="error">--}}
+                                {{--                                            {{$message}}--}}
+                                {{--                                        </div>--}}
+                                {{--                                    </small>--}}
+                                {{--                                    @enderror--}}
+                                {{--                                </div>--}}
                                 <div class="input-field"></div>
                                 <div class="col s12 mt-3 mb-3">
                                     <label>

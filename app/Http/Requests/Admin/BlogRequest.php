@@ -45,7 +45,6 @@ class BlogRequest extends FormRequest
             config('translatable.fallback_locale') . '.description' => 'required',
             config('translatable.fallback_locale') . '.content' => 'required',
             'category_id' => 'required|numeric|exists:categories,id',
-            'video_link' => 'nullable|string',
         ];
     }
 }

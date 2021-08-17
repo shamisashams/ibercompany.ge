@@ -1,7 +1,7 @@
 {{-- extend layout --}}
 @extends('admin.layout.contentLayoutMaster')
 {{-- page title --}}
-@section('title', $project->title)
+@section('title', $company->title)
 
 
 
@@ -13,17 +13,17 @@
                 <div class="display-flex media">
                     <div class="media-body">
                         <h6 class="media-heading">
-                            <span class="users-view-name">{{$project->title}} </span>
+                            <span class="users-view-name">{{$company->title}} </span>
                         </h6>
                     </div>
                 </div>
             </div>
             <div class="col s12 m5 quick-action-btns display-flex justify-content-end align-items-center pt-2">
-                <a href="{{locale_route('project.edit',$project->id)}}" class="btn-small indigo">
+                <a href="{{locale_route('company.edit',$company->id)}}" class="btn-small indigo">
                     @lang('admin.edit')
                 </a>
                 <a class="btn-small -settings waves-effect -light -btn right ml-3"
-                   href="{{locale_route('project.destroy',$project->id)}}"
+                   href="{{locale_route('company.destroy',$company->id)}}"
                    onclick="return confirm('Are you sure?')">
                     <span class="hide-on-small-onl">
                         @lang('admin.delete')
@@ -41,13 +41,13 @@
                         <tr>
                             <td>@lang('admin.slug'):</td>
                             <td>
-                                {{$project->slug}}
+                                {{$company->slug}}
                             </td>
                         </tr>
                         <tr>
                             <td>@lang('admin.status'):</td>
                             <td>
-                                @if($project->status)
+                                @if($company->status)
                                     <span class="chip green lighten-5 green-text">@lang('admin.active')</span>
                                 @else
                                     <span class="chip red lighten-5 red-text">@lang('admin.not_active')</span>
@@ -55,18 +55,18 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>@lang('admin.video_link'):</td>
+                            <td>@lang('admin.website_link'):</td>
                             <td>
-                                {{$project->video_link}}
+                                {{$company->website_link}}
                             </td>
                         </tr>
                         <tr>
                             <td>@lang('admin.created_at')</td>
-                            <td>{{\Carbon\Carbon::parse($project->created_at)}}</td>
+                            <td>{{\Carbon\Carbon::parse($company->created_at)}}</td>
                         </tr>
                         <tr>
                             <td>@lang('admin.updated_at')</td>
-                            <td>{{\Carbon\Carbon::parse($project->updated_at)}}</td>
+                            <td>{{\Carbon\Carbon::parse($company->updated_at)}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -86,37 +86,37 @@
                 </div>
                 <div class="col sm12 mt-2">
                     @foreach(config('translatable.locales') as $locale)
-                            <div id="cat-{{$locale}}"
-                                 class="">
-                                <table class="striped">
-                                    <tbody>
-                                    <tr>
-                                        <td>@lang('admin.title'):</td>
-                                        <td>{{$project->translate($locale)->title ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.description'):</td>
-                                        <td>{{$project->translate($locale)->description ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.content'):</td>
-                                        <td>{!!$project->translate($locale)->content ?? ''!!}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.meta_title'):</td>
-                                        <td>{{$project->translate($locale)->meta_title ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.meta_description'):</td>
-                                        <td>{{$project->translate($locale)->meta_description ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.meta_keyword'):</td>
-                                        <td>{{$project->translate($locale)->meta_keyword ?? ''}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div id="cat-{{$locale}}"
+                             class="">
+                            <table class="striped">
+                                <tbody>
+                                <tr>
+                                    <td>@lang('admin.title'):</td>
+                                    <td>{{$company->translate($locale)->title ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.content_1'):</td>
+                                    <td>{{$company->translate($locale)->content_1 ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.content_2'):</td>
+                                    <td>{!!$company->translate($locale)->content_2 ?? ''!!}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_title'):</td>
+                                    <td>{{$company->translate($locale)->meta_title ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_description'):</td>
+                                    <td>{{$company->translate($locale)->meta_description ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_keyword'):</td>
+                                    <td>{{$company->translate($locale)->meta_keyword ?? ''}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -129,7 +129,7 @@
                 <div class="popup-gallery">
                     <div class="gallery-sizer"></div>
                     <div class="row">
-                        @foreach($project->files as $file)
+                        @foreach($company->files as $file)
                             <div class="col s12 m6 l4 xl2">
                                 <div>
                                     <a href="{{asset($file->path.'/'.$file->title)}}" target="_blank"

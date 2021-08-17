@@ -13,6 +13,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CompanyRequest;
 use App\Models\Company;
+use App\Models\Project;
 use App\Repositories\CompanyRepositoryInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -67,6 +68,7 @@ class CompanyController extends Controller
             'company' => $company,
             'url' => $url,
             'method' => $method,
+            'projects' => Project::where(['company_id' => null])->get()
         ]);
     }
 
@@ -80,10 +82,10 @@ class CompanyController extends Controller
      */
     public function store(CompanyRequest $request)
     {
-        $saveData = Arr::except($request->except('_token'), []);
+        $saveData = Arr::except($request->except('_token', 'projects'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
-        $company = $this->companyRepository->create($saveData);
+        $company = $this->companyRepository->create($saveData, $request['projects']);
 
         // Save Files
         if ($request->hasFile('images')) {
@@ -120,11 +122,14 @@ class CompanyController extends Controller
     {
         $url = locale_route('company.update', $company->id, false);
         $method = 'PUT';
+        $companyProjects = $company->projects->pluck('id')->toArray();
 
         return view('admin.pages.company.form', [
             'company' => $company,
+            'companyProjects' => $companyProjects,
             'url' => $url,
             'method' => $method,
+            'projects' => Project::where(['company_id' => null])->orWhere(['company_id' => $company->id])->get()
         ]);
     }
 
@@ -139,10 +144,10 @@ class CompanyController extends Controller
      */
     public function update(CompanyRequest $request, string $locale, Company $company)
     {
-        $saveData = Arr::except($request->except('_token'), []);
+        $saveData = Arr::except($request->except('_token', 'projects'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
-        $this->companyRepository->update($company->id, $saveData);
+        $this->companyRepository->update($company->id, $saveData, $request['projects']);
 
 
         $this->companyRepository->saveFiles($company->id, $request);

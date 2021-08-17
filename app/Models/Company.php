@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Translations\CompanyTranslation;
 use App\Models\Translations\ProjectTranslation;
 use App\Models\Translations\TeamTranslation;
 use App\Traits\ScopeFilter;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -74,7 +76,7 @@ class Company extends Model implements Searchable
     ];
 
     /** @var string */
-    protected $translationModel = TeamTranslation::class;
+    protected $translationModel = CompanyTranslation::class;
 
     /** @var array */
     public $translatedAttributes = [
@@ -130,5 +132,11 @@ class Company extends Model implements Searchable
     public function file(): MorphOne
     {
         return $this->morphOne(File::class, 'fileable');
+    }
+
+
+    public function projects(): HasMany
+    {
+        return $this->hasMany(Project::class, 'company_id');
     }
 }
