@@ -66,9 +66,9 @@
                         <div class="col s12 m6 8">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    {!! Form::text("youtube_url",$slider->youtube_url ?? '',['class' => 'validate '. $errors->has("youtube_url") ? '' : 'valid']) !!}
-                                    {!! Form::label("youtube_url",__('admin.youtube_url')) !!}
-                                    @error($locale.'.youtube_url')
+                                    {!! Form::text("redirect_url",$slider->redirect_url ?? '',['class' => 'validate '. $errors->has("redirect_url") ? '' : 'valid']) !!}
+                                    {!! Form::label("redirect_url",__('admin.redirect_url')) !!}
+                                    @error($locale.'.redirect_url')
                                     <small class="errorTxt4">
                                         <div class="error">
                                             {{$message}}

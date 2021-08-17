@@ -6,12 +6,16 @@
  * Time: 11:03
  * @author Vito Makhatadze <vitomakhatadze@gmail.com>
  */
+
 namespace App\Http\Middleware;
 
+use App\Models\Blog;
+use App\Models\Company;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Team;
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -27,19 +31,23 @@ class EnableGlobalScopeMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        Product::addGlobalScope('active', function (Builder $builder) {
-            $builder->where('status', true);
-        });
-
         Project::addGlobalScope('active', function (Builder $builder) {
             $builder->where('status', true);
         });
 
-        Service::addGlobalScope('active', function (Builder $builder) {
+        Company::addGlobalScope('active', function (Builder $builder) {
+            $builder->where('status', true);
+        });
+
+        Blog::addGlobalScope('active', function (Builder $builder) {
             $builder->where('status', true);
         });
 
         Slider::addGlobalScope('active', function (Builder $builder) {
+            $builder->where('status', true);
+        });
+
+        Team::addGlobalScope('active', function (Builder $builder) {
             $builder->where('status', true);
         });
 

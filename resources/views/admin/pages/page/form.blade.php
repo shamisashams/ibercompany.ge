@@ -32,10 +32,11 @@
                                 </ul>
                                 @foreach(config('translatable.locales') as $locale)
                                     <div id="lang-{{$locale}}" class="col s12  mt-5">
+
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[title]',$page->translate($locale)->title ?? '',['class' => 'validate '. $errors->has($locale.'.title') ? '' : 'valid']) !!}
-                                            {!! Form::label($locale.'[title]',__('admin.title')) !!}
-                                            @error($locale.'.title')
+                                            {!! Form::text($locale.'[title_1]',$page->translate($locale)->title_1 ?? '',['class' => 'validate '. $errors->has($locale.'.title_1') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[title_1]',__('admin.title_1')) !!}
+                                            @error($locale.'.title_1')
                                             <small class="errorTxt4">
                                                 <div class="error">
                                                     {{$message}}
@@ -43,13 +44,35 @@
                                             </small>
                                             @enderror
                                         </div>
+
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[title_2]',$page->translate($locale)->title_2 ?? '',['class' => 'validate '. $errors->has($locale.'.title_2') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[title_2]',__('admin.title_2')) !!}
+                                            @error($locale.'.title_2')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+
                                         <div class="input-field">
-                                            <h5 for="description">@lang('admin.description')</h5>
-                                            <textarea class="form-control" id="description-{{$locale}}"
-                                                      name="{{$locale}}[description]'">
-                                                {!! $page->translate($locale)->description ?? '' !!}
-                                            </textarea>
-                                            @error($locale.'.description')
+                                            <h5 for="description">@lang('admin.content_1')</h5>
+                                            {!! Form::textarea($locale.'[content_1]', $page->translate($locale)->content_1 ?? '',['class' => 'form-control validate '. ($errors->has($locale.'.content_1') ? '' : 'valid'),'id'=>"content_1-".$locale]) !!}
+                                            @error($locale.'.content_1')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+
+                                        <div class="input-field">
+                                            <h5 for="description">@lang('admin.content_2')</h5>
+                                            {!! Form::textarea($locale.'[content_2]', $page->translate($locale)->content_2 ?? '',['class' => 'form-control validate '. ($errors->has($locale.'.content_2') ? '' : 'valid'),'id'=>"content_2-".$locale]) !!}
+                                            @error($locale.'.content_2')
                                             <small class="errorTxt4">
                                                 <div class="error">
                                                     {{$message}}
@@ -70,7 +93,7 @@
                                             @enderror
                                         </div>
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[meta_description]',$page->translate($locale)->meta_keyword ?? '',['class' => 'validate '. $errors->has($locale.'.meta_description') ? '' : 'valid']) !!}
+                                            {!! Form::text($locale.'[meta_description]',$page->translate($locale)->meta_description ?? '',['class' => 'validate '. $errors->has($locale.'.meta_description') ? '' : 'valid']) !!}
                                             {!! Form::label($locale.'[meta_description]',__('admin.meta_description')) !!}
                                             @error($locale.'.meta_description')
                                             <small class="errorTxt4">
@@ -112,7 +135,11 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         @foreach(config('translatable.locales') as $locale)
-        CKEDITOR.replace('description-{{$locale}}', {
+        CKEDITOR.replace('content_1-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+        CKEDITOR.replace('content_2-{{$locale}}', {
             filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
             filebrowserUploadMethod: 'form'
         });

@@ -63,29 +63,37 @@
                 </div>
                 <div class="col sm12 mt-2">
                     @foreach(config('translatable.locales') as $locale)
-                            <div id="cat-{{$locale}}"
-                                 class="">
-                                <table class="striped">
-                                    <tbody>
-                                    <tr>
-                                        <td>@lang('admin.title'):</td>
-                                        <td>{{$page->translate($locale)->title ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.description'):</td>
-                                        <td>{{$page->translate($locale)->description ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.meta_title'):</td>
-                                        <td>{{$page->translate($locale)->meta_title ?? ''}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>@lang('admin.meta_description'):</td>
-                                        <td>{{$page->translate($locale)->meta_description ?? ''}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div id="cat-{{$locale}}"
+                             class="">
+                            <table class="striped">
+                                <tbody>
+                                <tr>
+                                    <td>@lang('admin.title_1'):</td>
+                                    <td>{{$page->translate($locale)->title_1 ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.title_2'):</td>
+                                    <td>{{$page->translate($locale)->title_2 ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.content_1'):</td>
+                                    <td>{!!$page->translate($locale)->content_1 ?? ''!!}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.content_2'):</td>
+                                    <td>{!!$page->translate($locale)->content_2 ?? ''!!}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_title'):</td>
+                                    <td>{{$page->translate($locale)->meta_title ?? ''}}</td>
+                                </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_description'):</td>
+                                    <td>{{$page->translate($locale)->meta_description ?? ''}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     @endforeach
                 </div>
             </div>

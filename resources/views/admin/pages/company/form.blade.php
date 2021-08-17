@@ -43,6 +43,18 @@
                                             </small>
                                             @enderror
                                         </div>
+
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[description]',$company->translate($locale)->description ?? '',['class' => 'validate '. $errors->has($locale.'.description') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[description]',__('admin.description')) !!}
+                                            @error($locale.'.description')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
                                         <div class="input-field ">
                                             {!! Form::text($locale.'[meta_title]',$company->translate($locale)->meta_title ?? '',['class' => 'validate '. $errors->has($locale.'.meta_title') ? '' : 'valid']) !!}
                                             {!! Form::label($locale.'[meta_title]',__('admin.meta_title')) !!}
@@ -143,7 +155,7 @@
                                         @endforeach
                                     </select>
 
-                                    <label class="active" for="category_id">{{__('admin.category')}}</label>
+                                    <label class="active" for="category_id">{{__('admin.projects')}}</label>
 
                                     @error('project[].*')
                                     <small class="errorTxt4">

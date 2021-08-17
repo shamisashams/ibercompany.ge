@@ -6,20 +6,18 @@
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
-    <link rel="stylesheet" href="{{ asset("client/style.css") }}" />
+    <link rel="stylesheet" href="{{ asset("client/style.css") }}"/>
     @yield('subhead')
 @endsection
 
 @section('content')
-{{--    @yield("div_open")--}}
+    {{--    @yield("div_open")--}}
     @include('client.layout.partial.header')
-{{--    @yield("div_close")--}}
+    {{--    @yield("div_close")--}}
 
     @yield('wrapper')
 
     @include('client.layout.partial.footer')
-
-    @yield("home_video")
     <script
         type="text/javascript"
         src="https://code.jquery.com/jquery-1.11.0.min.js"

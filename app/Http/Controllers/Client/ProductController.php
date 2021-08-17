@@ -25,7 +25,7 @@ class ProductController extends Controller
         $productPage = Page::where('key', 'product')->firstOrFail();
         $categories = Category::whereHas('product', function (Builder $query) {
             $query->where('status', true);
-        })->where('status', true)->get();
+        })->where('status', true)->get();2
 
         $products = Product::query()->with(['file', 'translations']);
 

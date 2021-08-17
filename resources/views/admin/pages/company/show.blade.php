@@ -95,8 +95,12 @@
                                     <td>{{$company->translate($locale)->title ?? ''}}</td>
                                 </tr>
                                 <tr>
+                                    <td>@lang('admin.description'):</td>
+                                    <td>{{$company->translate($locale)->description ?? ''}}</td>
+                                </tr>
+                                <tr>
                                     <td>@lang('admin.content_1'):</td>
-                                    <td>{{$company->translate($locale)->content_1 ?? ''}}</td>
+                                    <td>{!!$company->translate($locale)->content_1 ?? ''!!}</td>
                                 </tr>
                                 <tr>
                                     <td>@lang('admin.content_2'):</td>

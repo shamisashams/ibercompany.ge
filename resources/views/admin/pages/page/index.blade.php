@@ -20,7 +20,8 @@
                                     <tr>
                                         <th>@lang('admin.id')</th>
                                         <th>@lang('admin.key')</th>
-                                        <th>@lang('admin.title')</th>
+                                        <th>@lang('admin.title_1')</th>
+                                        <th>@lang('admin.title_2')</th>
                                         <th>@lang('admin.actions')</th>
                                     </tr>
                                     </thead>
@@ -36,9 +37,14 @@
                                                    class="validate {{$errors->has('key') ? '' : 'valid'}}">
                                         </th>
                                         <th>
-                                            <input type="text" name="title" onchange="this.form.submit()"
-                                                   value="{{Request::get('title')}}"
-                                                   class="validate {{$errors->has('title') ? '' : 'valid'}}">
+                                            <input type="text" name="title_1" onchange="this.form.submit()"
+                                                   value="{{Request::get('title_1')}}"
+                                                   class="validate {{$errors->has('title_1') ? '' : 'valid'}}">
+                                        </th>
+                                        <th>
+                                            <input type="text" name="title_2" onchange="this.form.submit()"
+                                                   value="{{Request::get('title_2')}}"
+                                                   class="validate {{$errors->has('title_2') ? '' : 'valid'}}">
                                         </th>
                                     </tr>
                                     <tbody>
@@ -64,7 +70,30 @@
                                                             @foreach(config('translatable.locales') as $locale)
                                                                 <div id="cat-{{$locale}}-{{$page->id}}"
                                                                      class="">
-                                                                    {{$page->translate($locale)->title ?? ''}}
+                                                                    {{$page->translate($locale)->title_1 ?? ''}}
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col s12">
+                                                            <ul class="tabs">
+                                                                @foreach(config('translatable.locales') as $locale)
+                                                                    <li class="tab ">
+                                                                        <a href="#cat1-{{$locale}}-{{$page->id}}">
+                                                                            {{$locale}}
+                                                                        </a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col sm12 mt-2">
+                                                            @foreach(config('translatable.locales') as $locale)
+                                                                <div id="cat1-{{$locale}}-{{$page->id}}"
+                                                                     class="">
+                                                                    {{$page->translate($locale)->title_2 ?? ''}}
                                                                 </div>
                                                             @endforeach
                                                         </div>
@@ -78,10 +107,10 @@
                                                        class="pl-3">
                                                         <i class="material-icons">edit</i>
                                                     </a>
-{{--                                                    <a href="{{locale_route('page.destroy',$page->id)}}"--}}
-{{--                                                       onclick="return confirm('Are you sure?')" class="pl-3">--}}
-{{--                                                        <i class="material-icons">delete</i>--}}
-{{--                                                    </a>--}}
+                                                    {{--                                                    <a href="{{locale_route('page.destroy',$page->id)}}"--}}
+                                                    {{--                                                       onclick="return confirm('Are you sure?')" class="pl-3">--}}
+                                                    {{--                                                        <i class="material-icons">delete</i>--}}
+                                                    {{--                                                    </a>--}}
                                                 </td>
                                             </tr>
                                         @endforeach

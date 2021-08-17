@@ -10,8 +10,10 @@ class PageTranslation extends BaseTranslationModel
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'description',
+        'title_1',
+        'title_2',
+        'content_1',
+        'content_2',
         "meta_title",
         "meta_description"
     ];

@@ -1,7 +1,7 @@
 {{-- extend layout --}}
 @extends('admin.layout.contentLayoutMaster')
 {{-- page title --}}
-@section('title', $team->title)
+@section('title', $team->name)
 
 
 
@@ -13,7 +13,7 @@
                 <div class="display-flex media">
                     <div class="media-body">
                         <h6 class="media-heading">
-                            <span class="users-view-name">{{$team->title}} </span>
+                            <span class="users-view-name">{{$team->name}} </span>
                         </h6>
                     </div>
                 </div>

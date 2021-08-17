@@ -21,6 +21,7 @@ class CompanyTranslation extends BaseTranslationModel
      */
     protected $fillable = [
         'title',
+        'description',
         'content_1',
         'content_2',
         'meta_title',

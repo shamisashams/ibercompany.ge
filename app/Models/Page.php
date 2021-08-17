@@ -25,8 +25,10 @@ class Page extends Model
     protected $translationModel = PageTranslation::class;
 
     public $translatedAttributes = [
-        'title',
-        'description',
+        'title_1',
+        'title_2',
+        'content_1',
+        'content_2',
         "meta_title",
         "meta_description"
     ];
@@ -43,14 +45,16 @@ class Page extends Model
                 'hasParam' => true,
                 'scopeMethod' => 'key'
             ],
-            'title' => [
+            'title_1' => [
                 'hasParam' => true,
-                'scopeMethod' => 'titleTranslation'
+                'scopeMethod' => 'title1Translation'
+            ],
+            'title_2' => [
+                'hasParam' => true,
+                'scopeMethod' => 'title2Translation'
             ]
         ];
     }
-
-
 
 
     public function files(): MorphMany

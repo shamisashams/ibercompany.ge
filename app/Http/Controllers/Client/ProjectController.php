@@ -24,22 +24,21 @@ class ProjectController extends Controller
     public function index(string $locale, Request $request)
     {
         $projectPage = Page::where('key', 'project')->firstOrFail();
-        $categories = Category::whereHas('project', function (Builder $query) {
-            $query->where('status', true);
-        })->where('status', true)->get();
+//        $categories = Category::whereHas('project', function (Builder $query) {
+//            $query->where('status', true);
+//        })->where('status', true)->get();
 
         $projects = Project::query()->with(['file', 'translations']);
 
         $projects = $projects->where('status', true);
 
-        if ($request->has('category')) {
-            $projects = $projects->where('category_id',$request['category']);
-        }
+//        if ($request->has('category')) {
+//            $projects = $projects->where('category_id', $request['category']);
+//        }
 
         return view('client.pages.project.index', [
             'projectPage' => $projectPage,
-            'categories' => $categories,
-            'projects' => $projects->paginate(5)
+            'projects' => $projects->paginate(1)
         ]);
     }
 

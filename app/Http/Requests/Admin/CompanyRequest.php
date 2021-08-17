@@ -45,6 +45,7 @@ class CompanyRequest extends FormRequest
             config('translatable.fallback_locale') . '.title' => 'required|string',
             config('translatable.fallback_locale') . '.content_1' => 'required|string',
             config('translatable.fallback_locale') . '.content_2' => 'required|string',
+            config('translatable.fallback_locale') . '.description' => 'required|string',
         ];
     }
 }

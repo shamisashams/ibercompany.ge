@@ -91,7 +91,7 @@
                                     </tr>
                                     <tr>
                                         <td>@lang('admin.description'):</td>
-                                        <td>{{$slider->translate($locale)->description ?? ''}}</td>
+                                        <td>{!!$slider->translate($locale)->description ?? ''!!}</td>
                                     </tr>
 
                                     </tbody>

@@ -87,6 +87,7 @@ Route::prefix('{locale?}')
         });
         Route::middleware(['active'])->group(function () {
 
+
             // Home Page
             Route::get('', [HomeController::class, 'index'])->name('client.home.index');
 
@@ -116,7 +117,6 @@ Route::prefix('{locale?}')
             Route::get('/service', [ServiceController::class, "index"])->name('client.service.index');
         });
 
-        Route::get('/home', [HomeController::class, 'index'])->name('client.home.index');
 
     });
 

@@ -81,6 +81,7 @@ class Company extends Model implements Searchable
     /** @var array */
     public $translatedAttributes = [
         'title',
+        'description',
         'content_1',
         'content_2',
         'meta_title',

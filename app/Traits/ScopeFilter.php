@@ -165,6 +165,32 @@ trait ScopeFilter
 
     /**
      * @param $query
+     * @param $title_1
+     *
+     * @return mixed
+     */
+    public function scopeTitle1Translation($query, $title_1)
+    {
+        return $query->whereHas('translations', function ($query) use ($title_1) {
+            return $query->where('title_1', 'like', '%' . $title_1 . '%');
+        });
+    }
+
+    /**
+     * @param $query
+     * @param $title_2
+     *
+     * @return mixed
+     */
+    public function scopeTitle2Translation($query, $title_2)
+    {
+        return $query->whereHas('translations', function ($query) use ($title_2) {
+            return $query->where('title_2', 'like', '%' . $title_2 . '%');
+        });
+    }
+
+    /**
+     * @param $query
      * @param $description
      *
      * @return mixed
