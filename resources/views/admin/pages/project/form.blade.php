@@ -117,6 +117,26 @@
                                     </small>
                                     @enderror
                                 </div>
+
+                                <div class="input-field col s12">
+
+                                    <select name="type" class="select2 js-example-programmatic browser-default">
+                                        <option
+                                            {{$project->type=='current'?"selected":""}} value="current">@lang('client.current')</option>
+                                        <option
+                                            {{$project->type=='finished'?"selected":""}} value="finished">@lang('client.finished')</option>
+                                    </select>
+
+                                    <label class="active" for="category_id">{{__('admin.type')}}</label>
+
+                                    @error('type')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
                                 <div class="input-field"></div>
                                 <div class="col s12 mt-3 mb-3">
                                     <label>

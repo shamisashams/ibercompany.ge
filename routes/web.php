@@ -105,6 +105,7 @@ Route::prefix('{locale?}')
 
             // Project Page
             Route::get('/project', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project.index');
+            Route::get('/project/{type}', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project-type.index');
             Route::get('/project/{project}', [\App\Http\Controllers\Client\ProjectController::class, "show"])->name('client.project.show');
 
             // Blog Page

@@ -28,17 +28,19 @@ class ProjectController extends Controller
 //            $query->where('status', true);
 //        })->where('status', true)->get();
 
-        $projects = Project::query()->with(['file', 'translations']);
+        $currentProjects = Project::query()->where(['type' => 'current'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
+        $finishedProjects = Project::query()->where(['type' => 'finished'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
 
-        $projects = $projects->where('status', true);
+//        $projects = $projects->where('status', true);
 
 //        if ($request->has('category')) {
 //            $projects = $projects->where('category_id', $request['category']);
 //        }
 
-        return view('client.pages.project.index', [
+        return view('client.pages.project.sectors ', [
             'projectPage' => $projectPage,
-            'projects' => $projects->paginate(1)
+            'currentProjects' => $currentProjects->get(),
+            'finishedProjects' => $finishedProjects->get(),
         ]);
     }
 

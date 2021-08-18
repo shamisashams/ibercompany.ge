@@ -70,7 +70,8 @@ class Project extends Model implements Searchable
         'category_id',
         'slug',
         'status',
-        'company_id'
+        'company_id',
+        'type'
     ];
 
     /** @var string */

@@ -7,7 +7,7 @@
         <a class="dark-text font18 active" href="{{locale_route('client.home.index')}}">@lang('home')</a>
         <a class="dark-text font18" href="about.html">About</a>
         <a class="dark-text font18" href="{{locale_route('client.blog.index')}}">News</a>
-        <a class="dark-text font18" href="">@lang('client.sectors')</a>
+        <a class="dark-text font18" href="{{locale_route('client.project.index')}}">@lang('client.sectors')</a>
         <a class="dark-text font18" href="team.html">Team</a>
         <a class="dark-text font18" href="contact.html">Contact</a>
     </div>
