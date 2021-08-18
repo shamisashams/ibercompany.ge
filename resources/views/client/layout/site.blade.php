@@ -6,6 +6,10 @@
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+
     <link rel="stylesheet" href="{{ asset("client/style.css") }}"/>
     @yield('subhead')
 @endsection
@@ -30,6 +34,11 @@
         type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
     <script src="{{ asset("client/general.js") }}"></script>
     <script src="{{ asset("client/slide.js") }}"></script>
 @endsection

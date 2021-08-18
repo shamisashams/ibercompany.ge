@@ -6,6 +6,7 @@
  * Time: 10:32
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
+
 namespace App\Models;
 
 use App\Models\Translations\CategoryTranslation;
@@ -116,13 +117,15 @@ class Category extends Model
             ]
         ];
     }
+
     public function product(): HasMany
     {
         return $this->hasMany(Product::class);
     }
-
-    public function project(): HasMany
+    
+    public function blogs(): HasMany
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Blog::class);
+
     }
 }

@@ -4,49 +4,49 @@
             "url": "category.index",
             "name": "category",
             "i18n": "category",
-            "icon": "language",
+            "icon": "filter_list",
             "slug": "category"
         },
         {
             "url": "project.index",
             "name": "project",
             "i18n": "project",
-            "icon": "language",
+            "icon": "apps",
             "slug": "project"
         },
         {
             "url": "blog.index",
             "name": "blog",
             "i18n": "blog",
-            "icon": "language",
+            "icon": "assignment",
             "slug": "blog"
         },
         {
             "url": "team.index",
             "name": "team",
             "i18n": "team",
-            "icon": "language",
+            "icon": "account_box",
             "slug": "team"
         },
         {
             "url": "company.index",
             "name": "company",
             "i18n": "company",
-            "icon": "language",
+            "icon": "domain",
             "slug": "company"
         },
         {
             "url": "page.index",
             "name": "page",
             "i18n": "page",
-            "icon": "language",
+            "icon": "pages",
             "slug": "page"
         },
         {
             "url": "slider.index",
             "name": "slider",
             "i18n": "slider",
-            "icon": "language",
+            "icon": "slideshow",
             "slug": "slider"
         },
         {
@@ -60,7 +60,7 @@
             "url": "setting.index",
             "name": "setting",
             "i18n": "setting",
-            "icon": "language",
+            "icon": "brightness_low",
             "slug": "setting"
         },
         {

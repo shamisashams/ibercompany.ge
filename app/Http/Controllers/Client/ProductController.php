@@ -25,7 +25,7 @@ class ProductController extends Controller
         $productPage = Page::where('key', 'product')->firstOrFail();
         $categories = Category::whereHas('product', function (Builder $query) {
             $query->where('status', true);
-        })->where('status', true)->get();2
+        })->where('status', true)->get();
 
         $products = Product::query()->with(['file', 'translations']);
 
@@ -48,7 +48,7 @@ class ProductController extends Controller
      * @param string $slug
      * @return Application|Factory|View
      */
-    public function show(string $locale, string $slug)
+    public function show(string $slug)
     {
 
         $product = Product::where(['status' => true, 'slug' => $slug])->whereHas('category', function (Builder $query) {
