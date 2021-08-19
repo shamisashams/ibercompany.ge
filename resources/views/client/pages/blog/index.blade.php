@@ -37,7 +37,7 @@
                 <div class="news_item flex center">
                     <div class="img">
                         <img
-                            src="{{url(count($blog->files)>0? $blog->files[0]->path.'/'.$blog->files[0]->title : 'noimage.png')}}"
+                            src="{{url($blog->file? $blog->file->path.'/'.$blog->file->title : 'noimage.png')}}"
                             alt=""/>
                     </div>
                     <div class="text">
@@ -50,7 +50,7 @@
                         <div class="flex">
                             <div>
                                 <div
-                                    class="light-text font18">{{\Carbon\Carbon::createFromFormat('Y-m-d h:i:s',$blog->created_at)->format('d.m.Y')}}</div>
+                                    class="light-text font18">{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$blog->created_at)->format('d.m.Y')}}</div>
                                 <div class="light-text font18">{{$blog->category->title}}</div>
                             </div>
                             <a href="{{locale_route('client.blog.show',$blog->id)}}"

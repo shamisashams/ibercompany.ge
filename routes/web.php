@@ -105,18 +105,19 @@ Route::prefix('{locale?}')
 
             // Project Page
             Route::get('/project', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project.index');
-            Route::get('/project/{type}', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project-type.index');
-            Route::get('/project/{project}', [\App\Http\Controllers\Client\ProjectController::class, "show"])->name('client.project.show');
+            Route::get('/project/view/{project}', [\App\Http\Controllers\Client\ProjectController::class, "show"])->name('client.project.show');
+            Route::get('/project/{type}', [\App\Http\Controllers\Client\ProjectController::class, 'projectsByType'])->name('client.project-type.index');
 
             // Blog Page
             Route::get('/blog', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
             Route::get('/blog/{blog}', [\App\Http\Controllers\Client\BlogController::class, "show"])->name('client.blog.show');
+
+            // Team Page
+            Route::get('/team', [\App\Http\Controllers\Client\TeamController::class, 'index'])->name('client.team.index');
+            Route::get('/team/{team}', [\App\Http\Controllers\Client\TeamController::class, 'show'])->name('client.team.show');
             // Search Page
             Route::get('/search', [\App\Http\Controllers\Client\SearchController::class, 'index'])->name('client.search.index');
 
-            // Project Page
-            Route::get('/project', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project.index');
-            Route::get('/project/{project}', [\App\Http\Controllers\Client\ProjectController::class, "show"])->name('client.project.show');
 
             // Service Page
             Route::get('/service', [ServiceController::class, "index"])->name('client.service.index');

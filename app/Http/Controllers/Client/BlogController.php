@@ -29,9 +29,9 @@ class BlogController extends Controller
 //        $projectPage = Page::where('key', 'blog')->firstOrFail();
         $categories = Category::whereHas('blogs', function (Builder $query) {
             $query->where('status', true);
-        })->where('status', true)->get();
+        })->get();
 
-        $blogs = Blog::query()->with(['file', 'translations'])->orderBy('created_at', 'desc');
+        $blogs = Blog::query()->has('category')->with(['file', 'translations', 'category'])->orderBy('created_at', 'desc');
 
 
         if ($request->has('category') && $request['category'] !== 'all') {
@@ -72,11 +72,11 @@ class BlogController extends Controller
     public function show(string $locale, string $id)
     {
 
-        $blog = Blog::where(['status' => true, 'id' => $id])->whereHas('category', function (Builder $query) {
+        $blog = Blog::where(['id' => $id])->whereHas('category', function (Builder $query) {
             $query->where('status', 1);
         })->firstOrFail();
 
-        $otherBlogs = Blog::where('id', '!=', $id)->take(4)->orderBy('created_at', 'desc')->get();
+        $otherBlogs = Blog::where('id', '!=', $id)->has('category')->with(['file', 'translations', 'category'])->take(4)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.blog.show', [
             'blog' => $blog,

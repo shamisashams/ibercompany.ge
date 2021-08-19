@@ -24,24 +24,33 @@ class ProjectController extends Controller
     public function index(string $locale, Request $request)
     {
         $projectPage = Page::where('key', 'project')->firstOrFail();
-//        $categories = Category::whereHas('project', function (Builder $query) {
-//            $query->where('status', true);
-//        })->where('status', true)->get();
 
         $currentProjects = Project::query()->where(['type' => 'current'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
         $finishedProjects = Project::query()->where(['type' => 'finished'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
-
-//        $projects = $projects->where('status', true);
-
-//        if ($request->has('category')) {
-//            $projects = $projects->where('category_id', $request['category']);
-//        }
 
         return view('client.pages.project.sectors ', [
             'projectPage' => $projectPage,
             'currentProjects' => $currentProjects->get(),
             'finishedProjects' => $finishedProjects->get(),
         ]);
+    }
+
+    public function projectsByType(string $locale, string $type)
+    {
+        $projectPage = Page::where('key', 'project')->firstOrFail();
+
+        $projects = Project::query()->where(['type' => $type])
+            ->orderBy('created_at', 'desc')
+            ->with(['file', 'translations'])
+            ->paginate(5);
+
+
+        return view('client.pages.project.index', [
+            'projectPage' => $projectPage,
+            'projects' => $projects,
+            'type' => $type == 'current' ? 'current_projects' : ($type == 'finished' ? 'finished_projects' : "")
+        ]);
+
     }
 
 
@@ -52,15 +61,12 @@ class ProjectController extends Controller
      */
     public function show(string $locale, string $slug)
     {
-//        dd($slug);
-//        return 1;
-
-        $project = Project::where(['status' => true, 'slug' => $slug])->whereHas('category', function (Builder $query) {
-            $query->where('status', 1);
-        })->firstOrFail();
+        $project = Project::where(['slug' => $slug])->firstOrFail();
+        $otherProjects = Project::where('slug', '!=', $slug)->with(['file', 'translations'])->take(4)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.project.show', [
-            'project' => $project
+            'project' => $project,
+            'otherProjects' => $otherProjects
         ]);
     }
 }

@@ -9,7 +9,8 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span>@lang('client.news')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span>@lang('client.news')
             </div>
         </div>
     </section>
@@ -20,7 +21,7 @@
                     {{$blog->title}}
                 </div>
                 <div class="flex font18 light-text">
-                    <p>{{\Carbon\Carbon::createFromFormat('Y-m-d h:i:s',$blog->created_at)->format('d.m.Y')}}</p>
+                    <p>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$blog->created_at)->format('d.m.Y')}}</p>
                     <p>{{$blog->category->title}}</p>
                 </div>
                 <div class="light-text paragraph">
@@ -41,7 +42,7 @@
                     <div class="news_item flex center">
                         <div class="img">
                             <img
-                                src="{{url(count($blog->files)>0? $blog->files[0]->path.'/'.$blog->files[0]->title : 'noimage.png')}}"
+                                src="{{url($blog->file? $blog->file->path.'/'.$blog->file->title : 'noimage.png')}}"
                                 alt=""/>
                         </div>
                         <div class="text">

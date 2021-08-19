@@ -9,18 +9,23 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="index.html">@lang('home')</a> <span>|</span> @lang('client.projects')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span> @lang('client.sectors')
+                <span>|</span>@lang('client.'.$type)
             </div>
         </div>
     </section>
     <section class="projects_page">
         <div class="wrapper pad48">
+            <div class="sector_head flex dark-text">
+                <div class="font20 bold uppercase">@lang('client.'.$type)</div>
+            </div>
             <div class="project_grid">
                 @foreach($projects as $project)
-                    <a href="single-project.html">
+                    <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
                             <img class="bg"
-                                 src="{{url(count($project->files)>0? $project->files[0]->path.'/'.$project->files[0]->title : 'noimage.png')}}"
+                                 src="{{url($project->file? $project->file->path.'/'.$project->file->title : 'noimage.png')}}"
                                  alt=""/>
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>

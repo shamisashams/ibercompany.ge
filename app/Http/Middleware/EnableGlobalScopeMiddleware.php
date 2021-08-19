@@ -10,6 +10,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Company;
 use App\Models\Product;
 use App\Models\Project;
@@ -48,6 +49,10 @@ class EnableGlobalScopeMiddleware
         });
 
         Team::addGlobalScope('active', function (Builder $builder) {
+            $builder->where('status', true);
+        });
+
+        Category::addGlobalScope('active', function (Builder $builder) {
             $builder->where('status', true);
         });
 
