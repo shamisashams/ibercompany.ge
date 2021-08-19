@@ -406,10 +406,11 @@ img {
     margin: 0 17px;
     display: flex;
     align-items: center;
-    max-width: 268px;
+    max-width: 300px;
 }
 #partners_slider .slide img {
     margin-right: 15px;
+    height: 70px;
 }
 #partners_slider .slide::after {
     width: 100%;
@@ -1142,6 +1143,8 @@ img {
 }
 .company_page .heading img {
     margin-right: 15px;
+    max-width: 100px;
+    height: auto;
 }
 .company_page .heading .back {
     margin-left: 50px;
