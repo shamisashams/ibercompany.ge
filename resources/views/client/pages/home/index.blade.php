@@ -132,6 +132,8 @@
     <section class="news_home glass">
         <div class="wrapper pad80">
             <div class="content white">
+            <div class="abs_img img"><img src="/img/other/1.png" alt=""/></div> 
+            <div>
                 <div class="main-title white bold">@lang('client.news')</div>
                 <div class="font18 uppercase bold">
                     @lang('client.news_title')
@@ -149,7 +151,8 @@
                 <a href="news.html" class="view_all light-text bold font20"
                 >@lang('client.view_all_news')</a
                 >
-                <div class="abs_img"><img src="/img/other/1.png" alt=""/></div>
+                
+            </div>
             </div>
         </div>
     </section>

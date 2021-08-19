@@ -1,4 +1,5 @@
 <div id="navigation" class="flex center">
+<button id="open_navigation"><div></div></button>
     <a href="index.html" class="logo">
         <img src="/img/logo/1.png" alt=""/>
     </a>
