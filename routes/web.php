@@ -115,8 +115,12 @@ Route::prefix('{locale?}')
             // Team Page
             Route::get('/team', [\App\Http\Controllers\Client\TeamController::class, 'index'])->name('client.team.index');
             Route::get('/team/{team}', [\App\Http\Controllers\Client\TeamController::class, 'show'])->name('client.team.show');
+
             // Search Page
             Route::get('/search', [\App\Http\Controllers\Client\SearchController::class, 'index'])->name('client.search.index');
+
+            //Company Page
+            Route::get('/company/{company}', [\App\Http\Controllers\Client\CompanyController::class, 'show'])->name('client.company.show');
 
 
             // Service Page

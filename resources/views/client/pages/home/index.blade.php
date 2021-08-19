@@ -53,7 +53,7 @@
         <div class="wrapper">
             <div id="partners_slider" class="flex">
                 @foreach($companies as $company)
-                    <a href="companies.html" class="slide flex center">
+                    <a href="{{locale_route('client.company.show',$company->slug)}}" class="slide flex center">
                         <img
                             src="{{url(count($company->files)>0? $company->files[0]->path.'/'.$company->files[0]->title : 'noimage.png')}}"
                             alt=""/>
@@ -132,7 +132,7 @@
     <section class="news_home glass">
         <div class="wrapper pad80">
             <div class="content white">
-            <div class="abs_img img"><img src="/img/other/1.png" alt=""/></div> 
+            <div class="abs_img img"><img src="/img/other/1.png" alt=""/></div>
             <div>
                 <div class="main-title white bold">@lang('client.news')</div>
                 <div class="font18 uppercase bold">
@@ -151,7 +151,7 @@
                 <a href="news.html" class="view_all light-text bold font20"
                 >@lang('client.view_all_news')</a
                 >
-                
+
             </div>
             </div>
         </div>

@@ -143,6 +143,18 @@
                                     @enderror
                                 </div>
                                 <div class="input-field col s12">
+                                    <label for="youtube_link">{{__('admin.youtube_link')}}</label>
+
+                                    {!! Form::text('youtube_link',$company->youtube_link ?? '',['class' => 'validate '. $errors->has('youtube_link') ? '' : 'valid']) !!}
+                                    @error('youtube_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+                                <div class="input-field col s12">
                                     <select class="select2 browser-default"
                                             multiple="multiple"
                                             id="select2-customize-result"

@@ -72,7 +72,8 @@ class Company extends Model implements Searchable
     protected $fillable = [
         'status',
         'slug',
-        'website_link'
+        'website_link',
+        'youtube_link'
     ];
 
     /** @var string */
