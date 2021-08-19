@@ -24,11 +24,11 @@
                     alt=""/>
                 <div class="bold dark-text font25 uppercase">{{$company->title}}</div>
                 <a
-                    href="{{$company->website_link}}"
+                    href="{{$company->website_link?('https://'.$company->website_link):"#"}}"
                     class="flex uppercase back"
                     style="color: #015aaa"
                 >
-                    <div class="bold">Go to website</div>
+                    <div class="bold">@lang('client.go_to_website')</div>
                     <img class="transition3" src="/img/icons/news/3.png" alt=""/>
                 </a>
             </div>
