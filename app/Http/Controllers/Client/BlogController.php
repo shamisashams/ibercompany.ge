@@ -26,7 +26,7 @@ class BlogController extends Controller
      */
     public function index(string $locale, Request $request)
     {
-//        $projectPage = Page::where('key', 'blog')->firstOrFail();
+        $blogPage = Page::where('key', 'blog')->firstOrFail();
         $categories = Category::whereHas('blogs', function (Builder $query) {
             $query->where('status', true);
         })->get();
@@ -57,7 +57,7 @@ class BlogController extends Controller
 
 
         return view('client.pages.blog.index', [
-//            'projectPage' => $projectPage,
+            'blogPage' => $blogPage,
             'blogs' => $blogs->paginate(8),
             'categories' => $categories
         ]);

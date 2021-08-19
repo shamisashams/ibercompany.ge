@@ -1,9 +1,9 @@
 @extends('client.layout.site')
-{{--@section('subhead')--}}
-{{--    <title>{{ $projectPage->meta_title }}</title>--}}
-{{--    <meta name="description"--}}
-{{--          content="{{ $projectPage->meta_description }}">--}}
-{{--@endsection--}}
+@section('subhead')
+    <title>{{ $blogPage->meta_title }}</title>
+    <meta name="description"
+          content="{{ $blogPage->meta_description }}">
+@endsection
 
 @section('wrapper')
     <section id="page_path">

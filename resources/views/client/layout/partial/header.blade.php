@@ -1,19 +1,27 @@
 <div id="navigation" class="flex center">
-<button id="open_navigation"><div></div></button>
-    <a href="index.html" class="logo">
+    <button id="open_navigation">
+        <div></div>
+    </button>
+    <a href="{{locale_route('client.home.index')}}" class="logo">
         <img src="/img/logo/1.png" alt=""/>
     </a>
     <div class="navbar">
 
-        <a class="dark-text font18 active" href="{{locale_route('client.home.index')}}">@lang('home')</a>
-        <a class="dark-text font18" href="about.html">About</a>
-        <a class="dark-text font18" href="{{locale_route('client.blog.index')}}">News</a>
-        <a class="dark-text font18" href="{{locale_route('client.project.index')}}">@lang('client.sectors')</a>
-        <a class="dark-text font18" href="{{locale_route('client.team.index')}}">Team</a>
-        <a class="dark-text font18" href="contact.html">Contact</a>
+        <a class="dark-text font18 {{request()->routeIs('client.home.index')?"active":""}}"
+           href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'about')?"active":""}}"
+           href="{{locale_route('client.about.index')}}">@lang('client.about')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'blog')?"active":""}}"
+           href="{{locale_route('client.blog.index')}}">@lang('client.news')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'project')?"active":""}}"
+           href="{{locale_route('client.project.index')}}">@lang('client.sectors')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'team')?"active":""}}"
+           href="{{locale_route('client.team.index')}}">@lang('client.team')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'contact')?"active":""}}"
+           href="{{locale_route('client.contact.index')}}">@lang('client.contact')</a>
     </div>
     <div class="social_media">
-        <a href="#"
+        <a href="{{$gfacebook}}"
         >
             <div class="flex center sm transition3">
                 <svg
@@ -33,7 +41,7 @@
             </div
             >
         </a>
-        <a href="#"
+        <a href="{{$ginstagram}}"
         >
             <div class="flex center sm transition3">
                 <svg
@@ -53,7 +61,7 @@
             </div
             >
         </a>
-        <a href="#"
+        <a href="{{$gyoutube}}"
         >
             <div class="flex center sm transition3">
                 <svg
@@ -80,24 +88,30 @@
         <div class="wrapper">
             <div class="overlay pad48">
                 <div class="font50 white bold">
-                    @switch(Request::route()->getName())
-                        @case('client.project.index')
+                    @if(str_contains(request()->path(),'blog'))
+                        <p>@lang('client.news')</p>
+                    @elseif(str_contains(request()->path(),'about'))
+                        <p>@lang('client.about_us')</p>
+                    @elseif(request()->routeIs('client.project.index'))
+                        <p>@lang('client.sectors')</p>
+                    @elseif(str_contains(request()->path(),'project'))
                         <p>@lang('client.projects')</p>
-                        @break
-                        @case('client.news.index')
-                        <p>@lang('client.projects')</p>
-                        @break
-                        @default
-                    @endswitch
-
-
+                    @elseif(str_contains(request()->path(),'team'))
+                        <p>@lang('client.team')</p>
+                    @elseif(str_contains(request()->path(),'contact'))
+                        <p>@lang('client.contact')</p>
+                    @endif
                 </div>
 
                 <div id="languages" class="white font18 transition3">
-                    <div class="main transition3">En</div>
+                    <div class="main transition3">{{app()->getLocale()}}</div>
+
                     <div class="dropdown transition3">
-                        <a href="#">Ge</a>
-                        <a href="#">Ru</a>
+                        @foreach(config('translatable.locales') as $locale)
+                            @if(app()->getLocale() != $locale)
+                                <a href="{{ get_url($locale) }}">{{$locale}}</a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ class PageController extends Controller
      * @param PageRepositoryInterface $pageRepository
      */
     public function __construct(
-        PageRepositoryInterface  $pageRepository
+        PageRepositoryInterface $pageRepository
     )
     {
         $this->pageRepository = $pageRepository;
@@ -89,7 +89,9 @@ class PageController extends Controller
     public function update(PageRequest $request, string $locale, Page $page)
     {
         $saveData = Arr::except($request->except('_token'), []);
-        $this->pageRepository->update($page->id,$saveData);
+        $this->pageRepository->update($page->id, $saveData);
+
+        $this->pageRepository->saveFiles($page->id, $request);
 
 
         return redirect(locale_route('page.show', $page->id))->with('success', __('admin.update_successfully'));

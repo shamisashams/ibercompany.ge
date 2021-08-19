@@ -38,6 +38,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>@lang('admin.video_link'):</td>
+                            <td>
+                                {{$page->video_link}}
+                            </td>
+                        </tr>
+                        <tr>
                             <td>@lang('admin.created_at')</td>
                             <td>{{\Carbon\Carbon::parse($page->created_at)}}</td>
                         </tr>

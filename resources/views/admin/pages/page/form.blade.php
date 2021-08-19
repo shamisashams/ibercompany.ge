@@ -107,6 +107,31 @@
                                 @endforeach
                             </div>
                         </div>
+
+                        <div class="col s12 m6 8">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="youtube_link">{{__('admin.video_link')}}</label>
+
+                                    {!! Form::text('video_link',$page->video_link ?? '',['class' => 'validate '. $errors->has('video_link') ? '' : 'valid']) !!}
+                                    @error('video_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-images"></div>
+                                @if ($errors->has('images'))
+                                    <span class="help-block">
+                                            {{ $errors->first('images') }}
+                                        </span>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">

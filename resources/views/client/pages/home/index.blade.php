@@ -19,7 +19,7 @@
                                 <div class="font18">
                                     {!!$slider->description!!}
                                 </div>
-                                <button onclick="window.location.href='https://{{$slider->redirect_url}}'"
+                                <button onclick="window.location.href='{{$slider->redirect_url}}'"
                                         class="main-button main-border white bold">
                                     @lang('client.learn_more')
                                 </button>
@@ -41,53 +41,18 @@
                 <img class="transition3" src="/img/icons/hero/2.png" alt=""/>
             </button>
             <div id="languages" class="white font18 transition3">
-                <div class="main">En</div>
+                <div class="main">{{app()->getLocale()}}</div>
                 <div class="dropdown transition3">
-                    <a href="#">Ge</a>
-                    <a href="#">Ru</a>
+                    @foreach(config('translatable.locales') as $locale)
+                        @if(app()->getLocale() != $locale)
+                            <a href="{{ get_url($locale) }}">{{$locale}}</a>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
-    <section id="partners">
-        <div class="wrapper">
-            <div id="partners_slider" class="flex">
-                @foreach($companies as $company)
-                    <a href="{{locale_route('client.company.show',$company->slug)}}" class="slide flex center">
-                        <img
-                            src="{{url(count($company->files)>0? $company->files[0]->path.'/'.$company->files[0]->title : 'noimage.png')}}"
-                            alt=""/>
-                        <div>
-                            <div class="bold font20 dark-text uppercase">
-                                {{$company->title}}
-                            </div>
-                            <div class="font14 light-text text-07">
-                                {{$company->description}}
-                            </div>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-            <!-- <button class="arrow flex center transition3" id="partners_arrow_next">
-              <svg
-                class="transition3"
-                xmlns="http://www.w3.org/2000/svg"
-                width="13.385"
-                height="23.603"
-                viewBox="0 0 13.385 23.603"
-              >
-                <path
-                  id="Path_55"
-                  data-name="Path 55"
-                  d="M8365.011,384.853l10.218,11-10.218,10.534"
-                  transform="translate(-8363.911 -383.832)"
-                  fill="none"
-                  stroke-width="3"
-                />
-              </svg>
-            </button> -->
-        </div>
-    </section>
+    @include('client.pages.includes.partners',['companies'=>$companies,'class'=>null])
 
     <section class="projects_home">
 
@@ -104,14 +69,16 @@
                 <div class="light-text text-07" style="text-align: left">
                     @lang('client.project_description')
                 </div>
-                <button class="main-button dark-text main-border bold">
-                    @lang('client.see_all_projects')
-                </button>
+                <a href="{{locale_route('client.project.index')}}">
+                    <button class="main-button dark-text main-border bold">
+                        @lang('client.see_all_projects')
+                    </button>
+                </a>
             </div>
 
             <div class="grid">
                 @foreach($projects as $project)
-                    <a href="#">
+                    <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
                             <img class="bg"
                                  src="{{url(count($project->files)>0? $project->files[0]->path.'/'.$project->files[0]->title : 'noimage.png')}}"
@@ -132,27 +99,27 @@
     <section class="news_home glass">
         <div class="wrapper pad80">
             <div class="content white">
-            <div class="abs_img img"><img src="/img/other/1.png" alt=""/></div>
-            <div>
-                <div class="main-title white bold">@lang('client.news')</div>
-                <div class="font18 uppercase bold">
-                    @lang('client.news_title')
-                </div>
-                <div class="light-text">
-                    @lang('client.news_description')
-                </div>
-                <div class="flex font18 uppercase">
-                    {{--                    <div>--}}
-                    {{--                        <p class="bold">01.01.2021</p>--}}
-                    {{--                        <p class="bold">Category</p>--}}
-                    {{--                    </div>--}}
-                    {{--                    <a class="bold" href="#">See more</a>--}}
-                </div>
-                <a href="news.html" class="view_all light-text bold font20"
-                >@lang('client.view_all_news')</a
-                >
+                <div class="abs_img img"><img src="/img/other/1.png" alt=""/></div>
+                <div>
+                    <div class="main-title white bold">@lang('client.news')</div>
+                    <div class="font18 uppercase bold">
+                        @lang('client.news_title')
+                    </div>
+                    <div class="light-text">
+                        @lang('client.news_description')
+                    </div>
+                    <div class="flex font18 uppercase">
+                        {{--                    <div>--}}
+                        {{--                        <p class="bold">01.01.2021</p>--}}
+                        {{--                        <p class="bold">Category</p>--}}
+                        {{--                    </div>--}}
+                        {{--                    <a class="bold" href="#">See more</a>--}}
+                    </div>
+                    <a href="{{locale_route('client.blog.index')}}" class="view_all light-text bold font20"
+                    >@lang('client.view_all_news')</a
+                    >
 
-            </div>
+                </div>
             </div>
         </div>
     </section>
@@ -180,7 +147,8 @@
                                     </div>
                                     <div class="light-text font18">{{$blog->category->title}}</div>
                                 </div>
-                                <a href="#" class="dark-text uppercase font18 transition3 see_more">
+                                <a href="{{locale_route('client.blog.show',$blog->id)}}"
+                                   class="dark-text uppercase font18 transition3 see_more">
                                     @lang('client.see_more')
                                 </a>
                             </div>
@@ -200,9 +168,11 @@
                 <div class="dark-text text-07" style="text-align: left">
                     @lang('about_us_text')
                 </div>
-                <button class="main-button dark-text main-border bold">
-                    @lang('more_about_us')
-                </button>
+                <a href="{{locale_route('client.about.index')}}">
+                    <button class="main-button dark-text main-border bold">
+                        @lang('more_about_us')
+                    </button>
+                </a>
             </div>
             <div class="img"><img src="/img/other/2.png" alt=""/></div>
         </div>
@@ -211,13 +181,16 @@
         <div class="wrapper pad80">
             <div class="flex">
                 <div class="main-title bold">@lang('client.out_team')</div>
-                <a href="team.html" class="view font20 dark-text bold">@lang('client.view_team')</a>
+                <a href="{{locale_route('client.team.index')}}"
+                   class="view font20 dark-text bold">@lang('client.view_team')</a>
             </div>
             <div id="team_slider" class="flex">
                 @foreach($teamMembers as $member)
-                    <a href="#">
+                    <a href="{{locale_route('client.team.show',$member->id)}}">
                         <div class="team_member img">
-                            <img src="{{url(count($member->files)>0? $member->files[0]->path.'/'.$member->files[0]->title : 'noimage.png')}}" alt=""/>
+                            <img
+                                src="{{url(count($member->files)>0? $member->files[0]->path.'/'.$member->files[0]->title : 'noimage.png')}}"
+                                alt=""/>
                             <div class="caption white transition5">
                                 <div class="font20 bold transition5 uppercase name">
                                     {{$member->name}}

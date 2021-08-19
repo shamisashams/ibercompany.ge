@@ -19,7 +19,8 @@ class Page extends Model
     protected $table = 'pages';
 
     protected $fillable = [
-        'key'
+        'key',
+        'video_link'
     ];
 
     protected $translationModel = PageTranslation::class;

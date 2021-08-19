@@ -38,7 +38,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['admin.panels.navbar'], LanguageComposer::class);
-        View::composer(['client.layout.partial.footer', 'client.pages.contact.index'], SettingComposer::class);
+        View::composer(['client.layout.partial.footer','client.layout.partial.header', 'client.pages.contact.index'], SettingComposer::class);
 
     }
 }

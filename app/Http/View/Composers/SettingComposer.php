@@ -29,51 +29,50 @@ class SettingComposer
      */
     public function compose(View $view)
     {
-//        $gphone = "";
-//        $gemail = "";
-//        $gaddress = "";
-//        $gworkingHours = "";
-//        $ginstagram = "";
-//        $gfacebook = "";
-//        $gyoutube = "";
-//
-//        $settings = Setting::query()->with(['translations']);
-//        $settings = $settings->get();
-//        foreach ($settings as $setting){
-//            switch ($setting->key){
-//                case "phone":
-//                    $gphone = $setting;
-//                    break;
-//                case "email":
-//                    $gemail = $setting;
-//                    break;
-//                case "address":
-//                    $gaddress = $setting;
-//                    break;
-//                case "working_hours":
-//                    $gworkingHours = $setting;
-//                    break;
-//                case "instagram":
-//                    $ginstagram = $setting;
-//                    break;
-//                case "facebook":
-//                    $gfacebook = $setting;
-//                    break;
-//                case "youtube":
-//                    $gyoutube = $setting;
-//                    break;
-//            }
-//        }
-////        dd($gemail->value);
-//
-//        $view
-//            ->with('gaddress',$gaddress->value)
-//            ->with('ginstagram',$ginstagram->value)
-//            ->with('gfacebook',$gfacebook->value)
-//            ->with('gyoutube',$gyoutube->value)
-//            ->with('gemail',$gemail->value)
-//            ->with('gphone',$gphone->value)
-//            ->with("gworkingHours",$gworkingHours->value);
+        $gphone = "";
+        $gemail = "";
+        $gaddress = "";
+        $gworkingHours = "";
+        $ginstagram = "";
+        $gfacebook = "";
+        $gyoutube = "";
+
+        $settings = Setting::query()->with(['translations']);
+        $settings = $settings->get();
+        foreach ($settings as $setting) {
+            switch ($setting->key) {
+                case "phone":
+                    $gphone = $setting;
+                    break;
+                case "email":
+                    $gemail = $setting;
+                    break;
+                case "address":
+                    $gaddress = $setting;
+                    break;
+                case "working_hours":
+                    $gworkingHours = $setting;
+                    break;
+                case "instagram":
+                    $ginstagram = $setting;
+                    break;
+                case "facebook":
+                    $gfacebook = $setting;
+                    break;
+                case "youtube":
+                    $gyoutube = $setting;
+                    break;
+            }
+        }
+
+        $view
+            ->with('gaddress', $gaddress->value)
+            ->with('ginstagram', $ginstagram->value)
+            ->with('gfacebook', $gfacebook->value)
+            ->with('gyoutube', $gyoutube->value)
+            ->with('gemail', $gemail->value)
+            ->with('gphone', $gphone->value)
+            ->with("gworkingHours", $gworkingHours->value);
     }
 
 

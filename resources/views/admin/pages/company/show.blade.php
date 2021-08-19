@@ -61,6 +61,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>@lang('admin.youtube_link'):</td>
+                            <td>
+                                {{$company->youtube_link}}
+                            </td>
+                        </tr>
+                        <tr>
                             <td>@lang('admin.created_at')</td>
                             <td>{{\Carbon\Carbon::parse($company->created_at)}}</td>
                         </tr>

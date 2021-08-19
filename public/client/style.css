@@ -411,6 +411,7 @@ img {
 #partners_slider .slide img {
     margin-right: 15px;
     height: 70px;
+    object-fit:scale-down;
 }
 #partners_slider .slide::after {
     width: 100%;
@@ -915,7 +916,7 @@ img {
     padding-bottom: 150px;
 }
 .about_holding .flex {
-    align-items: flex-end;
+    align-items: flex-start;
 }
 .about_holding .flex .content {
     width: 47%;
@@ -1768,6 +1769,9 @@ img {
         margin-left: 6px;
     }
 }
+/*.about_holding .flex {*/
+/*    align-items: flex-start;*/
+/*}*/
 
 /* about page */
 @media screen and (max-width: 1700px) {

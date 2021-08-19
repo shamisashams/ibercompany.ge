@@ -1,10 +1,10 @@
 @extends('client.layout.site')
-@section('subhead')
-    <title>{{$team->meta_title}}</title>
-    <meta name="description"
-          content="{{ $team->meta_description }}">
-    <meta name="keywords" content="{{ $team->meta_keyword }}">
-@endsection
+{{--@section('subhead')--}}
+{{--    <title>{{$team->meta_title}}</title>--}}
+{{--    <meta name="description"--}}
+{{--          content="{{ $team->meta_description }}">--}}
+{{--    <meta name="keywords" content="{{ $team->meta_keyword }}">--}}
+{{--@endsection--}}
 
 @section('wrapper')
     <section id="page_path">

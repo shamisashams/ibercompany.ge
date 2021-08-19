@@ -1,35 +1,63 @@
 @extends('client.layout.site')
 @section('subhead')
-    <title>{{ $aboutPage->meta_title }}</title>
+    <title>{{ $about->meta_title }}</title>
     <meta name="description"
-          content="{{ $aboutPage->meta_description }}">
+          content="{{ $about->meta_description }}">
 @endsection
 
 @section('wrapper')
-    <div class="about_us_page wrapper">
-        <div class="main_title">{{ $aboutPage->title }}</div>
-        <div class="container">
-            {!! $aboutPage->description !!}
-        </div>
-        <div class="bottom">
-            <button class="arrow" id="prev_about">
-                <img src="/img/icons/arrows/prev.svg" alt=""/>
-            </button>
-            <button class="arrow" id="next_about">
-                <img src="/img/icons/arrows/next.svg" alt=""/>
-            </button>
-            <div class="title">@lang("client.about_certificates_and_awards")</div>
-            <div class="bottom_flex bottom_about_slide flex">
-                @foreach($certificates as $certificate)
-                    <div class="item">
-                        <img class="img" src="{{ url($certificate->file ? $certificate->file->file_url : '') }}"
-                             alt="{{ $certificate->title }}">
-                        <div class="paragraph">{{ $certificate->title }}</div>
-                    </div>
-                @endforeach
+    <section id="page_path">
+        <div class="wrapper flex pp_wrapper pad48 font20">
+            <div class="light-text">
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.about')
             </div>
         </div>
-    </div>
+    </section>
+    <section class="about_holding">
+        <div class="wrapper pad48 flex">
+            <div class="content">
+                <div class="main-title short bold">{{$about->title_1}}</div>
+                <div class="light-text text-07">
+                    {!! $about->content_1 !!}
+                </div>
+            </div>
+            <div class="img">
+                <img
+                    src="{{url(count($about->files)>0? $about->files[0]->path.'/'.$about->files[0]->title : 'noimage.png')}}"
+                    alt=""/>
+            </div>
+        </div>
+    </section>
+    @if($about->video_link)
+        <section class="video_placeholder about">
+            <div class="wrapper video pad48">
+                <iframe
+                    src="https://www.youtube.com/embed/{{$about->video_link}}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+    @endif
+    <section class="about_holding our_companies">
+        <div class="wrapper pad48 flex">
+            <div class="content">
+                <div class="main-title short bold">{{$about->title_2}}</div>
+                <div class="light-text text-07">
+                    {!!$about->content_2!!}
+                </div>
+            </div>
+            <div class="img">
+                <img src="{{url(count($about->files)>1? $about->files[1]->path.'/'.$about->files[1]->title : 'noimage.png')}}" alt=""/>
+            </div>
+        </div>
+    </section>
+
+    @include('client.pages.includes.partners',['companies'=>$companies,'class'=>'about'])
+
+    <section class="gap about"></section>
 
 @endsection
 

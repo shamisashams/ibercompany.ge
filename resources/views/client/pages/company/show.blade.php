@@ -24,7 +24,7 @@
                     alt=""/>
                 <div class="bold dark-text font25 uppercase">{{$company->title}}</div>
                 <a
-                    href="{{$company->website_link?('https://'.$company->website_link):"#"}}"
+                    href="{{$company->website_link?:"#"}}"
                     class="flex uppercase back"
                     style="color: #015aaa"
                 >

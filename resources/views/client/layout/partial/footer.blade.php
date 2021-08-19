@@ -9,54 +9,52 @@
             <div class="flex font18">
                 <img src="/img/icons/footer/1.png" alt=""/>
                 <div>
-                    30 Commercial Road <br/>
-                    Tbilisi, Georgia
+                    {{$gaddress}}
                 </div>
             </div>
             <div class="flex font18">
                 <img src="/img/icons/footer/2.png" alt=""/>
-                <div>0 32 2 444 777</div>
+                <div>{{$gphone}}</div>
             </div>
             <div class="bold font20">Working hours</div>
             <div class="flex font18">
                 <img src="/img/icons/footer/3.png" alt=""/>
                 <div>
-                    Mon-Sat. 09:00 - 19:00 <br/>
-                    Sunday: Closed
+                   {{$gworkingHours}}
                 </div>
             </div>
         </div>
         <div class="column">
             <div class="title flex">
-                <div class="bold">Links</div>
+                <div class="bold">@lang('client.links')</div>
                 <span></span>
             </div>
-            <a href="#" class="nav font20 transition3">Projects</a>
-            <a href="#" class="nav font20 transition3">News</a>
-            <a href="#" class="nav font20 transition3">About us</a>
-            <a href="#" class="nav font20 transition3">Team</a>
-            <a href="#" class="nav font20 transition3">Contact</a>
+            <a href="{{locale_route('client.project.index')}}" class="nav font20 transition3">@lang('client.projects')</a>
+            <a href="{{locale_route('client.blog.index')}}" class="nav font20 transition3">@lang('client.news')</a>
+            <a href="{{locale_route('client.about.index')}}" class="nav font20 transition3">@lang('client.about_us')</a>
+            <a href="{{locale_route('client.team.index')}}" class="nav font20 transition3">@lang('client.team')</a>
+            <a href="{{locale_route('client.contact.index')}}" class="nav font20 transition3">@lang('client.contact')</a>
         </div>
         <div class="column">
             <div class="title flex">
-                <div class="bold">Newsletter</div>
+                <div class="bold">@lang('client.newsletter')</div>
                 <span></span>
             </div>
             <div class="text-07 font20">
-                Subscribe to gel all the news and updates
+                @lang('client.subscribe_to_gel')
             </div>
             <div class="flex email">
                 <input
                     class="font20 main-border white transition3"
                     type="text"
-                    placeholder="Enter your email here"
+                    placeholder="@lang('client.enter_email')"
                 />
                 <button class="send flex center transition3">
                     <img src="/img/icons/footer/4.png" alt=""/>
                 </button>
             </div>
             <div class="flex sm">
-                <a href="#"
+                <a href="{{$gfacebook}}"
                 >
                     <svg
                         class="transition3"
@@ -73,7 +71,7 @@
                         />
                     </svg>
                 </a>
-                <a href="#"
+                <a href="{{$ginstagram}}"
                 >
                     <svg
                         class="transition3"
@@ -90,7 +88,7 @@
                         />
                     </svg>
                 </a>
-                <a href="#"
+                <a href="{{$gyoutube}}"
                 >
                     <svg
                         class="transition3"
@@ -111,7 +109,7 @@
         </div>
         <div class="column">
             <div class="title flex">
-                <div class="bold">Map</div>
+                <div class="bold">@lang('client.map')</div>
                 <span></span>
             </div>
             <div class="map">

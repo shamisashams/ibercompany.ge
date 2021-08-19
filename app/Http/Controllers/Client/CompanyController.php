@@ -24,7 +24,7 @@ class CompanyController extends Controller
     public function show(string $locale, string $slug)
     {
         $company = Company::where(['slug' => $slug])->firstOrFail();
-        $otherCompanies = Company::where('slug', '!=', $slug)->with(['files', 'translations','projects'])->take(6)->orderBy('created_at', 'desc')->get();
+        $otherCompanies = Company::where('slug', '!=', $slug)->with(['file', 'translations', 'projects'])->take(6)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.company.show', [
             'company' => $company,
