@@ -3,6 +3,7 @@
     <title>{{ $projectPage->meta_title }}</title>
     <meta name="description"
           content="{{ $projectPage->meta_description }}">
+    <meta name="keywords" content="{{ $projectPage->meta_keyword }}">
 @endsection
 
 @section('wrapper')

@@ -1,8 +1,8 @@
 @extends('client.layout.site')
 @section('subhead')
-    <title>Home</title>
+    <title>IberCompany</title>
     <meta name="description"
-          content="home">
+          content="iber-company">
 @endsection
 @section('wrapper')
     <section id="hero">
