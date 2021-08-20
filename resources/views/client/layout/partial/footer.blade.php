@@ -1,7 +1,7 @@
 <footer id="footer" class="white">
     <div class="wrapper pad80 flex">
         <div class="column">
-            <a href="index.html">
+            <a href="{{locale_route('client.home.index')}}">
                 <div class="logo">
                     <img src="/img/logo/2.png" alt=""/>
                 </div>
