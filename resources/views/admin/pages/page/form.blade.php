@@ -103,6 +103,18 @@
                                             </small>
                                             @enderror
                                         </div>
+
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[meta_keyword]',$page->translate($locale)->meta_keyword ?? '',['class' => 'validate '. $errors->has($locale.'.meta_keyword') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[meta_keyword]',__('admin.meta_keyword')) !!}
+                                            @error($locale.'.meta_keyword')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>

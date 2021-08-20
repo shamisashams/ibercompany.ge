@@ -67,7 +67,7 @@
                                             @enderror
                                         </div>
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[meta_description]',$company->translate($locale)->meta_keyword ?? '',['class' => 'validate '. $errors->has($locale.'.meta_description') ? '' : 'valid']) !!}
+                                            {!! Form::text($locale.'[meta_description]',$company->translate($locale)->meta_description ?? '',['class' => 'validate '. $errors->has($locale.'.meta_description') ? '' : 'valid']) !!}
                                             {!! Form::label($locale.'[meta_description]',__('admin.meta_description')) !!}
                                             @error($locale.'.meta_description')
                                             <small class="errorTxt4">
@@ -78,7 +78,7 @@
                                             @enderror
                                         </div>
                                         <div class="input-field ">
-                                            {!! Form::text($locale.'[meta_keyword]',$company->translate($locale)->meta_description ?? '',['class' => 'validate '. $errors->has($locale.'.meta_keyword') ? '' : 'valid']) !!}
+                                            {!! Form::text($locale.'[meta_keyword]',$company->translate($locale)->meta_keyword ?? '',['class' => 'validate '. $errors->has($locale.'.meta_keyword') ? '' : 'valid']) !!}
                                             {!! Form::label($locale.'[meta_keyword]',__('admin.meta_keyword')) !!}
                                             @error($locale.'.meta_keyword')
                                             <small class="errorTxt4">

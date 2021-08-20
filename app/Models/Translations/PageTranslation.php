@@ -14,7 +14,8 @@ class PageTranslation extends BaseTranslationModel
         'title_2',
         'content_1',
         'content_2',
-        "meta_title",
-        "meta_description"
+        'meta_title',
+        'meta_description',
+        'meta_keyword'
     ];
 }

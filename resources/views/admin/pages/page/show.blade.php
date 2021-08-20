@@ -97,6 +97,10 @@
                                     <td>@lang('admin.meta_description'):</td>
                                     <td>{{$page->translate($locale)->meta_description ?? ''}}</td>
                                 </tr>
+                                <tr>
+                                    <td>@lang('admin.meta_keyword'):</td>
+                                    <td>{{$page->translate($locale)->meta_keyword ?? ''}}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
