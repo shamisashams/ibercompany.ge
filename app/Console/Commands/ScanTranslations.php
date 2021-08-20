@@ -102,7 +102,7 @@ class ScanTranslations extends Command
                     continue;
                 }
 
-                $text[$defaultLanguage->id] = $key;
+                $text[$defaultLanguage->locale] = $key;
                 $this->info('Insert into language lines -  '. $key);
                 LanguageLine::create([
                     'group' => $group,
