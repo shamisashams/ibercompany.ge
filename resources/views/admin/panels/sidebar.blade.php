@@ -7,7 +7,7 @@
           @if(!empty ($configData['templateTitle']) && isset($configData['templateTitle']))
                         {{$configData['templateTitle']}}
                     @else
-                        glass service
+                        IberCompany
                     @endif
         </span>
             </a>
