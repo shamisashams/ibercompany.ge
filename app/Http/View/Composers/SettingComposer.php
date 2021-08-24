@@ -66,14 +66,13 @@ class SettingComposer
         }
 
         $view
-            ->with('gaddress', $gaddress->value)
-            ->with('ginstagram', $ginstagram->value)
-            ->with('gfacebook', $gfacebook->value)
-            ->with('gyoutube', $gyoutube->value)
-            ->with('gemail', $gemail->value)
-            ->with('gphone', $gphone->value)
-            ->with("gworkingHours", $gworkingHours->value);
+            ->with('gaddress', $gaddress->value ?? '')
+            ->with('ginstagram', $ginstagram->value ?? '')
+            ->with('gfacebook', $gfacebook->value ?? '')
+            ->with('gyoutube', $gyoutube->value ?? '')
+            ->with('gemail', $gemail->value ?? '')
+            ->with('gphone', $gphone->value ?? '')
+            ->with("gworkingHours", $gworkingHours->value ?? '');
     }
-
 
 }
