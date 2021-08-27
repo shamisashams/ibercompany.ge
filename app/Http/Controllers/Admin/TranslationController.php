@@ -117,6 +117,7 @@ class TranslationController extends Controller
     public function update(string $locale, int $id, TranslationRequest $request)
     {
         $data = $request->only('text');
+        
         $this->translationRepository->update($id, $data);
 
         // Clear cache

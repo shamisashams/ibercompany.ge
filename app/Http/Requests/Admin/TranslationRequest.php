@@ -41,12 +41,12 @@ class TranslationRequest extends FormRequest
         $defaultLanguage = Language::where('default', true)->firstOrFail();
 
         $data = [
-            'group' =>  'nullable|string|max:255',
-            'key' => 'nullable|string|max:255',
+            'group' =>  'nullable|string',
+            'key' => 'nullable|string',
         ];
 
         if ($this->method !== 'GET') {
-            $data ['text.' . $defaultLanguage->id] = 'required|string';
+            $data ['text.' . $defaultLanguage->locale] = 'required';
         }
         return $data;
     }
