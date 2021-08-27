@@ -206,13 +206,17 @@ img {
     background-color: #fff;
     box-shadow: 5px 0 15px #31324123;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 35px;
     text-align: center;
     z-index: 1000;
 }
 #open_navigation {
     display: none;
+}
+#navigation .navbar {
+    margin-top: 86px;
+    margin-bottom: 100px;
 }
 #navigation .navbar a {
     display: block;
@@ -395,13 +399,14 @@ img {
 /* partners */
 #partners {
     padding: 47px 0;
+    padding-top: 15px;
     overflow: hidden;
 }
 #partners_slider {
     border-bottom: 0.5px solid #231f2059;
 }
 #partners_slider .slide {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     position: relative;
     margin: 0 17px;
     display: flex;
@@ -411,7 +416,7 @@ img {
 #partners_slider .slide img {
     margin-right: 15px;
     height: 70px;
-    object-fit:scale-down;
+    object-fit: scale-down;
 }
 #partners_slider .slide::after {
     width: 100%;
@@ -547,7 +552,7 @@ img {
     top: 0;
     z-index: 100;
     width: 100%;
-    max-height: calc(100% + 530px);
+    max-height: calc(100% + 510px);
     overflow: hidden;
 }
 
@@ -563,6 +568,9 @@ img {
     border-radius: 3px;
     overflow: hidden;
     flex-shrink: 0;
+}
+.news_item .text {
+    width: 90%;
 }
 .news_item .title {
     position: relative;
@@ -1318,6 +1326,14 @@ img {
         right: 0;
     }
 }
+@media screen and (max-width: 1280px) {
+    #hero_slider .slide {
+        height: 500px;
+    }
+    #hero_slider .content {
+        margin-top: 90px;
+    }
+}
 @media screen and (max-width: 1200px) {
     .wrapper {
         margin: 0 30px;
@@ -1598,23 +1614,33 @@ img {
 }
 
 /* height */
-@media screen and (max-height: 730px) {
+@media screen and (max-height: 850px) {
     #navigation .social_media .sm {
         width: 47px;
         height: 47px;
     }
+    #navigation .social_media .sm svg {
+        height: 50%;
+    }
     #navigation .navbar a {
         margin-bottom: 19px;
     }
+    #navigation .navbar {
+        margin-top: 58px;
+        margin-bottom: 58px;
+    }
 }
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
     #navigation {
         padding: 10px 20px;
     }
     #navigation .navbar a {
-        margin-bottom: 19px;
         font-size: 16px;
         line-height: 100%;
+    }
+    #navigation .navbar {
+        margin-top: 44px;
+        margin-bottom: 26px;
     }
 }
 @media screen and (max-height: 530px) {

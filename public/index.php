@@ -5,6 +5,20 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+$ips = [
+    '185.70.54.47',
+    '127.0.0.1',
+    '85.117.62.171',
+    '178.134.79.118',
+    '212.58.103.119'
+];
+
+if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
+    echo 'Coming soon...';
+    exit();
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance
