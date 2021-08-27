@@ -10,9 +10,9 @@
                         <div class="bold font20 dark-text uppercase">
                             {{$company->title}}
                         </div>
-                        <div class="font14 light-text text-07">
+                        <!-- <div class="font14 light-text text-07">
                             {{$company->description}}
-                        </div>
+                        </div> -->
                     </div>
                 </a>
             @endforeach
