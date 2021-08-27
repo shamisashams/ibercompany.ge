@@ -401,10 +401,24 @@ img {
     padding: 47px 0;
     padding-top: 15px;
     overflow: hidden;
+    position: relative;
 }
 #partners_slider {
     border-bottom: 0.5px solid #231f2059;
 }
+#partners_slider.notslide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#partners_slider.notslide .slick-track {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+}
+
 #partners_slider .slide {
     padding-bottom: 15px;
     position: relative;
@@ -948,8 +962,8 @@ img {
 }
 #partners.about {
     background: #e6e7e9;
-    padding-top: 41px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 0px;
     overflow: hidden;
 }
 #partners.about #partners_slider {

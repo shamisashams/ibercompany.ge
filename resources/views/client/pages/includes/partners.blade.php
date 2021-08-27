@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div id="partners_slider" class="flex">
             @foreach($companies as $company)
-                <a href="{{locale_route('client.company.show',$company->slug)}}" class="slide flex center">
+                <a href="{{locale_route('client.company.show',$company->slug)}}" class="slide flex center partner_slide_item">
                     <img
                         src="{{url(count($company->files)>0? $company->files[0]->path.'/'.$company->files[0]->title : 'noimage.png')}}"
                         alt=""/>
