@@ -399,14 +399,14 @@ img {
 /* partners */
 #partners {
     padding: 47px 0;
-    padding-top: 30px;
+    padding-top: 15px;
     overflow: hidden;
 }
 #partners_slider {
     border-bottom: 0.5px solid #231f2059;
 }
 #partners_slider .slide {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     position: relative;
     margin: 0 17px;
     display: flex;
