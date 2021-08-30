@@ -1281,18 +1281,6 @@ img {
         margin-left: 28px;
         grid-gap: 12px;
     }
-    #partners_slider.notslide .slick-track {
-        text-align: center;
-        display: block;
-        align-items: unset;
-        justify-content: unset;
-        width: auto;
-    }
-    #partners_slider.notslide {
-        display: block;
-        align-items: unset;
-        justify-content: unset;
-    }
 }
 @media screen and (max-width: 1400px) {
     #navigation {
