@@ -19,9 +19,11 @@
     <section class="company_page">
         <div class="wrapper pad48">
             <div class="flex heading">
-                <img
-                    src="{{url(count($company->files)>0? $company->files[0]->path.'/'.$company->files[0]->title : 'noimage.png')}}"
-                    alt=""/>
+                @if(count($company->files)>0)
+                    <img
+                        src="{{url($company->files[0]->path.'/'.$company->files[0]->title)}}"
+                        alt=""/>
+                @endif
                 <div class="bold dark-text font25 uppercase">{{$company->title}}</div>
                 <a
                     href="{{$company->website_link?:"#"}}"
@@ -36,11 +38,13 @@
                 <div class="light-text">
                     {!! $company->content_1 !!}
                 </div>
-                <div class="img">
-                    <img
-                        src="{{url(count($company->files)>1? $company->files[1]->path.'/'.$company->files[1]->title : 'noimage.png')}} "
-                        alt=""/>
-                </div>
+                @if(count($company->files)>1)
+                    <div class="img">
+                        <img
+                            src="{{url($company->files[1]->path.'/'.$company->files[1]->title)}} "
+                            alt=""/>
+                    </div>
+                @endif
             </div>
             @if(count($company->projects)>0)
                 <div class="company_projects">
@@ -49,9 +53,11 @@
                         @foreach($company->projects as $project)
                             <a href="{{locale_route('client.project.show',$project->slug)}}">
                                 <div class="project_item">
-                                    <img class="bg"
-                                         src="{{url($project->file? $project->file->path.'/'.$project->file->title : 'noimage.png')}}"
-                                         alt=""/>
+                                    @if($project->file)
+                                        <img class="bg"
+                                             src="{{url($project->file->path.'/'.$project->file->title)}}"
+                                             alt=""/>
+                                    @endif
                                     <div class="caption white transition3">
                                         <img src="/img/icons/projects/1.png" alt=""/>
                                         <div class="bold font20 uppercase">{{$project->title}}</div>
@@ -148,9 +154,11 @@
             <div id="partners_slider" class="flex">
                 @foreach($otherCompanies as $company)
                     <a href="{{locale_route('client.company.show',$company->slug)}}" class="slide flex center">
-                        <img
-                            src="{{url($company->file? $company->file->path.'/'.$company->file->title : 'noimage.png')}}"
-                            alt=""/>
+                        @if($company->file)
+                            <img
+                                src="{{url($company->file->path.'/'.$company->file->title)}}"
+                                alt=""/>
+                        @endif
                         <div>
                             <div class="bold font20 dark-text uppercase">
                                 {{$company->title}}

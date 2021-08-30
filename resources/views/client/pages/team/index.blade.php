@@ -10,7 +10,8 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.team')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span> @lang('client.team')
             </div>
         </div>
     </section>
@@ -19,22 +20,26 @@
             <div class="heading">
                 <div class="main-title short bold">@lang('client.out_team')</div>
                 <div class="font18 light-text text-07">
-                   @lang('client.team_description')
+                    @lang('client.team_description')
                 </div>
             </div>
             <div class="team_grid">
                 @foreach($members as $member)
-                <a href="{{locale_route('client.team.show',$member->id)}}">
-                    <div class="team_member img">
-                        <img src="{{url($member->file? $member->file->path.'/'.$member->file->title : 'noimage.png')}}" alt=""/>
-                        <div class="caption white transition5">
-                            <div class="font20 bold transition5 uppercase name">
-                                {{$member->name}}
+                    <a href="{{locale_route('client.team.show',$member->id)}}">
+                        <div class="team_member img">
+                            @if($member->file)
+                                <img
+                                    src="{{url($member->file->path.'/'.$member->file->title)}}"
+                                    alt=""/>
+                            @endif
+                            <div class="caption white transition5">
+                                <div class="font20 bold transition5 uppercase name">
+                                    {{$member->name}}
+                                </div>
+                                <div class="text-07 font14">{{$member->position}}</div>
                             </div>
-                            <div class="text-07 font14">{{$member->position}}</div>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 @endforeach
             </div>
         </div>

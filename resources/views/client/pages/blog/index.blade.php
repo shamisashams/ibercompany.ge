@@ -36,11 +36,13 @@
         <div class="wrapper pad48 grid">
             @foreach($blogs as $blog)
                 <div class="news_item flex center">
-                    <div class="img">
-                        <img
-                            src="{{url($blog->file? $blog->file->path.'/'.$blog->file->title : 'noimage.png')}}"
-                            alt=""/>
-                    </div>
+                    @if($blog->file)
+                        <div class="img">
+                            <img
+                                src="{{url($blog->file->path.'/'.$blog->file->title)}}"
+                                alt=""/>
+                        </div>
+                    @endif
                     <div class="text">
                         <div class="title dark-text bold uppercase font18">
                             {{$blog->title}}

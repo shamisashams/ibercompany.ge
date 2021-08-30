@@ -10,7 +10,8 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.about')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span> @lang('client.about')
             </div>
         </div>
     </section>
@@ -22,11 +23,13 @@
                     {!! $about->content_1 !!}
                 </div>
             </div>
-            <div class="img">
-                <img
-                    src="{{url(count($about->files)>0? $about->files[0]->path.'/'.$about->files[0]->title : 'noimage.png')}}"
-                    alt=""/>
-            </div>
+            @if(count($about->files)>0)
+                <div class="img">
+                    <img
+                        src="{{url($about->files[0]->path.'/'.$about->files[0]->title)}}"
+                        alt=""/>
+                </div>
+            @endif
         </div>
     </section>
     @if($about->video_link)
@@ -48,12 +51,14 @@
                 <div class="main-title short bold">{{$about->title_2}}</div>
                 <div class="light-text text-07">
                     {!!$about->content_2!!}
+                    </di
+                </div>
+                <div class="img">
+                    @if(count($about->files)>1)
+                        <img src="{{url($about->files[1]->path.'/'.$about->files[1]->title)}}" alt=""/>
+                    @endif
                 </div>
             </div>
-            <div class="img">
-                <img src="{{url(count($about->files)>1? $about->files[1]->path.'/'.$about->files[1]->title : 'noimage.png')}}" alt=""/>
-            </div>
-        </div>
     </section>
 
     @include('client.pages.includes.partners',['companies'=>$companies,'class'=>'about'])

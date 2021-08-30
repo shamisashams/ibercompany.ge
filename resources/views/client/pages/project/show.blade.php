@@ -10,7 +10,8 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.projects')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span> @lang('client.projects')
             </div>
         </div>
     </section>
@@ -41,9 +42,11 @@
                     @foreach($otherProjects as $project)
                         <a href="{{locale_route('client.project.show',$project->slug)}}">
                             <div class="project_item">
-                                <img class="bg"
-                                     src="{{url($project->file? $project->file->path.'/'.$project->file->title : 'noimage.png')}}"
-                                     alt=""/>
+                                @if($project->file)
+                                    <img class="bg"
+                                         src="{{url($project->file->path.'/'.$project->file->title)}}"
+                                         alt=""/>
+                                @endif
                                 <div class="caption white transition3">
                                     <img src="/img/icons/projects/1.png" alt=""/>
                                     <div class="bold font20 uppercase">{{$project->title}}</div>

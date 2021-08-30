@@ -19,13 +19,16 @@
         <div class="wrapper pad48">
             <div class="sector_head flex dark-text">
                 <div class="font20 bold uppercase">@lang('client.current_projects')</div>
-                <a href="{{locale_route('client.project-type.index','current')}}" class="font20 bold">@lang('client.view_all')</a>
+                <a href="{{locale_route('client.project-type.index','current')}}"
+                   class="font20 bold">@lang('client.view_all')</a>
             </div>
             <div class="project_grid">
                 @foreach($currentProjects as $project)
                     <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
-                            <img class="bg" src="{{url($project->file? $project->file->path.'/'.$project->file->title : 'noimage.png')}}" alt=""/>
+                            @if($project->file)
+                                <img class="bg" src="{{url($project->file->path.'/'.$project->file->title)}}" alt=""/>
+                            @endif
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>
                                 <div class="bold font20 uppercase">{{$project->title}}</div>
@@ -39,13 +42,18 @@
             </div>
             <div class="sector_head flex dark-text">
                 <div class="font20 bold uppercase">@lang('client.finished_projects')</div>
-                <a href="{{locale_route('client.project-type.index','finished')}}" class="font20 bold">@lang('client.view_all')</a>
+                <a href="{{locale_route('client.project-type.index','finished')}}"
+                   class="font20 bold">@lang('client.view_all')</a>
             </div>
             <div class="project_grid">
                 @foreach($finishedProjects as $project)
                     <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
-                            <img class="bg" src="{{url($project->file? $project->file->path.'/'.$project->file->title : 'noimage.png')}}" alt=""/>
+                            @if($project->file)
+                                <img class="bg"
+                                     src="{{url($project->file->path.'/'.$project->file->title)}}"
+                                     alt=""/>
+                            @endif
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>
                                 <div class="bold font20 uppercase">{{$project->title}}</div>
