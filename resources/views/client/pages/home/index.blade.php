@@ -10,9 +10,11 @@
             <div id="hero_slider">
                 @foreach($sliders as $slider)
                     <div class="slide">
-                        <img
-                            src="{{url(count($slider->files)>0? $slider->files[0]->path.'/'.$slider->files[0]->title : 'noimage.png')}}"
-                            alt="" class="bg"/>
+                        @if(count($slider->files)>0)
+                            <img
+                                src="{{url($slider->files[0]->path.'/'.$slider->files[0]->title)}}"
+                                alt="" class="bg"/>
+                        @endif
                         <div class="overlay">
                             <div class="content transition5 white flex center">
                                 <div class="font50 bold">{{$slider->title}}</div>
@@ -80,9 +82,11 @@
                 @foreach($projects as $project)
                     <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
-                            <img class="bg"
-                                 src="{{url(count($project->files)>0? $project->files[0]->path.'/'.$project->files[0]->title : 'noimage.png')}}"
-                                 alt=""/>
+                            @if(count($project->files)>0)
+                                <img class="bg"
+                                     src="{{url($project->files[0]->path.'/'.$project->files[0]->title)}}"
+                                     alt=""/>
+                            @endif
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>
                                 <div class="bold font20 uppercase">{{$project->title}}</div>
@@ -128,11 +132,13 @@
             <div class="content">
                 @foreach($blogs as $blog)
                     <div class="news_item flex center">
-                        <div class="img">
-                            <img
-                                src="{{url(count($blog->files)>0? $blog->files[0]->path.'/'.$blog->files[0]->title : 'noimage.png')}}"
-                                alt=""/>
-                        </div>
+                        @if(count($blog->files)>0)
+                            <div class="img">
+                                <img
+                                    src="{{url($blog->files[0]->path.'/'.$blog->files[0]->title)}}"
+                                    alt=""/>
+                            </div>
+                        @endif
                         <div class="text">
                             <div class="title dark-text bold uppercase font18">
                                 {{$blog->title}}
@@ -188,9 +194,11 @@
                 @foreach($teamMembers as $member)
                     <a href="{{locale_route('client.team.show',$member->id)}}">
                         <div class="team_member img">
-                            <img
-                                src="{{url(count($member->files)>0? $member->files[0]->path.'/'.$member->files[0]->title : 'noimage.png')}}"
-                                alt=""/>
+                            @if(count($member->files)>0)
+                                <img
+                                    src="{{url($member->files[0]->path.'/'.$member->files[0]->title)}}"
+                                    alt=""/>
+                            @endif
                             <div class="caption white transition5">
                                 <div class="font20 bold transition5 uppercase name">
                                     {{$member->name}}

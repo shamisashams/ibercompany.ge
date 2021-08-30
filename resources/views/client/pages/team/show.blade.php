@@ -10,7 +10,8 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.team')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <span>|</span> @lang('client.team')
             </div>
         </div>
     </section>
@@ -21,9 +22,11 @@
                 <div class="person">
                     <div class="main-title bold short uppercase">{{$team->name}}</div>
                     <div class="font14 text-07">{{$team->position}}</div>
-                    <div class="img"><img
-                            src="{{url($team->file? $team->file->path.'/'.$team->file->title : 'noimage.png')}}"
-                            alt=""/></div>
+                    @if($team->file)
+                        <div class="img"><img
+                                src="{{url($team->file->path.'/'.$team->file->title)}}"
+                                alt=""/></div>
+                    @endif
                 </div>
                 <div class="font18 light-text text-07">
                     {!!$team->content!!}
