@@ -73,7 +73,13 @@ class Company extends Model implements Searchable
         'status',
         'slug',
         'website_link',
-        'youtube_link'
+        'youtube_link',
+        'facebook_link',
+        'linkedin_link',
+        'instagram_link',
+        'twitter_link',
+        'pinterest_link',
+        'youtube',
     ];
 
     /** @var string */
