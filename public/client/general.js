@@ -37,5 +37,16 @@ $(function () {
 });
 
 if (partnerSlideItem.length <= 5) {
-    partnerSlider.classList.add("notslide");
+    function mediaQuery(x) {
+        if (x.matches) {
+            // If media query matches
+            partnerSlider.classList.remove("notslide");
+        } else {
+            partnerSlider.classList.add("notslide");
+        }
+    }
 }
+
+var x = window.matchMedia("(max-width: 1500px)");
+mediaQuery(x); // Call listener function at run time
+x.addListener(mediaQuery); // Attach listener function on state changes
