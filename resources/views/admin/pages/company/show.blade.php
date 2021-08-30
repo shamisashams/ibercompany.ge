@@ -67,6 +67,42 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>@lang('admin.facebook_link'):</td>
+                            <td>
+                                {{$company->facebook_link}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@lang('admin.linkedin_link'):</td>
+                            <td>
+                                {{$company->linkedin_link}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@lang('admin.instagram_link'):</td>
+                            <td>
+                                {{$company->instagram_link}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@lang('admin.twitter_link'):</td>
+                            <td>
+                                {{$company->twitter_link}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@lang('admin.pinterest_link'):</td>
+                            <td>
+                                {{$company->pinterest_link}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@lang('admin.youtube'):</td>
+                            <td>
+                                {{$company->youtube}}
+                            </td>
+                        </tr>
+                        <tr>
                             <td>@lang('admin.created_at')</td>
                             <td>{{\Carbon\Carbon::parse($company->created_at)}}</td>
                         </tr>
