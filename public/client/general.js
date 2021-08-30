@@ -36,6 +36,6 @@ $(function () {
     });
 });
 
-// if (partnerSlideItem.length <= 5) {
-//     partnerSlider.classList.add("notslide");
-// }
+if (partnerSlideItem.length <= 5) {
+    partnerSlider.classList.add("notslide");
+}
