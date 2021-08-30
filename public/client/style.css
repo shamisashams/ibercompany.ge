@@ -138,13 +138,13 @@ img {
     color: #231f20;
 }
 .light-text {
-    color: #a8a9ad;
+    /* color: #a8a9ad; */
 }
 .white {
     color: #fff;
 }
 .text-07 {
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 .main-button {
     width: 184px;
@@ -172,7 +172,7 @@ img {
     text-transform: uppercase;
 }
 .main-title {
-    font-size: 50px;
+    font-size: 40px;
     color: #231f20;
     position: relative;
     margin-bottom: 50px;
@@ -189,7 +189,7 @@ img {
     background: #015aaa;
     border-radius: 3px;
     left: 0;
-    bottom: -30px;
+    bottom: -20px;
 }
 .main-title.short::after {
     bottom: -22px;
@@ -1233,6 +1233,21 @@ img {
 .company #partners_slider {
     border-bottom: none;
     margin-right: -56px;
+}
+.social_media.companies {
+    padding-bottom: 40px;
+    display: none;
+}
+.social_media.companies .flex {
+    justify-content: flex-start;
+}
+.social_media.companies .flex a {
+    transition: 0.3s;
+    margin-right: 16px;
+}
+.social_media.companies .flex a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
 }
 
 /************** responsive **************/
