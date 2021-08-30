@@ -1236,7 +1236,7 @@ img {
 }
 .social_media.companies {
     padding-bottom: 40px;
-    display: none;
+    /*display: none;*/
 }
 .social_media.companies .flex {
     justify-content: flex-start;

@@ -198,6 +198,84 @@
                                 {{--                                    </small>--}}
                                 {{--                                    @enderror--}}
                                 {{--                                </div>--}}
+
+                                <div class="input-field col s12">
+                                    <label for="youtube_link">{{__('admin.youtube')}}</label>
+
+                                    {!! Form::text('youtube',$company->youtube ?? '',['class' => 'validate '. $errors->has('youtube') ? '' : 'valid']) !!}
+                                    @error('youtube')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="facebook_link">{{__('admin.facebook_link')}}</label>
+
+                                    {!! Form::text('facebook_link',$company->facebook_link ?? '',['class' => 'validate '. $errors->has('facebook_link') ? '' : 'valid']) !!}
+                                    @error('facebook_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="linkedin_link">{{__('admin.linkedin_link')}}</label>
+
+                                    {!! Form::text('linkedin_link',$company->linkedin_link ?? '',['class' => 'validate '. $errors->has('linkedin_link') ? '' : 'valid']) !!}
+                                    @error('linkedin_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="instagram_link">{{__('admin.instagram_link')}}</label>
+
+                                    {!! Form::text('instagram_link',$company->instagram_link ?? '',['class' => 'validate '. $errors->has('instagram_link') ? '' : 'valid']) !!}
+                                    @error('instagram_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="twitter_link">{{__('admin.twitter_link')}}</label>
+
+                                    {!! Form::text('twitter_link',$company->twitter_link ?? '',['class' => 'validate '. $errors->has('twitter_link') ? '' : 'valid']) !!}
+                                    @error('twitter_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <label for="pinterest_link">{{__('admin.pinterest_link')}}</label>
+
+                                    {!! Form::text('pinterest_link',$company->pinterest_link ?? '',['class' => 'validate '. $errors->has('pinterest_link') ? '' : 'valid']) !!}
+                                    @error('pinterest_link')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
                                 <div class="input-field"></div>
                                 <div class="col s12 mt-3 mb-3">
                                     <label>

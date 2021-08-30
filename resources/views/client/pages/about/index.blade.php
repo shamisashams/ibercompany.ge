@@ -51,14 +51,14 @@
                 <div class="main-title short bold">{{$about->title_2}}</div>
                 <div class="light-text text-07">
                     {!!$about->content_2!!}
-                    </di
-                </div>
-                <div class="img">
-                    @if(count($about->files)>1)
-                        <img src="{{url($about->files[1]->path.'/'.$about->files[1]->title)}}" alt=""/>
-                    @endif
                 </div>
             </div>
+            <div class="img">
+                @if(count($about->files)>1)
+                    <img src="{{url($about->files[1]->path.'/'.$about->files[1]->title)}}" alt=""/>
+                @endif
+            </div>
+        </div>
     </section>
 
     @include('client.pages.includes.partners',['companies'=>$companies,'class'=>'about'])
