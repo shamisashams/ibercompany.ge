@@ -138,13 +138,13 @@ img {
     color: #231f20;
 }
 .light-text {
-    color: #a8a9ad;
+    /* color: #a8a9ad; */
 }
 .white {
     color: #fff;
 }
 .text-07 {
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 .main-button {
     width: 184px;
@@ -1234,10 +1234,26 @@ img {
     border-bottom: none;
     margin-right: -56px;
 }
+.social_media.companies {
+    padding-bottom: 40px;
+    display: none;
+}
+.social_media.companies .flex {
+    justify-content: flex-start;
+}
+.social_media.companies .flex a {
+    transition: 0.3s;
+    margin-right: 16px;
+}
+.social_media.companies .flex a:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
 
 /************** responsive **************/
 
 /* home page */
+
 @media screen and (max-width: 1600px) {
     #navigation {
         width: 200px;
@@ -1264,6 +1280,17 @@ img {
         width: 50%;
         margin-left: 28px;
         grid-gap: 12px;
+    }
+     #partners_slider.notslide {
+        display: block;
+        align-items: unset;
+        justify-content: unset;
+    }
+    #partners_slider.notslide .slick-track {
+        text-align: center;
+        align-items: unset;
+        justify-content: unset;
+        width: unset !important;
     }
 }
 @media screen and (max-width: 1400px) {
