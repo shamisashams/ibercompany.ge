@@ -172,7 +172,7 @@ img {
     text-transform: uppercase;
 }
 .main-title {
-    font-size: 50px;
+    font-size: 40px;
     color: #231f20;
     position: relative;
     margin-bottom: 50px;
@@ -189,7 +189,7 @@ img {
     background: #015aaa;
     border-radius: 3px;
     left: 0;
-    bottom: -30px;
+    bottom: -20px;
 }
 .main-title.short::after {
     bottom: -22px;
