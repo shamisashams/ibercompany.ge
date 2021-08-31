@@ -1,7 +1,7 @@
 /* general */
 @font-face {
-    font-family: "tbc-medium";
-    src: url(fonts/tbc-din-mtavruli/TbcDin_Mtavruli_Medium.otf);
+    font-family: "tbc-regular";
+    src: url(fonts/tbc-din-mtavruli/TbcDin_Mtavruli_Regular.otf);
 }
 @font-face {
     font-family: "tbc-bold";
@@ -10,10 +10,10 @@
 *,
 *::after,
 *::before {
-    font-family: "tbc-medium";
+    font-family: "tbc-regular";
 }
 body {
-    font-family: "tbc-medium";
+    font-family: "tbc-regular";
 }
 .bold {
     font-family: "tbc-bold";

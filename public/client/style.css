@@ -935,7 +935,7 @@ img {
 /* about page */
 .about_holding {
     padding-top: 50px;
-    padding-bottom: 150px;
+    padding-bottom: 70px;
 }
 .about_holding .flex {
     align-items: flex-start;
@@ -954,7 +954,7 @@ img {
     margin-bottom: 30px;
 }
 .about_holding.our_companies {
-    padding-top: 100px;
+    padding-top: 0 !important;
     padding-bottom: 66px;
 }
 .video_placeholder .video {
