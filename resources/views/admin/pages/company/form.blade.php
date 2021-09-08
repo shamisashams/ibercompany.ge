@@ -92,7 +92,7 @@
 
                                         <div class="input-field">
                                             <h5 for="content">@lang('admin.content_1')</h5>
-                                            {!! Form::textarea($locale.'[content_1]',$company->translate($locale)->content_1 ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content_1') ? '' : 'valid')]) !!}
+                                            {!! Form::textarea($locale.'[content_1]',$company->translate($locale)->content_1 ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content_1') ? '' : 'valid'),'id'=>'content-1-'.$locale]) !!}
                                             @error($locale.'.content_1')
                                             <small class="errorTxt4">
                                                 <div class="error">
@@ -104,7 +104,7 @@
 
                                         <div class="input-field">
                                             <h5 for="content">@lang('admin.content_2')</h5>
-                                            {!! Form::textarea($locale.'[content_2]',$company->translate($locale)->content_2 ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content_2') ? '' : 'valid')]) !!}
+                                            {!! Form::textarea($locale.'[content_2]',$company->translate($locale)->content_2 ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content_2') ? '' : 'valid'),'id'=>'content-2-'.$locale]) !!}
                                             @error($locale.'.content_2')
                                             <small class="errorTxt4">
                                                 <div class="error">
@@ -322,8 +322,12 @@
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         @foreach(config('translatable.locales') as $locale)
-        CKEDITOR.replace('content-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+        CKEDITOR.replace('content-1-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token(),'type'=>'company'])}}",
+            filebrowserUploadMethod: 'form'
+        });
+        CKEDITOR.replace('content-2-{{$locale}}', {
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token(),'type'=>'company'])}}",
             filebrowserUploadMethod: 'form'
         });
         @endforeach

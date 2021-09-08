@@ -73,12 +73,4 @@
     <script src="{{asset('js/scripts/form-select2.js')}}"></script>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script>
-        @foreach(config('translatable.locales') as $locale)
-        CKEDITOR.replace('description-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
-        });
-        @endforeach
-    </script>
 @endsection

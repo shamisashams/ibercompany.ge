@@ -10,4 +10,6 @@ CKEDITOR.editorConfig = function (config) {
     // config.font_names = "tbc-regular";
 
     config.font_defaultLabel = "tbc-regular";
+    config.extraPlugins = 'youtube';
+    config.allowedContent = true;
 };

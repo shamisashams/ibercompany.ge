@@ -122,8 +122,7 @@
     <script>
         @foreach(config('translatable.locales') as $locale)
         CKEDITOR.replace('description-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-            filebrowserUploadMethod: 'form'
+
         });
         @endforeach
     </script>

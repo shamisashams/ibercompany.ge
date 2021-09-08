@@ -27,7 +27,7 @@ use App\Http\Controllers\Client\AboutUsController;
 use App\Http\Controllers\Client\ServiceController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('ckeditor/image_upload', [CKEditorController::class, 'upload'])->name('upload');
+Route::post('ckeditor/image_upload/{type}', [CKEditorController::class, 'upload'])->name('upload');
 
 Route::redirect('', config('translatable.fallback_locale'));
 Route::prefix('{locale?}')

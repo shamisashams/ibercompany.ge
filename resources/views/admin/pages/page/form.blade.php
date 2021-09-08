@@ -173,11 +173,11 @@
     <script>
         @foreach(config('translatable.locales') as $locale)
         CKEDITOR.replace('content_1-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token(),'type'=>'page'])}}",
             filebrowserUploadMethod: 'form'
         });
         CKEDITOR.replace('content_2-{{$locale}}', {
-            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token(),'type'=>'page'])}}",
             filebrowserUploadMethod: 'form'
         });
         @endforeach

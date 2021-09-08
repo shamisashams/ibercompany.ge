@@ -22,7 +22,7 @@ class CKEditorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function upload(Request $request)
+    public function upload(Request $request,string $type)
     {
         if($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
@@ -30,10 +30,10 @@ class CKEditorController extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension;
 
-            $request->file('upload')->move(public_path('storage/ckeditor/blog'), $fileName);
+            $request->file('upload')->move(public_path('storage/ckeditor/'.$type), $fileName);
 
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/ckeditor/blog/'.$fileName);
+            $url = asset('storage/ckeditor/'.$type.'/'.$fileName);
             $msg = 'Image uploaded successfully';
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
