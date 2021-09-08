@@ -12,4 +12,5 @@ CKEDITOR.editorConfig = function (config) {
     config.font_defaultLabel = "tbc-regular";
     config.extraPlugins = 'youtube';
     config.allowedContent = true;
+    config.removePlugins = 'iframe'
 };
