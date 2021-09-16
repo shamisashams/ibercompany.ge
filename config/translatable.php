@@ -4,7 +4,6 @@
   array (
     0 => 'ge',
     1 => 'en',
-    2 => 'ru',
   ),
   'locale_separator' => '-',
   'locale' => NULL,
