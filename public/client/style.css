@@ -431,6 +431,8 @@ img {
     margin-right: 15px;
     height: 70px;
     object-fit: scale-down;
+    filter: grayscale(1);
+    transition: .5s;
 }
 #partners_slider .slide::after {
     width: 100%;
@@ -446,6 +448,9 @@ img {
 #partners_slider .slide:hover::after {
     transform: scaleX(1);
     transform-origin: left center;
+}
+#partners_slider .slide:hover img {
+    filter: grayscale(0);
 }
 #partners .arrow {
     position: absolute;
