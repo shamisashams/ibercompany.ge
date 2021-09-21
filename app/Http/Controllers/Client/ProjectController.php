@@ -61,12 +61,12 @@ class ProjectController extends Controller
      */
     public function show(string $locale, string $slug)
     {
-        $project = Project::where(['slug' => $slug])->firstOrFail();
-        $otherProjects = Project::where('slug', '!=', $slug)->with(['file', 'translations'])->take(4)->orderBy('created_at', 'desc')->get();
+        $project = Project::where(['slug' => $slug])->with(["files"])->firstOrFail();
+//        $otherProjects = Project::where('slug', '!=', $slug)->with(['file', 'translations'])->take(4)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.project.show', [
             'project' => $project,
-            'otherProjects' => $otherProjects
+//            'otherProjects' => $otherProjects
         ]);
     }
 }

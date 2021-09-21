@@ -37,26 +37,36 @@
                 </a>
             </div>
             <div class="other_news">
-                <div class="font25 bold dark-text uppercase">@lang('client.other_projects')</div>
+                <div class="font25 bold dark-text uppercase">@lang('client.project_photos')</div>
                 <div class="project_grid">
-                    @foreach($otherProjects as $project)
-                        <a href="{{locale_route('client.project.show',$project->slug)}}">
+                    @foreach($project->files as $file)
+                        @if($file)
                             <div class="project_item">
-                                @if($project->file)
-                                    <img class="bg"
-                                         src="{{url($project->file->path.'/'.$project->file->title)}}"
-                                         alt=""/>
-                                @endif
-                                <div class="caption white transition3">
-                                    <img src="/img/icons/projects/1.png" alt=""/>
-                                    <div class="bold font20 uppercase">{{$project->title}}</div>
-                                    <div class="text-07 font14">
-                                        {{$project->description}}
-                                    </div>
-                                </div>
+                                <img class="bg"
+                                     src="{{url($file->path.'/'.$file->title)}}"
+                                     alt=""/>
                             </div>
-                        </a>
+
+                        @endif
                     @endforeach
+{{--                    @foreach($otherProjects as $project)--}}
+{{--                        <a href="{{locale_route('client.project.show',$project->slug)}}">--}}
+{{--                            <div class="project_item">--}}
+{{--                                @if($project->file)--}}
+{{--                                    <img class="bg"--}}
+{{--                                         src="{{url($project->file->path.'/'.$project->file->title)}}"--}}
+{{--                                         alt=""/>--}}
+{{--                                @endif--}}
+{{--                                <div class="caption white transition3">--}}
+{{--                                    <img src="/img/icons/projects/1.png" alt=""/>--}}
+{{--                                    <div class="bold font20 uppercase">{{$project->title}}</div>--}}
+{{--                                    <div class="text-07 font14">--}}
+{{--                                        {{$project->description}}--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    @endforeach--}}
                 </div>
             </div>
         </div>
