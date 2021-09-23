@@ -144,10 +144,7 @@
                                     <td>@lang('admin.content_1'):</td>
                                     <td>{!!$company->translate($locale)->content_1 ?? ''!!}</td>
                                 </tr>
-                                <tr>
-                                    <td>@lang('admin.content_2'):</td>
-                                    <td>{!!$company->translate($locale)->content_2 ?? ''!!}</td>
-                                </tr>
+
                                 <tr>
                                     <td>@lang('admin.meta_title'):</td>
                                     <td>{{$company->translate($locale)->meta_title ?? ''}}</td>
