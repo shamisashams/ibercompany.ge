@@ -117,6 +117,7 @@
                         @if($file)
                             <div class="project_item">
                                 <img class="bg"
+                                     style="object-fit: contain"
                                      src="{{url($file->path.'/'.$file->title)}}"
                                      alt=""/>
                             </div>
