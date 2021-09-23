@@ -27,7 +27,7 @@
                     <a href="{{locale_route('client.project.show',$company->slug)}}">
                         <div class="project_item">
                             @if($company->file)
-                                <img class="bg" src="{{url($company->file->path.'/'.$company->file->title)}}" alt=""/>
+                                <img class="bg" style="object-fit: contain" src="{{url($company->file->path.'/'.$company->file->title)}}" alt=""/>
                             @endif
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>
