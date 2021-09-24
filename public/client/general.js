@@ -2,6 +2,10 @@ const navigation = document.getElementById("navigation");
 const navigationButton = document.getElementById("open_navigation");
 const partnerSlider = document.getElementById("partners_slider");
 const partnerSlideItem = document.querySelectorAll(".partner_slide_item");
+const imageZoomin = document.getElementById("image_zoomin");
+const imgBackground = document.getElementById("img_background");
+const imageZoomedIn = document.getElementById("image_zoomed_in");
+const closeBtn = document.getElementById("close_zoomed");
 
 let startDate;
 let endDate;
@@ -34,6 +38,20 @@ $(function () {
     $("#date-range-picker").on("apply.daterangepicker", (e, picker) => {
         $("#news-filter-form").submit();
     });
+});
+// image popup
+imageZoomin.addEventListener("click", () => {
+    imgBackground.classList.toggle("on");
+    imageZoomedIn.classList.toggle("on");
+    $(window).scrollTop(0);
+});
+imgBackground.addEventListener("click", () => {
+    imgBackground.classList.toggle("on");
+    imageZoomedIn.classList.toggle("on");
+});
+closeBtn.addEventListener("click", () => {
+    imgBackground.classList.toggle("on");
+    imageZoomedIn.classList.toggle("on");
 });
 
 if (partnerSlideItem.length <= 5) {
