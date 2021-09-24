@@ -90,7 +90,6 @@ class Company extends Model implements Searchable
         'title',
         'description',
         'content_1',
-        'content_2',
         'meta_title',
         'meta_description',
         'meta_keyword',

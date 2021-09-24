@@ -102,17 +102,6 @@
                                             @enderror
                                         </div>
 
-                                        <div class="input-field">
-                                            <h5 for="content">@lang('admin.content_2')</h5>
-                                            {!! Form::textarea($locale.'[content_2]',$company->translate($locale)->content_2 ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content_2') ? '' : 'valid'),'id'=>'content-2-'.$locale]) !!}
-                                            @error($locale.'.content_2')
-                                            <small class="errorTxt4">
-                                                <div class="error">
-                                                    {{$message}}
-                                                </div>
-                                            </small>
-                                            @enderror
-                                        </div>
                                     </div>
                                 @endforeach
                             </div>

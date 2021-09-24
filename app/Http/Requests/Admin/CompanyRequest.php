@@ -44,7 +44,6 @@ class CompanyRequest extends FormRequest
             'slug' => ['required', 'alpha_dash', Rule::unique('companies', 'slug')->ignore($this->company)],
             config('translatable.fallback_locale') . '.title' => 'required|string',
             config('translatable.fallback_locale') . '.content_1' => 'required|string',
-            config('translatable.fallback_locale') . '.content_2' => 'required|string',
             config('translatable.fallback_locale') . '.description' => 'required|string',
             'youtube_link' => 'nullable|string|max:255',
         ];
