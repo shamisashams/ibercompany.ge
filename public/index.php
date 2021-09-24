@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 define('LARAVEL_START', microtime(true));
 
 $ips = [
+    '162.55.139.157',
     '185.70.54.47',
     '127.0.0.1',
     '85.117.62.171',
