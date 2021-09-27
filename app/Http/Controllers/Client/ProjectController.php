@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Company;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Project;
@@ -26,15 +25,14 @@ class ProjectController extends Controller
     {
         $projectPage = Page::where('key', 'project')->firstOrFail();
 
+        $currentProjects = Project::query()->orderBy('created_at', 'desc')->with(['file', 'translations']);
 //        $currentProjects = Project::query()->where(['type' => 'current'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
 //        $finishedProjects = Project::query()->where(['type' => 'finished'])->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(5);
-        $companies = Company::with(['file', 'translations'])->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.project.sectors ', [
             'projectPage' => $projectPage,
-//            'currentProjects' => $currentProjects->get(),
+            'currentProjects' => $currentProjects->get(),
 //            'finishedProjects' => $finishedProjects->get(),
-            'companies' => $companies
         ]);
     }
 
@@ -64,11 +62,11 @@ class ProjectController extends Controller
      */
     public function show(string $locale, string $slug)
     {
-        $company = Company::where(['slug' => $slug])->with(["files"])->firstOrFail();
+        $project = Project::where(['slug' => $slug])->firstOrFail();
 //        $otherProjects = Project::where('slug', '!=', $slug)->with(['file', 'translations'])->take(4)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.project.show', [
-            'company' => $company,
+            'project' => $project,
 //            'otherProjects' => $otherProjects
         ]);
     }
