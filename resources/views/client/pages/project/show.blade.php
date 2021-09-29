@@ -115,7 +115,7 @@
                 <div class="project_grid">
                     @foreach($company->files as $file)
                         @if($file)
-                            <div class="project_item">
+                            <div class="project_item" id='image_zoomin'>
                                 <img class="bg"
                                      style="object-fit: contain"
                                      src="{{url($file->path.'/'.$file->title)}}"
@@ -154,6 +154,11 @@
                             </div>
                         @endif
                 </div>
+            </div>
+            <div id="img_background"></div>
+            <div id="image_zoomed_in">
+                <button id="close_zoomed"><img src="/img/svg/close.svg" alt=""></button>
+                <img  src="{{url($file->path.'/'.$file->title)}}"  alt=""/>
             </div>
         </div>
 
