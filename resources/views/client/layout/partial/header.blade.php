@@ -13,8 +13,8 @@
            href="{{locale_route('client.about.index')}}">@lang('client.about')</a>
         <a class="dark-text font18 {{str_contains(request()->path(),'blog')?"active":""}}"
            href="{{locale_route('client.blog.index')}}">@lang('client.news')</a>
-        <a class="dark-text font18 {{str_contains(request()->path(),'project')?"active":""}}"
-           href="{{locale_route('client.project.index')}}">@lang('client.sectors')</a>
+        <a class="dark-text font18 {{str_contains(request()->path(),'company')?"active":""}}"
+           href="{{locale_route('client.company.index')}}">@lang('client.sectors')</a>
         <a class="dark-text font18 {{str_contains(request()->path(),'team')?"active":""}}"
            href="{{locale_route('client.team.index')}}">@lang('client.team')</a>
         <a class="dark-text font18 {{str_contains(request()->path(),'contact')?"active":""}}"

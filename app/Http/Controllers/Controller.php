@@ -25,6 +25,6 @@ class Controller extends BaseController
 
     public function activeLanguages()
     {
-        return Language::where('status', true)->orderBy('default', 'DESC')->get()->keyBy('id');
+        return Language::where('status', true)->orderBy('default', 'DESC')->get()->keyBy('locale');
     }
 }

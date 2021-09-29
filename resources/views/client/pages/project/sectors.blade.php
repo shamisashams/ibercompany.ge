@@ -11,29 +11,29 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="index.html">@lang('client.home')</a> <span>|</span> @lang('client.sectors')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.sectors')
             </div>
         </div>
     </section>
     <section class="projects_page">
         <div class="wrapper pad48">
-{{--            <div class="sector_head flex dark-text">--}}
-{{--                <div class="font20 bold uppercase">@lang('client.current_projects')</div>--}}
+            <div class="sector_head flex dark-text">
+                <div class="font20 bold uppercase">@lang('client.current_projects')</div>
 {{--                <a href="{{locale_route('client.project-type.index','current')}}"--}}
 {{--                   class="font20 bold">@lang('client.view_all')</a>--}}
-{{--            </div>--}}
+            </div>
             <div class="project_grid">
-                @foreach($companies as $company)
-                    <a href="{{locale_route('client.project.show',$company->slug)}}">
+                @foreach($currentProjects as $project)
+                    <a href="{{locale_route('client.project.show',$project->slug)}}">
                         <div class="project_item">
-                            @if($company->file)
-                                <img class="bg" style="object-fit: contain" src="{{url($company->file->path.'/'.$company->file->title)}}" alt=""/>
+                            @if($project->file)
+                                <img class="bg" src="{{url($project->file->path.'/'.$project->file->title)}}" alt=""/>
                             @endif
                             <div class="caption white transition3">
                                 <img src="/img/icons/projects/1.png" alt=""/>
-                                <div class="bold font20 uppercase">{{$company->title}}</div>
+                                <div class="bold font20 uppercase">{{$project->title}}</div>
                                 <div class="text-07 font14">
-                                    {{$company->description}}
+                                    {{$project->description}}
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
 {{--                        </div>--}}
 {{--                    </a>--}}
 {{--                @endforeach--}}
-            </div>
+{{--            </div>--}}
         </div>
     </section>
 @endsection

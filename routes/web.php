@@ -106,7 +106,7 @@ Route::prefix('{locale?}')
             // Project Page
             Route::get('/project', [\App\Http\Controllers\Client\ProjectController::class, 'index'])->name('client.project.index');
             Route::get('/project/view/{project}', [\App\Http\Controllers\Client\ProjectController::class, "show"])->name('client.project.show');
-//            Route::get('/project/{type}', [\App\Http\Controllers\Client\ProjectController::class, 'projectsByType'])->name('client.project-type.index');
+            Route::get('/project/{type}', [\App\Http\Controllers\Client\ProjectController::class, 'projectsByType'])->name('client.project-type.index');
 
             // Blog Page
             Route::get('/blog', [\App\Http\Controllers\Client\BlogController::class, 'index'])->name('client.blog.index');
@@ -120,6 +120,8 @@ Route::prefix('{locale?}')
             Route::get('/search', [\App\Http\Controllers\Client\SearchController::class, 'index'])->name('client.search.index');
 
             //Company Page
+
+            Route::get('/company', [\App\Http\Controllers\Client\CompanyController::class, 'index'])->name('client.company.index');
             Route::get('/company/{company}', [\App\Http\Controllers\Client\CompanyController::class, 'show'])->name('client.company.show');
 
 
