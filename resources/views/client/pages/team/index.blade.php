@@ -26,454 +26,503 @@
             <div class="title font50 bold dark-text">CEOS</div>
             <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
             <div class="team_grid">
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/4.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/other/1.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/hero/2.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
+                    </div>
+                </div>
+                <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="title font50 bold dark-text">Management</div>
             <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
             <div class="team_grid">
-                 <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+            <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                 <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div><div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
-                 <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+                    </div>
+                </div><div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
+                    </div>
+                </div>
             </div>
             <div class="title font50 bold dark-text">Engineers</div>
             <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
             <div class="team_grid">
-            <a href="#">
-                        <div class="team_member">
-                            <div class="inner_div">
-                                <div class="flip_card_front">
-                                    <div class="img">
-                                        <img
-                                            src="/img/team/aa.png"
-                                            alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="blue font20 bold">name surname</div>
-                                        <strong>position</strong>
-                                        <p>competition, color, camp</p>
-                                    </div>
+            <div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
                                 </div>
-                                <div class="flip_card_back">
-                                    <div class="img">
-                                          <img
-                                        src="/img/team/ab.png"
-                                        alt=""/>
-                                    </div>
-                                    <div class="caption">
-                                        <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
-                                            <p>fishing, hiking</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
-                                            <p>pilot</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
-                                            <p>unlimited lifes</p>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
-                                            <p>Dune</p>
-                                        </div>
-                                    </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
                                 </div>
                             </div>
-                          
                         </div>
-                    </a>
+                    </div>
+                </div><div class="team_member">
+                    <div class="inner_div">
+                        <div class="flip_card_front">
+                            <div class="img">
+                                <img
+                                    src="/img/team/aa.png"
+                                    alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="blue font20 bold">name surname</div>
+                                <strong>position</strong>
+                                <p>competition, color, camp</p>
+                            </div>
+                        </div>
+                        <div class="flip_card_back">
+                            <div class="img">
+                                  <img
+                                src="/img/team/ab.png"
+                                alt=""/>
+                            </div>
+                            <div class="caption">
+                                <div class="flex">
+                                    <div class="blue font20 bold">name surname</div>
+                                    <p>fishing, hiking</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">As a child he wanted to come out</div>
+                                    <p>pilot</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Desired super power</div>
+                                    <p>unlimited lifes</p>
+                                </div>
+                                <div class="flex">
+                                    <div class="blue font20 bold">Favorite book / movie</div>
+                                    <p>Dune</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

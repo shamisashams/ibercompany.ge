@@ -643,6 +643,9 @@ img {
     padding-top: 26px;
     padding-bottom: 150px;
 }
+.team_home .team_member {
+    margin: 0 20px;
+}
 #team_slider {
     margin-top: 20px;
     margin-left: -11px;
@@ -654,7 +657,7 @@ img {
 /* team member */
 .team_member {
     width: 295px;
-    height: 369px;
+    height: 500px;
     position: relative;
     perspective: 1000px;
 }
@@ -698,7 +701,16 @@ img {
 .team_member:hover .inner_div {
     transform: rotateY(180deg);
 }
-.team_member img {
+.team_member .img {
+    width: 100%;
+    height: 74%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.team_member .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .team_member:hover::before {
     transform: scaleY(1);
@@ -709,7 +721,7 @@ img {
 .team_home .arrow_scale {
     top: auto;
     transform: none;
-    bottom: 116px;
+    bottom: -30px;
 }
 .team_home .arrow_scale:hover {
     border-color: #231f20;
@@ -1088,7 +1100,7 @@ img {
     width: 100%;
     height: 500px;
 }
-.our_team_page .team_grid a:nth-child(even) .team_member {
+.our_team_page .team_grid .team_member:nth-child(even) {
     margin-top: 40px;
 }
 .our_team_page .team_grid .team_member img {

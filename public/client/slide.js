@@ -57,7 +57,7 @@ $("#partners_slider").slick({
     ],
 });
 $("#team_slider").slick({
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     draggable: true,
     arrows: true,
@@ -71,12 +71,6 @@ $("#team_slider").slick({
     variableWidth: true,
     responsive: [
         {
-            breakpoint: 1600,
-            settings: {
-                slidesToShow: 4,
-            },
-        },
-        {
             breakpoint: 1400,
             settings: {
                 slidesToShow: 3,
@@ -86,7 +80,6 @@ $("#team_slider").slick({
             breakpoint: 900,
             settings: {
                 slidesToShow: 2,
-                centerMode: true,
             },
         },
         {
