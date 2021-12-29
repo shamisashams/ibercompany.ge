@@ -16,34 +16,32 @@
     </section>
     <section class="contact_page">
         <div class="wrapper">
-            <div class="main-title uppercase bold ">Be in touch</div>
-            <div class="title uppercase bold font25">Contact info</div>
-            <div class="font18 para">Satisfied conveying an dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection </div>
+            <div class="main-title uppercase bold ">@lang('client.contact_be_in_touch')</div>
+            <div class="title uppercase bold font25">@lang('client.contact_info')</div>
+            <div class="font18 para">@lang('client.contact_about')</div>
             <div class="info flex center">
                 <div class="info_item">
                     <img src="/img/icons/contact/1.png" alt="">
-                    <div class="font18">Call us</div>
-                    <div class="font20">+995 0 32 2 444 777</div>
+                    <div class="font18">@lang('client.contact_call_us')</div>
+                    <div class="font20">{{$gphone}}</div>
                 </div>
                 <div class="border"></div>
                 <div class="info_item">
                     <img src="/img/icons/contact/2.png" alt="">
-                    <div class="font18">Chat with us</div>
-                    <div class="font20">info@ibercompany.com</div>
+                    <div class="font18">@lang('client.contact_chat_with_us')</div>
+                    <div class="font20">{{$gemail}}</div>
                 </div>
                 <div class="border"></div>
                 <div class="info_item">
                     <img src="/img/icons/contact/3.png" alt="">
-                    <div class="font18">Visit us</div>
-                    <div class="font20">30 Commercial Road. <br>
-                        Tbilisi, Georgia</div>
+                    <div class="font18">@lang('client.contact_visit_us')</div>
+                    <div class="font20">{{$gaddress}}</div>
                 </div>
                 <div class="border"></div>
                 <div class="info_item">
                     <img src="/img/icons/contact/4.png" alt="">
-                    <div class="font18">Working Hours</div>
-                    <div class="font20">Mon - Fri: 09:00 - 18:00 <br>
-                        Sat, Sun: closed</div>
+                    <div class="font18">@lang('client.contact_workinghours')</div>
+                    <div class="font20">{{$gworkingHours}}</div>
                 </div>
             </div>
             <div class="map video">
@@ -57,7 +55,7 @@
                 ></iframe>
             </div>
             <div class="flex center">
-                
+
                 <form method="POST" action="{{locale_route('client.contact.mail')}}" class="form">
                     @csrf
                     <div class="font25 uppercase bold title">Send us a message</div>
@@ -93,7 +91,7 @@
                         name="phone"
                     />
                     </div>
-                    
+
                     <textarea
                         class=" font18"
                         type="text"
