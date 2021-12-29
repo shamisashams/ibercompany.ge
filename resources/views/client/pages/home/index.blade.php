@@ -193,18 +193,27 @@
             <div id="team_slider" class="flex">
                 @foreach($teamMembers as $member)
                     <a href="{{locale_route('client.team.show',$member->id)}}">
-                        <div class="team_member img">
-                            @if(count($member->files)>0)
-                                <img
-                                    src="{{url($member->files[0]->path.'/'.$member->files[0]->title)}}"
-                                    alt=""/>
+                    <div class="team_member img">
+                            <div class="inner_div">
+                                <div class="flip_card_front">
+                                    <img
+                                        src="{{url($member->file->path.'/'.$member->file->title)}}"
+                                        alt=""/>
+                                </div>
+                                <div class="flip_card_back">
+                                    <img
+                                        src="/img/other/2.png"
+                                        alt=""/>
+                                </div>
+                            </div>
+                            @if($member->file)
                             @endif
-                            <div class="caption white transition5">
+                            <!-- <div class="caption white transition5">
                                 <div class="font20 bold transition5 uppercase name">
                                     {{$member->name}}
                                 </div>
                                 <div class="text-07 font14">{{$member->position}}</div>
-                            </div>
+                            </div> -->
                         </div>
                     </a>
                 @endforeach

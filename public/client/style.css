@@ -495,7 +495,7 @@ img {
 }
 
 /* project item */
-.project_item_video{
+.project_item_video {
     width: 100%;
     height: 214px;
     position: relative;
@@ -656,49 +656,49 @@ img {
     width: 295px;
     height: 369px;
     position: relative;
+    perspective: 1000px;
 }
-.team_member::before {
+.team_member .blue {
+    color: #015aaa;
+    text-transform: uppercase;
+}
+.team_member strong {
+    text-transform: uppercase;
+    color: #231f20;
+}
+.team_member .inner_div {
+    position: relative;
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 0.3s;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
-.team_member::after {
+.team_member .flip_card_front,
+.team_member .flip_card_back {
+    position: absolute;
+    background-color: #fff;
     width: 100%;
-    height: 3px;
-    border-radius: 20px;
-    background: #015aaa;
-    left: 0;
-    bottom: -9px;
-    transform: scaleX(0);
-    transition: 0.3s;
-    transform-origin: left;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.team_member .flip_card_front {
+}
+.team_member .flip_card_back .blue {
+    font-size: 14px;
+    margin-right: 10px;
+}
+.team_member .flip_card_back p {
+    text-align: right;
+}
+.team_member .flip_card_back {
+    transform: rotateY(180deg);
+}
+.team_member:hover .inner_div {
+    transform: rotateY(180deg);
 }
 .team_member img {
-    margin-bottom: 11px;
-}
-.team_member .caption {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    bottom: 10px;
-    z-index: 10;
-    opacity: 0;
-}
-.team_member .caption .name {
-    margin-bottom: 0;
-}
-.team_member:hover .caption {
-    bottom: 90px;
-    opacity: 1;
-}
-.team_member:hover .caption .name {
-    margin-bottom: 10px;
 }
 .team_member:hover::before {
     transform: scaleY(1);
@@ -1060,21 +1060,36 @@ img {
 }
 .our_team_page .heading {
     max-width: 711px;
+    margin: auto;
     margin-bottom: 70px;
+    text-align: center;
+}
+.our_team_page .heading .main-title::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 .our_team_page .heading .main-title {
     margin-bottom: 42px;
 }
+.our_team_page .title {
+    margin-bottom: 5px;
+}
+
 .our_team_page .team_grid {
     margin-right: 150px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 40px;
     grid-column-gap: 20px;
+    margin-bottom: 66px;
+    margin-top: 20px;
 }
 .our_team_page .team_grid .team_member {
     width: 100%;
-    height: 400px;
+    height: 500px;
+}
+.our_team_page .team_grid a:nth-child(even) .team_member {
+    margin-top: 40px;
 }
 .our_team_page .team_grid .team_member img {
     margin-bottom: 0;
@@ -1163,7 +1178,7 @@ img {
     margin-bottom: 89px;
 }
 .contact_page .info .info_item {
-    text-align: left;
+    text-align: center;
 }
 .contact_page .info .border {
     height: 170px;
@@ -1997,16 +2012,29 @@ img {
 }
 
 /* team page */
+@media screen and (max-width: 1700px) {
+    .our_team_page .team_grid .team_member {
+        height: 420px;
+    }
+}
 @media screen and (max-width: 1500px) {
     .our_team_page .team_grid {
         margin-right: 0;
     }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .our_team_page .team_grid {
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 26px;
         grid-column-gap: 15px;
+    }
+    .our_team_page .team_grid .team_member {
+        height: 650px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .our_team_page .team_grid .team_member {
+        height: 500px;
     }
 }
 @media screen and (max-width: 600px) {
@@ -2014,7 +2042,7 @@ img {
         margin-bottom: 36px;
     }
     .our_team_page .team_grid .team_member {
-        height: 321px;
+        height: 390px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -2022,7 +2050,12 @@ img {
         grid-template-columns: 1fr;
     }
     .our_team_page .team_grid .team_member {
-        height: auto;
+        height: 617px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .our_team_page .team_grid .team_member {
+        height: 500px;
     }
 }
 

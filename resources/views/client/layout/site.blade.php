@@ -45,5 +45,6 @@
 
     <script src="{{ asset("client/general.js") }}"></script>
     <script src="{{ asset("client/slide.js") }}"></script>
+    <script src="{{ asset("client/popup.js") }}"></script>
 @endsection
 
