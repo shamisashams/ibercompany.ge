@@ -23,507 +23,74 @@
                     @lang('client.team_description')
                 </div>
             </div>
-            <div class="title font50 bold dark-text">CEOS</div>
-            <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
-            <div class="team_grid">
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/4.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            @foreach($professions as $profession)
+                <div class="title font50 bold dark-text">{{ $profession->title }}</div>
+                <div class="font18 light-text text-07"> {!! $profession->description !!}
                 </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/other/1.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
+                {{--                @if($profession->team)--}}
+                <div class="team_grid">
+                    @foreach($profession->team as $member)
+                        <div class="team_member">
+                            <div class="inner_div">
+                                <div class="flip_card_front">
+                                    @if(count($member->files)>0)
+                                        <div class="img">
+                                            <img
+                                                src="{{url($member->files[0]->path.'/'.$member->files[0]->title)}}"
+                                                alt=""/>
+                                        </div>
+                                    @endif
+                                    <div class="caption">
+                                        <div class="blue font20 bold">{{ $member->name }}</div>
+                                        <strong>{{ $member->position }}</strong>
+                                        <p>{{ $member->content }}</p>
+                                    </div>
+                                </div>
+                                <div class="flip_card_back">
+                                    @if(count($member->files)>1)
+                                        <div class="img">
+                                            <img
+                                                src="{{url($member->files[1]->path.'/'.$member->files[1]->title)}}"
+                                                alt=""/>
+                                        </div>
+                                    @elseif(count($member->files)>0)
+                                        <div class="img">
+                                            <img
+                                                src="{{url($member->files[0]->path.'/'.$member->files[0]->title)}}"
+                                                alt=""/>
+                                        </div>
+                                    @endif
+                                    <div class="caption">
+                                        <div class="flex">
+                                            <div class="blue font20 bold">name surname</div>
+                                            <p>{{ $member->name }}</p>
+                                        </div>
+                                        @if($member->hobby)
+                                            <div class="flex">
+                                                <div class="blue font20 bold">As a child he wanted to come out</div>
+                                                <p>{{ $member->hobby }}</p>
+                                            </div>
+                                        @endif
+                                        @if($member->super_power)
+                                            <div class="flex">
+                                                <div class="blue font20 bold">Desired super power</div>
+                                                <p>{{ $member->super_power }}</p>
+                                            </div>
+                                        @endif
+                                        @if($member->favorite)
+                                            <div class="flex">
+                                                <div class="blue font20 bold">Favorite book / movie</div>
+                                                <p>{{ $member->favorite }}</p>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/hero/2.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="title font50 bold dark-text">Management</div>
-            <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
-            <div class="team_grid">
-            <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="title font50 bold dark-text">Engineers</div>
-            <div class="font18 light-text text-07">Satisfied conveying an dependent contented he gentleman agreeable do be.</div>
-            <div class="team_grid">
-            <div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><div class="team_member">
-                    <div class="inner_div">
-                        <div class="flip_card_front">
-                            <div class="img">
-                                <img
-                                    src="/img/team/aa.png"
-                                    alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="blue font20 bold">name surname</div>
-                                <strong>position</strong>
-                                <p>competition, color, camp</p>
-                            </div>
-                        </div>
-                        <div class="flip_card_back">
-                            <div class="img">
-                                  <img
-                                src="/img/team/ab.png"
-                                alt=""/>
-                            </div>
-                            <div class="caption">
-                                <div class="flex">
-                                    <div class="blue font20 bold">name surname</div>
-                                    <p>fishing, hiking</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">As a child he wanted to come out</div>
-                                    <p>pilot</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Desired super power</div>
-                                    <p>unlimited lifes</p>
-                                </div>
-                                <div class="flex">
-                                    <div class="blue font20 bold">Favorite book / movie</div>
-                                    <p>Dune</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {{--                @endif--}}
+            @endforeach
         </div>
     </section>
 

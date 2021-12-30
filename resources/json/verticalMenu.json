@@ -29,6 +29,13 @@
             "slug": "team"
         },
         {
+            "url": "profession.index",
+            "name": "profession",
+            "i18n": "profession",
+            "icon": "supervisor_account",
+            "slug": "profession"
+        },
+        {
             "url": "company.index",
             "name": "company",
             "i18n": "company",

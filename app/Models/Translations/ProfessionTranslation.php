@@ -5,15 +5,14 @@ namespace App\Models\Translations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TeamTranslation extends BaseTranslationModel
+class ProfessionTranslation extends BaseTranslationModel
 {
     use HasFactory;
+    /**
+     * @var string[]
+     */
     protected $fillable = [
-        'name',
-        'position',
-        'hobby',
-        'super_power',
-        'favorite',
-        'content',
+        'title',
+        'description',
     ];
 }

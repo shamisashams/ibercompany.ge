@@ -55,9 +55,9 @@
                                             @enderror
                                         </div>
 
-                                        <div class="input-field">
-                                            <h5 for="content">@lang('admin.content')</h5>
-                                            {!! Form::textarea($locale.'[content]',$team->translate($locale)->content ?? '',['class' => 'ckeditor form-control validate '. ($errors->has($locale.'.content') ? '' : 'valid'),'id'=>'content-'.$locale]) !!}
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[content]',$team->translate($locale)->content ?? '',['class' => 'validate '. $errors->has($locale.'.content') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[content]',__('admin.content')) !!}
                                             @error($locale.'.content')
                                             <small class="errorTxt4">
                                                 <div class="error">
@@ -66,12 +66,70 @@
                                             </small>
                                             @enderror
                                         </div>
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[hobby]',$team->translate($locale)->hobby ?? '',['class' => 'validate '. $errors->has($locale.'.hobby') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[hobby]',__('admin.hobby')) !!}
+                                            @error($locale.'.hobby')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[super_power]',$team->translate($locale)->super_power ?? '',['class' => 'validate '. $errors->has($locale.'.super_power') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[super_power]',__('admin.super_power')) !!}
+                                            @error($locale.'.super_power')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+                                        <div class="input-field ">
+                                            {!! Form::text($locale.'[favorite]',$team->translate($locale)->favorite ?? '',['class' => 'validate '. $errors->has($locale.'.favorite') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[favorite]',__('admin.favorite')) !!}
+                                            @error($locale.'.favorite')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+
                                     </div>
                                 @endforeach
                             </div>
                         </div>
                         <div class="col s12 m6 8">
                             <div class="row">
+                                <div class="input-field col s12">
+
+                                    <select name="profession_id" class="select2 js-example-programmatic browser-default">
+                                        <optgroup>
+                                            @foreach($professions as $key => $profession)
+                                                <option
+                                                    value="{{$profession->id}}" {{$key === 0 ? 'selected' : ''}} {{$team->profession_id === $profession->id ? 'selected' : ''}}>
+                                                    {{$profession->title}}
+                                                </option>
+                                            @endforeach
+                                        </optgroup>
+                                    </select>
+
+                                    <label class="active" for="profession_id">{{__('admin.profession')}}</label>
+
+                                    @error('profession_id')
+                                    <small class="errorTxt4">
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    </small>
+                                    @enderror
+                                </div>
+
                                 <div class="input-field"></div>
                                 <div class="col s12 mt-3 mb-3">
                                     <label>
@@ -93,8 +151,10 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
+
                             {!! Form::submit($team->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn cyan waves-effect waves-light ']) !!}
                         </div>
+
                     </div>
                     {!! Form::close() !!}
 

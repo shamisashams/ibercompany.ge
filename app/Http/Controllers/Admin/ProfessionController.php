@@ -11,32 +11,34 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\TeamRequest;
+use App\Http\Requests\Admin\ProfessionRequest;
+//use App\Models\Team;
 use App\Models\Profession;
-use App\Models\Team;
+use App\Repositories\ProfessionRepositoryInterface;
 use App\Repositories\TeamRepositoryInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Arr;
 use ReflectionException;
 
-class TeamController extends Controller
+class ProfessionController extends Controller
 {
     /**
      * @var TeamRepositoryInterface
      */
-    private $teamRepository;
+    private $professionRepository;
 
 
     /**
-     * @param TeamRepositoryInterface $teamRepository
+     * @param TeamRepositoryInterface $professionRepository
      */
-    public function __construct(TeamRepositoryInterface  $teamRepository)
+    public function __construct(ProfessionRepositoryInterface  $professionRepository)
     {
-        $this->teamRepository = $teamRepository;
+        $this->professionRepository = $professionRepository;
 
     }
 
@@ -45,11 +47,11 @@ class TeamController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(TeamRequest $request)
+    public function index(ProfessionRequest $request)
     {
 
-        return view('admin.pages.team.index', [
-            'teams' => $this->teamRepository->getData($request, ['translations'])
+        return view('admin.pages.profession.index', [
+            'professions' => $this->professionRepository->getData($request, ['translations'])
         ]);
     }
 
@@ -60,17 +62,15 @@ class TeamController extends Controller
      */
     public function create()
     {
-        $team = $this->teamRepository->model;
+        $profession = $this->professionRepository->model;
 
-        $url = locale_route('team.store', [], false);
+        $url = locale_route('profession.store', [], false);
         $method = 'POST';
-        $professions = Profession::where("status", 1)->with("translations")->get();
 
-        return view('admin.pages.team.form', [
-            'team' => $team,
+        return view('admin.pages.profession.form', [
+            'profession' => $profession,
             'url' => $url,
             'method' => $method,
-            "professions" => $professions
         ]);
     }
 
@@ -82,19 +82,19 @@ class TeamController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function store(TeamRequest $request)
+    public function store(ProfessionRequest $request)
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
-
-        $team = $this->teamRepository->create($saveData);
+//dd($saveData);
+        $profession = $this->professionRepository->create($saveData);
 
         // Save Files
-        if ($request->hasFile('images')) {
-            $team = $this->teamRepository->saveFiles($team->id, $request);
-        }
+//        if ($request->hasFile('images')) {
+//            $team = $this->teamRepository->saveFiles($team->id, $request);
+//        }
 
-        return redirect(locale_route('team.show', $team->id))->with('success', __('admin.create_successfully'));
+        return redirect(locale_route('profession.show', $profession->id))->with('success', __('admin.create_successfully'));
 
     }
 
@@ -106,10 +106,10 @@ class TeamController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function show(string $locale, Team $team)
+    public function show(string $locale, Profession $profession)
     {
-        return view('admin.pages.team.show', [
-            'team' => $team,
+        return view('admin.pages.profession.show', [
+            'profession' => $profession,
         ]);
     }
 
@@ -120,18 +120,15 @@ class TeamController extends Controller
      * @param Team $team
      * @return Application|Factory|View
      */
-    public function edit(string $locale, Team $team)
+    public function edit(string $locale, Profession $profession)
     {
-        $url = locale_route('team.update', $team->id, false);
+        $url = locale_route('profession.update', $profession->id, false);
         $method = 'PUT';
-        $professions = Profession::where("status", 1)->with("translations")->get();
 
-
-        return view('admin.pages.team.form', [
-            'team' => $team,
+        return view('admin.pages.profession.form', [
+            'profession' => $profession,
             'url' => $url,
             'method' => $method,
-            "professions" => $professions
         ]);
     }
 
@@ -144,18 +141,18 @@ class TeamController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function update(TeamRequest $request, string $locale, Team $team)
+    public function update(Request $request, string $locale, Profession $profession)
     {
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
-        $this->teamRepository->update($team->id, $saveData);
+        $this->professionRepository->update($profession->id, $saveData);
 
 
-        $this->teamRepository->saveFiles($team->id, $request);
+//        $this->professionRepository->saveFiles($profession->id, $request);
 
 
-        return redirect(locale_route('team.show', $team->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('profession.show', $profession->id))->with('success', __('admin.update_successfully'));
     }
 
     /**
@@ -165,11 +162,11 @@ class TeamController extends Controller
      * @param Team $team
      * @return Application|RedirectResponse|Redirector
      */
-    public function destroy(string $locale, Team $team)
+    public function destroy(string $locale, Profession $profession)
     {
-        if (!$this->teamRepository->delete($team->id)) {
-            return redirect(locale_route('team.show', $team->id))->with('danger', __('admin.not_delete_message'));
+        if (!$this->professionRepository->delete($profession->id)) {
+            return redirect(locale_route('profession.show', $profession->id))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('team.index'))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('profession.index'))->with('success', __('admin.delete_message'));
     }
 }

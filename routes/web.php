@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProfessionController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
@@ -65,6 +66,10 @@ Route::prefix('{locale?}')
                 // Team
                 Route::resource('team', TeamController::class);
                 Route::get('team/{team}/destroy', [TeamController::class, 'destroy'])->name('team.destroy');
+
+                // profession
+                Route::resource('profession', ProfessionController::class);
+                Route::get('profession/{profession}/destroy', [ProfessionController::class, 'destroy'])->name('profession.destroy');
 
                 // Company
                 Route::resource('company', CompanyController::class);

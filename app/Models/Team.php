@@ -68,7 +68,8 @@ class Team extends Model implements Searchable
      * @var string[]
      */
     protected $fillable = [
-        'status'
+        'status',
+        "profession_id"
     ];
 
     /** @var string */
@@ -78,6 +79,9 @@ class Team extends Model implements Searchable
     public $translatedAttributes = [
         'name',
         'position',
+        'hobby',
+        'super_power',
+        'favorite',
         'content',
     ];
 

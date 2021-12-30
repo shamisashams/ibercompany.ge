@@ -10,12 +10,13 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 /**
  * Class ProjectRequest
  * @package App\Http\Requests\Admin
  */
-class TeamRequest extends FormRequest
+class ProfessionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -40,13 +41,8 @@ class TeamRequest extends FormRequest
         }
 
         return [
-            config('translatable.fallback_locale') . '.name' => 'required|string|max:255',
-            config('translatable.fallback_locale') . '.position' => 'required|string|max:255',
-            config('translatable.fallback_locale') . '.content' => 'nullable|string|max:255',
-            config('translatable.fallback_locale') . '.hobby' => 'nullable|string|max:255',
-            config('translatable.fallback_locale') . '.super_power' => 'nullable|string|max:255',
-            config('translatable.fallback_locale') . '.favorite' => 'nullable|max:255',
-            'profession_id' => 'required',
+            config('translatable.fallback_locale') . '.title' => 'required|string|max:255',
+            config('translatable.fallback_locale') . '.description' => 'nullable|max:2550',
         ];
     }
 }

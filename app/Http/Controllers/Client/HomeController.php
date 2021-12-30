@@ -28,7 +28,7 @@ class HomeController extends Controller
         $companies = Company::with(['file', 'translations'])->orderBy('created_at', 'desc')->get();
         $projects = Project::with(['file', 'translations'])->orderBy('created_at', 'desc')->take(4)->get();
         $blogs = Blog::with(['file', 'translations'])->take(3)->orderBy('created_at', 'desc')->get();
-        $teamMembers = Team::with(['file', 'translations'])->take(6)->orderBy('created_at', 'desc')->get();
+        $teamMembers = Team::with(['files', 'translations'])->take(6)->orderBy('created_at', 'desc')->get();
 
         return view('client.pages.home.index', [
             'sliders' => $sliders,

@@ -23,6 +23,7 @@ use App\Repositories\Eloquent\CompanyRepository;
 use App\Repositories\Eloquent\LanguageRepository;
 use App\Repositories\Eloquent\PageRepository;
 use App\Repositories\Eloquent\ProductRepository;
+use App\Repositories\Eloquent\ProfessionRepository;
 use App\Repositories\Eloquent\ProjectRepository;
 use App\Repositories\Eloquent\SettingRepository;
 use App\Repositories\Eloquent\ServiceRepository;
@@ -32,6 +33,7 @@ use App\Repositories\Eloquent\TranslationRepository;
 use App\Repositories\LanguageRepositoryInterface;
 use App\Repositories\PageRepositoryInterface;
 use App\Repositories\ProductRepositoryInterface;
+use App\Repositories\ProfessionRepositoryInterface;
 use App\Repositories\ProjectRepositoryInterface;
 use App\Repositories\SettingRepositoryInterface;
 use App\Repositories\ServiceRepositoryInterface;
@@ -76,6 +78,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(BlogRepositoryInterface::class, BlogRepository::class);
         $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
         $this->app->bind(CompanyRepositoryInterface::class, CompanyRepository::class);
+        $this->app->bind(ProfessionRepositoryInterface::class, ProfessionRepository::class);
 
 
     }
