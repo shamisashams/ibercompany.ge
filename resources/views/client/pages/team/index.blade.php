@@ -62,24 +62,24 @@
                                     @endif
                                     <div class="caption">
                                         <div class="flex">
-                                            <div class="blue font20 bold">name surname</div>
+                                            <div class="blue font20 bold">@lang('client.name')</div>
                                             <p>{{ $member->name }}</p>
                                         </div>
                                         @if($member->hobby)
                                             <div class="flex">
-                                                <div class="blue font20 bold">As a child he wanted to come out</div>
+                                                <div class="blue font20 bold">@lang('client.hobby')</div>
                                                 <p>{{ $member->hobby }}</p>
                                             </div>
                                         @endif
                                         @if($member->super_power)
                                             <div class="flex">
-                                                <div class="blue font20 bold">Desired super power</div>
+                                                <div class="blue font20 bold">@lang('client.super_power')</div>
                                                 <p>{{ $member->super_power }}</p>
                                             </div>
                                         @endif
                                         @if($member->favorite)
                                             <div class="flex">
-                                                <div class="blue font20 bold">Favorite book / movie</div>
+                                                <div class="blue font20 bold">@lang('client.favorite')</div>
                                                 <p>{{ $member->favorite }}</p>
                                             </div>
                                         @endif

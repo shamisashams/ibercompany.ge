@@ -222,26 +222,26 @@
                                 @endif
                                 <div class="caption">
                                     <div class="flex">
-                                        <div class="blue font20 bold">name surname</div>
+                                        <div class="blue font20 bold">@lang('client.name')</div>
                                         <p>{{$teamMember->name}}</p>
                                     </div>
 
                                     @if($teamMember->hobby)
                                         <div class="flex">
-                                            <div class="blue font20 bold">As a child he wanted to come out</div>
+                                            <div class="blue font20 bold">@lang('client.hobby')</div>
                                             <p>{{$teamMember->hobby}}</p>
                                         </div>
                                     @endif
 
                                     @if($teamMember->super_power)
                                         <div class="flex">
-                                            <div class="blue font20 bold">Desired super power</div>
+                                            <div class="blue font20 bold">@lang('client.super_power')</div>
                                             <p>{{$teamMember->super_power}}</p>
                                         </div>
                                     @endif
                                     @if($teamMember->favorite)
                                         <div class="flex">
-                                            <div class="blue font20 bold">Favorite book / movie</div>
+                                            <div class="blue font20 bold">@lang('client.favorite')</div>
                                             <p>{{$teamMember->favorite}}</p>
                                         </div>
                                     @endif
