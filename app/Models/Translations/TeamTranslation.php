@@ -9,6 +9,7 @@ class TeamTranslation extends BaseTranslationModel
 {
     use HasFactory;
     protected $fillable = [
+        'childhood',
         'name',
         'position',
         'hobby',

@@ -77,6 +77,7 @@ class Team extends Model implements Searchable
 
     /** @var array */
     public $translatedAttributes = [
+        'childhood',
         'name',
         'position',
         'hobby',

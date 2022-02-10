@@ -67,6 +67,18 @@
                                             @enderror
                                         </div>
                                         <div class="input-field ">
+                                            {!! Form::text($locale.'[childhood]',$team->translate($locale)->childhood ?? '',['class' => 'validate '. $errors->has($locale.'.childhood') ? '' : 'valid']) !!}
+                                            {!! Form::label($locale.'[childhood]',__('admin.childhood')) !!}
+                                            @error($locale.'.childhood')
+                                            <small class="errorTxt4">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+                                        </div>
+
+                                        <div class="input-field ">
                                             {!! Form::text($locale.'[hobby]',$team->translate($locale)->hobby ?? '',['class' => 'validate '. $errors->has($locale.'.hobby') ? '' : 'valid']) !!}
                                             {!! Form::label($locale.'[hobby]',__('admin.hobby')) !!}
                                             @error($locale.'.hobby')

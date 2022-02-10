@@ -62,8 +62,8 @@
                                     @endif
                                     <div class="caption">
                                         <div class="flex">
-                                            <div class="blue font20 bold">@lang('client.name')</div>
-                                            <p>{{ $member->name }}</p>
+                                            <div class="blue font20 bold">@lang('client.childhood')</div>
+                                            <p>{{ $member->childhood }}</p>
                                         </div>
                                         @if($member->hobby)
                                             <div class="flex">
