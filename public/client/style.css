@@ -657,7 +657,7 @@ img {
 /* team member */
 .team_member {
     width: 295px;
-    height: 500px;
+    height: 580px;
     position: relative;
     perspective: 1000px;
 }
@@ -703,7 +703,7 @@ img {
 }
 .team_member .img {
     width: 100%;
-    height: 74%;
+    height: 65%;
     margin-bottom: 20px;
     overflow: hidden;
 }
@@ -2025,8 +2025,8 @@ img {
 
 /* team page */
 @media screen and (max-width: 1700px) {
-    .our_team_page .team_grid .team_member {
-        height: 420px;
+    .team_member .img {
+        height: 50%;
     }
 }
 @media screen and (max-width: 1500px) {
@@ -2042,6 +2042,9 @@ img {
     }
     .our_team_page .team_grid .team_member {
         height: 650px;
+    }
+    .team_member .img {
+        height: 73%;
     }
 }
 @media screen and (max-width: 800px) {
