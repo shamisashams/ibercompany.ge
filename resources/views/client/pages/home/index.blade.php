@@ -225,6 +225,12 @@
                                         <div class="blue font20 bold">@lang('client.name')</div>
                                         <p>{{$teamMember->name}}</p>
                                     </div>
+                                    @if($teamMember->childhood)
+                                        <div class="flex">
+                                            <div class="blue font20 bold">@lang('client.childhood')</div>
+                                            <p>{{$teamMember->childhood}}</p>
+                                        </div>
+                                    @endif
 
                                     @if($teamMember->hobby)
                                         <div class="flex">
