@@ -644,6 +644,9 @@ img {
     padding-bottom: 150px;
 }
 .team_home .team_member {
+    height: 650px;
+}
+.team_home .team_member {
     margin: 0 20px;
 }
 #team_slider {
@@ -2026,9 +2029,6 @@ img {
 @media screen and (max-width: 1700px) {
     .our_team_page .team_grid .team_member .img {
         height: 50%;
-    }
-    .team_home .team_member {
-        height: 650px;
     }
 }
 @media screen and (max-width: 1500px) {
