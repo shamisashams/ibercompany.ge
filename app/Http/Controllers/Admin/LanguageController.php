@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Controllers/Admin/LanguageController.php
  *
@@ -61,7 +62,6 @@ class LanguageController extends Controller
             'url' => $url,
             'method' => $method
         ]);
-
     }
 
     /**
@@ -78,7 +78,6 @@ class LanguageController extends Controller
             'locale' => $request['locale'],
             'status' => (bool)$request['status']
         ];
-
         $this->languageRepository->create($attributes);
 
         return redirect(locale_route('language.index'))->with('success', 'Language Created.');
@@ -155,7 +154,7 @@ class LanguageController extends Controller
             return redirect(locale_route('language.index'))->with('danger', 'Can not delete default language.');
         }
         if (!$this->languageRepository->delete($language->id)) {
-            return redirect(locale_route('language.show',$language->id))->with('danger', 'Language not deleted.');
+            return redirect(locale_route('language.show', $language->id))->with('danger', 'Language not deleted.');
         }
         return redirect(locale_route('language.index'))->with('success', 'Language Deleted.');
     }

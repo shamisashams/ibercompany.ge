@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Repositories/Eloquent/Base/BaseRepository.php
  *
@@ -52,7 +53,7 @@ class BaseRepository implements EloquentRepositoryInterface
      *
      * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
      */
-    public function all(array $columns = ["*"],array $with = [])
+    public function all(array $columns = ["*"], array $with = [])
     {
         return $this->model->with($with)->get($columns);
     }
@@ -68,8 +69,8 @@ class BaseRepository implements EloquentRepositoryInterface
     {
         try {
             return $this->model->create($attributes);
-
         } catch (\Illuminate\Database\QueryException $exception) {
+            dd($exception->getMessage());
             return $exception->errorInfo;
         }
     }

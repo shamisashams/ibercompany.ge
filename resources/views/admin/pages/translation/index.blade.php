@@ -6,6 +6,7 @@
 
 
 @section('content')
+{{-- @dd($translations) --}}
     <div class="row">
         <div class="col s12 m12 l12">
             <div id="button-trigger" class="card card card-default scrollspy">
@@ -53,6 +54,7 @@
                                     <tbody>
                                     @if($translations)
                                         @foreach($translations as $translation)
+                                        {{-- @dd($translation->text) --}}
                                             <tr>
                                                 <td>{{$translation->id}}</td>
                                                 <td>{{$translation->group}}</td>
