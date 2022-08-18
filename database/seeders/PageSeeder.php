@@ -36,6 +36,9 @@ class PageSeeder extends Seeder
             ],
             [
                 'key' => 'company'
+            ],
+            [
+                'key' => 'blog'
             ]
 
         ];

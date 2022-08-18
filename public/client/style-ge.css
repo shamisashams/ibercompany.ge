@@ -1,12 +1,12 @@
 /* general */
 @font-face {
     font-family: "tbc-regular";
-    src: url(fonts/tbc-din-mtavruli/TbcDin_Mtavruli_Regular.otf);
+    src: url(fonts/bpg-le-studio-02-caps-webfont.woff2);
 }
 
 @font-face {
     font-family: "tbc-bold";
-    src: url(fonts/tbc-din-mtavruli/TbcDin_Mtavruli_Bold.otf);
+    src: url(fonts/bpg-le-studio-02-caps-webfont.woff);
 }
 
 *,

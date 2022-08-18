@@ -1,12 +1,12 @@
 /* general */
 @font-face {
     font-family: "condensed-bold";
-    src: url(fonts/BarlowCondensed-Bold.ttf);
+    src: url(fonts/bpg-le-studio-02-caps-webfont.ttf);
 }
 
 @font-face {
     font-family: "condensed-medium";
-    src: url(fonts/BarlowCondensed-Medium.ttf);
+    src: url(fonts/bpg-le-studio-02-caps-webfont.eot);
 }
 
 *,
