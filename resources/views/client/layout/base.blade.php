@@ -13,6 +13,19 @@
 
 </head>
 <body>
+<!-- 
+<div class="cssload-preloader">
+  <div class="cssload-preloader-box">
+    <div>L</div>
+    <div>o</div>
+    <div>a</div>
+    <div>d</div>
+    <div>i</div>
+    <div>n</div>
+    <div>g</div>
+  </div>
+</div> -->
+
 @yield('body')
 </body>
 </html>
