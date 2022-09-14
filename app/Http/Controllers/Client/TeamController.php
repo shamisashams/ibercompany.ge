@@ -21,18 +21,14 @@ class TeamController extends Controller
      */
     public function index(string $locale, Request $request)
     {
-//        return Profession::with(['translations', 'team' => function ($query) {
-//            $query->orderBy('created_at', 'desc')->with(['file', 'translations']);
-//        }])->get();
+        //        return Profession::with(['translations', 'team' => function ($query) {
+        //            $query->orderBy('created_at', 'desc')->with(['file', 'translations']);
+        //        }])->get();
         $teamPage = Page::where('key', 'team')->firstOrFail();
-//        $members = Team::query()->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(6);
+        //        $members = Team::query()->orderBy('created_at', 'desc')->with(['file', 'translations'])->take(6);
         $professions = Profession::with(['translations', 'team' => function ($query) {
             $query->orderBy('created_at', 'desc')->with(['file', 'translations']);
         }])->where("status", 1);
-
-//        dd($professions->get());
-
-
         return view('client.pages.team.index ', [
             'teamPage' => $teamPage,
             'professions' => $professions->get()

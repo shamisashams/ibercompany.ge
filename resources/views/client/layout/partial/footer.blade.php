@@ -16,7 +16,10 @@
                 <img src="/img/icons/footer/2.png" alt=""/>
                 <div>{{$gphone}}</div>
             </div>
-            <div class="bold font20">Working hours</div>
+            <div class="bold font20">
+                {{-- Working hours --}}
+                @lang('client.working_hours')
+            </div>
             <div class="flex font18">
                 <img src="/img/icons/footer/3.png" alt=""/>
                 <div>

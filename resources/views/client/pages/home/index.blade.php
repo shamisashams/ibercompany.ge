@@ -21,7 +21,8 @@
                                 <div class="font18">
                                     {!!$slider->description!!}
                                 </div>
-                                <button onclick="window.location.href='{{$slider->redirect_url}}'"
+                                <button
+                                onclick="window.location.href='{{route('client.about.index')}}'"
                                         class="main-button main-border white bold">
                                     @lang('client.learn_more')
                                 </button>
@@ -165,7 +166,7 @@
     <section class="about_home projects_home">
         <div class="wrapper pad80 flex center">
             <div class="content">
-                <div class="main-title bold" style="text-align: left">@lang('client.about_us')</div>
+                <div class="main-title bold" style="text-align: left">@lang('client.home.about_us')</div>
                 <div class="blue font18 bold" style="text-align: left">
                     @lang('client.who_we_are')
                 </div>

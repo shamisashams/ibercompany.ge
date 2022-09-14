@@ -14,7 +14,7 @@
     @if(app()->getLocale()=="ge")
         <link rel="stylesheet" href="{{ asset("client/style-ge.css") }}"/>
     @endif
-    
+
     @yield('subhead')
 @endsection
 

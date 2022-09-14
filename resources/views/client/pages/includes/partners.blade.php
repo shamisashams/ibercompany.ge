@@ -1,6 +1,6 @@
 <section id="partners" class="{{$class}}">
     <div class="wrapper">
-        <div id="partners_slider" class="flex">
+        <div id="partners_slider">
             @foreach($companies as $company)
                 <a href="{{locale_route('client.company.show',$company->slug)}}"
                    class="slide flex center partner_slide_item">
