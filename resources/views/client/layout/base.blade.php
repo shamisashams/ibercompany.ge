@@ -13,7 +13,6 @@
 
 </head>
 <body>
-<!-- 
 <div class="cssload-preloader">
   <div class="cssload-preloader-box">
     <div>L</div>
@@ -24,8 +23,18 @@
     <div>n</div>
     <div>g</div>
   </div>
-</div> -->
+</div>
 
 @yield('body')
+
+
+<script>
+    window.addEventListener("load", function(){
+	var loader = document.querySelector(".cssload-preloader")
+	// loader.className += " hidden";
+	// changecolor.style.display = "none";
+	loader.style.display = "none";
+});
+</script>
 </body>
 </html>
