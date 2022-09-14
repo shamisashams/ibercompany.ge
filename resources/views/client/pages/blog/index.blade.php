@@ -14,7 +14,7 @@
                 <span>|</span> @lang('client.news')
             </div>
             <form action="{{locale_route('client.blog.index')}}" id="news-filter-form"
-                  class="filter dark-text flex center">
+                  class="filter  flex center">
 
                 <div style="opacity: 0.3">@lang('client.filter_by'):</div>
                 <div class="font20">
@@ -44,7 +44,7 @@
                         </div>
                     @endif
                     <div class="text">
-                        <div class="title dark-text bold uppercase font18">
+                        <div class="title  bold uppercase font18">
                             {{$blog->title}}
                         </div>
                         <div class="light-text">
@@ -57,7 +57,7 @@
                                 <div class="light-text font18">{{$blog->category->title}}</div>
                             </div>
                             <a href="{{locale_route('client.blog.show',$blog->id)}}"
-                               class="dark-text uppercase font18 transition3 see_more">
+                               class=" uppercase font18 transition3 see_more">
                                 @lang('client.see_more')
                             </a>
                         </div>
