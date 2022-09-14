@@ -45,7 +45,7 @@
             >
                 <img class="transition3" src="/img/icons/hero/2.png" alt=""/>
             </button>
-            <div id="languages" class="white font18 transition3">
+            <div id="languages" class="white font18 transition3" style="z-index:100000000000">
                 <div class="main">{{app()->getLocale()}}</div>
                 <div class="dropdown transition3">
                     @foreach(config('translatable.locales') as $locale)
@@ -168,7 +168,7 @@
     <section class="about_home projects_home dark-text">
         <div class="wrapper pad80 flex center">
             <div class="content">
-                <div class="main-title bold" style="text-align: left">@lang('client.home.about_us')</div>
+                {{-- <div class="main-title bold" style="text-align: left">@lang('client.home.about_us')</div> --}}
                 <div class="blue font18 bold" style="text-align: left">
                     @lang('client.who_we_are')
                 </div>
@@ -187,7 +187,8 @@
     <section class="team_home">
         <div class="wrapper pad80">
             <div class="flex">
-                <div class="main-title bold">@lang('client.out_team')</div>
+                {{-- <div class="main-title bold">@lang('client.out_team')</div> --}}
+                <div class="main-title bold" style="color:black">@lang('client.out_team')</div>
                 <a href="{{locale_route('client.team.index')}}"
                    class="view font20 dark-text bold">@lang('client.view_team')</a>
             </div>

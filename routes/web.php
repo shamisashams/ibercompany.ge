@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  routes/web.php
  *
@@ -13,6 +14,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\SubscribersController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfessionController;
@@ -47,6 +49,10 @@ Route::prefix('{locale?}')
                 // Language
                 Route::resource('language', LanguageController::class);
                 Route::get('language/{language}/destroy', [LanguageController::class, 'destroy'])->name('language.destroy');
+
+                //subscribers
+                Route::resource('subscribers', SubscribersController::class);
+                Route::get('subscribers/{subscribers}/destroy', [SubscribersController::class, 'destroy'])->name('subscribers.destroy');
 
                 // Translation
                 Route::resource('translation', TranslationController::class);
@@ -86,8 +92,6 @@ Route::prefix('{locale?}')
                 // Setting
                 Route::resource('setting', SettingController::class);
                 Route::get('setting/{setting}/destroy', [SettingController::class, 'destroy'])->name('setting.destroy');
-
-
             });
         });
         Route::middleware(['active'])->group(function () {
@@ -126,6 +130,8 @@ Route::prefix('{locale?}')
 
             //Company Page
 
+            Route::post("/sentsub", [\App\Http\Controllers\Client\CompanyController::class, 'subscriber'])->name("client.sendsub");
+
             Route::get('/company', [\App\Http\Controllers\Client\CompanyController::class, 'index'])->name('client.company.index');
             Route::get('/company/{company}', [\App\Http\Controllers\Client\CompanyController::class, 'show'])->name('client.company.show');
 
@@ -133,9 +139,4 @@ Route::prefix('{locale?}')
             // Service Page
             Route::get('/service', [ServiceController::class, "index"])->name('client.service.index');
         });
-
-
     });
-
-
-

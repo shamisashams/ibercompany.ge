@@ -9,6 +9,8 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Models\Subscriber;
+use Illuminate\Support\Facades\Redirect;
 
 class CompanyController extends Controller
 {
@@ -39,4 +41,14 @@ class CompanyController extends Controller
         ]);
     }
 
+
+    public function subscriber(Request $request)
+    {
+        // return $request->email;
+        Subscriber::create([
+            "email" => $request->email
+        ]);
+
+        return redirect()->back();
+    }
 }

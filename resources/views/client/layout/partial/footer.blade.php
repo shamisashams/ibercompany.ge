@@ -46,16 +46,24 @@
             <div class="text-07 font20">
                 @lang('client.subscribe_to_gel')
             </div>
+            <form action="{{ locale_route('client.sendsub')}}" method="post">
             <div class="flex email">
+                @csrf
+
+                @method('POST')
                 <input
                     class="font20 main-border white transition3"
-                    type="text"
+                    type="email"
+                    name="email"
+                    required
                     placeholder="@lang('client.enter_email')"
                 />
+
                 <button class="send flex center transition3">
                     <img src="/img/icons/footer/4.png" alt=""/>
                 </button>
             </div>
+        </form>
             <div class="flex sm">
                 <a href="{{$gfacebook}}"
                 >

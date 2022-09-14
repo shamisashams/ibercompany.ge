@@ -31,9 +31,11 @@
 <script>
     window.addEventListener("load", function(){
 	var loader = document.querySelector(".cssload-preloader")
-	// loader.className += " hidden";
+	loader.className += " hidden";
+    loader.style.pointerEvents = 'none';
 	// changecolor.style.display = "none";
-	loader.style.display = "none";
+	// loader.style.display = "none";
+	// loader.style.display = "none";
 });
 </script>
 </body>
