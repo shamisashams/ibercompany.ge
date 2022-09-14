@@ -305,6 +305,14 @@ img {
     fill: #015aaa;
 }
 
+.homePage {
+    background: url(/img/bg/main.png);
+    background-attachment: fixed;
+    color: #fff;
+}
+.homePage section {
+    background-color: transparent;
+}
 /* hero */
 #hero_slider {
     width: 100%;
@@ -643,10 +651,6 @@ img {
     position: relative;
 }
 
-.news_home.glass {
-    background: rgba(0, 0, 0, 0.7);
-}
-
 .news_home .content {
     width: 666px;
     margin: auto;
@@ -733,7 +737,7 @@ img {
 }
 
 /* about home */
-.about_home {
+.homePage .about_home {
     background: #f1f1f1;
     padding: 0;
 }
@@ -808,7 +812,8 @@ img {
     backface-visibility: hidden;
 }
 
-.team_member .flip_card_front {}
+.team_member .flip_card_front {
+}
 
 .team_member .flip_card_back .blue {
     font-size: 14px;

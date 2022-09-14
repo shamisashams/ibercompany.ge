@@ -5,6 +5,8 @@
           content="iber-company">
 @endsection
 @section('wrapper')
+<div class="homePage">
+
     <section id="hero">
         <div class="wrapper">
             <div id="hero_slider">
@@ -271,4 +273,5 @@
             </button>
         </div>
     </section>
+</div>
 @endsection
