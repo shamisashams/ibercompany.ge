@@ -177,6 +177,7 @@ img {
     height: 50px;
     font-size: 20px;
     transition: 0.3s;
+    color: #fff;
 }
 
 .main-button:hover {
@@ -184,7 +185,7 @@ img {
 }
 
 .main-border {
-    border: 3px solid #231f20;
+    border: 3px solid #fff;
     border-radius: 3px;
 }
 
@@ -735,6 +736,15 @@ img {
     background: #f1f1f1;
     padding: 0;
 }
+.homePage .about_home .main-button {
+    color: black;
+}
+.homePage .about_home .main-border {
+    border-color: black;
+}
+.homePage #partners .dark-text {
+    color: #fff;
+}
 
 .homePage .about_home .main-title {
     color: black;
@@ -1001,6 +1011,11 @@ img {
 
 #footer .insite img {
     margin-left: 10px;
+}
+
+#news-filter-form *,
+#news-filter-form *::placeholder {
+    color: #fff;
 }
 
 /* main showcase */

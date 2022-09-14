@@ -65,14 +65,14 @@
                 <div class="main-title bold" style="text-align: left">
                     @lang('client.our_projects')
                 </div>
-                <div class="dark-text font18 bold uppercase" style="text-align: left">
+                <div class=" font18 bold uppercase" style="text-align: left">
                     @lang('client.project_title')
                 </div>
                 <div class="light-text text-07" style="text-align: left">
                     @lang('client.project_description')
                 </div>
                 <a href="{{locale_route('client.project.index')}}">
-                    <button class="main-button dark-text main-border bold">
+                    <button class="main-button  main-border bold">
                         @lang('client.see_all_projects')
                     </button>
                 </a>
@@ -140,7 +140,7 @@
                             </div>
                         @endif
                         <div class="text">
-                            <div class="title dark-text bold uppercase font18">
+                            <div class="title  bold uppercase font18">
                                 {{$blog->title}}
                             </div>
                             <div class="light-text">
@@ -154,7 +154,7 @@
                                     <div class="light-text font18">{{$blog->category->title}}</div>
                                 </div>
                                 <a href="{{locale_route('client.blog.show',$blog->id)}}"
-                                   class="dark-text uppercase font18 transition3 see_more">
+                                   class=" uppercase font18 transition3 see_more">
                                     @lang('client.see_more')
                                 </a>
                             </div>
