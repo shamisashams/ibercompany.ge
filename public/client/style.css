@@ -2716,6 +2716,11 @@ img {
     right: 0px;
     bottom: 0px;
     z-index: 10000000;
+    transition: 0.6s;
+}
+.cssload-preloader.hidden {
+    opacity: 0;
+    visibility: 0;
 }
 
 .cssload-preloader > .cssload-preloader-box {
