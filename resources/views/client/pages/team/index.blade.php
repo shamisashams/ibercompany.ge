@@ -24,7 +24,7 @@
                 </div>
             </div>
             @foreach($professions as $profession)
-                <div class="title font50 bold dark-text">{{ $profession->title }}</div>
+                <div class="title font50 bold">{{ $profession->title }}</div>
                 <div class="font18 light-text text-07"> {!! $profession->description !!}
                 </div>
                 {{--                @if($profession->team)--}}

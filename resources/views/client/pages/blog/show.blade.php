@@ -17,7 +17,7 @@
     <section class="single_news">
         <div class="wrapper pad48 flex">
             <div class="single_news_content">
-                <div class="font25 bold dark-text uppercase">
+                <div class="font25 bold  uppercase">
                     {{$blog->title}}
                 </div>
                 <div class="flex font18 light-text">
@@ -37,7 +37,7 @@
                 </a>
             </div>
             <div class="other_news">
-                <div class="font25 bold dark-text uppercase">@lang('client.other_news')</div>
+                <div class="font25 bold  uppercase">@lang('client.other_news')</div>
                 @foreach($otherBlogs as $blog)
                     <div class="news_item flex center">
                         @if($blog->file)
@@ -48,7 +48,7 @@
                             </div>
                         @endif
                         <div class="text">
-                            <div class="title dark-text bold uppercase font18">
+                            <div class="title  bold uppercase font18">
                                 {{$blog->title}}
                             </div>
                             <div class="light-text">

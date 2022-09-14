@@ -164,7 +164,7 @@
             </div>
         </div>
     </section>
-    <section class="about_home projects_home">
+    <section class="about_home projects_home dark-text">
         <div class="wrapper pad80 flex center">
             <div class="content">
                 <div class="main-title bold" style="text-align: left">@lang('client.about_us')</div>
