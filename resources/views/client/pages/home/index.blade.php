@@ -276,4 +276,14 @@
         </div>
     </section>
 </div>
+ @if ($subsuccess)
+  <script>
+    Swal.fire({
+  title: @lang('client.subscriberEmail'),
+  text: @lang('client.subscriberEmailText'),
+  icon: 'success',
+  confirmButtonText: 'Cool'
+})
+  </script>
+ @endif
 @endsection

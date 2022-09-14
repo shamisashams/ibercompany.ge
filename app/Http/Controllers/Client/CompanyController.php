@@ -49,6 +49,6 @@ class CompanyController extends Controller
             "email" => $request->email
         ]);
 
-        return redirect()->back();
+        return redirect(route('client.home.index'))->with('subsuccess', 'warmatebi gaiara registracia');
     }
 }
