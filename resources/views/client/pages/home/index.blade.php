@@ -171,9 +171,9 @@
                 <div class="blue font18 bold" style="text-align: left">
                     @lang('client.who_we_are')
                 </div>
-                <div class="dark-text text-07" style="text-align: left">@lang('about_us_text')</div>
+                <div class="dark-text text-07" style="text-align: left">@lang('client.about_us_text')</div>
                 <a href="{{locale_route('client.about.index')}}">
-                    <button class="main-button dark-text main-border bold">@lang('more_about_us')</button>
+                    <button class="main-button dark-text main-border bold">@lang('client.more_about_us')</button>
                 </a>
             </div>
             <div class="img"><img src="/img/other/2.png" alt=""/></div>
