@@ -6,11 +6,9 @@
                     <img src="/img/logo/2.png" alt=""/>
                 </div>
             </a>
-            <div class="flex font18">
+            <div class="flex font18 address">
                 <img src="/img/icons/footer/1.png" alt=""/>
-                <div>
-                    {{$gaddress}}
-                </div>
+                <div>{{$gaddress}}</div>
             </div>
             <div class="flex font18">
                 <img src="/img/icons/footer/2.png" alt=""/>
@@ -28,10 +26,10 @@
             </div>
         </div>
         <div class="column">
-            <!-- <div class="title flex">
+            <div class="title flex">
                 <div class="bold">@lang('client.links')</div>
                 <span></span>
-            </div> -->
+            </div>
             <a href="{{locale_route('client.project.index')}}" class="nav font20 transition3">@lang('client.projects')</a>
             <a href="{{locale_route('client.blog.index')}}" class="nav font20 transition3">@lang('client.news')</a>
             <a href="{{locale_route('client.about.index')}}" class="nav font20 transition3">@lang('client.about_us')</a>
@@ -39,10 +37,10 @@
             <a href="{{locale_route('client.contact.index')}}" class="nav font20 transition3">@lang('client.contact')</a>
         </div>
         <div class="column">
-            <!-- <div class="title flex">
+            <div class="title flex">
                 <div class="bold">@lang('client.newsletter')</div>
                 <span></span>
-            </div> -->
+            </div>
             <div class="text-07 font20">
                 @lang('client.subscribe_to_gel')
             </div>
@@ -119,10 +117,10 @@
             </div>
         </div>
         <div class="column">
-            <!-- <div class="title flex">
+            <div class="title flex">
                 <div class="bold">@lang('client.map')</div>
                 <span></span>
-            </div> -->
+            </div>
             <div class="map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23819.48446076078!2d44.770252800061066!3d41.732697262578945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sge!4v1628857076363!5m2!1sen!2sge"
@@ -136,7 +134,7 @@
         </div>
     </div>
     <div class="insite flex center">
-        <div class="bold font20">Designed by</div>
+        <div class="bold font20">Developed by</div>
         <img src="/img/insite/1.png" alt=""/>
     </div>
 </footer>

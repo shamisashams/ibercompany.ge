@@ -889,7 +889,7 @@ img {
 #footer {
     padding-top: 140px;
     padding-bottom: 50px;
-    background-image: url(/img/bg/1.jpg);
+    /* background-image: url(/img/bg/1.jpg); */
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -914,7 +914,7 @@ img {
 #footer .title span {
     width: 137px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5) !important;
     margin-left: 10px;
 }
 
@@ -1020,6 +1020,17 @@ img {
 }
 
 #footer .insite img {
+    margin-left: 10px;
+}
+
+#footer .address {
+    width: 250px;
+}
+
+#footer hr {
+    width: 100%;
+    border-top: 1px solid #fff;
+    opacity: 0.5;
     margin-left: 10px;
 }
 

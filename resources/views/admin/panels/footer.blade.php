@@ -6,9 +6,6 @@
       <span>&copy; 2019 <a href="https://insite.international/en/"
           target="_blank">Insite.International</a> All rights reserved.
       </span>
-      <span class="right hide-on-small-only">
-         <a href="https://github.com/makhatadze" target="_blank">Developer</a>
-      </span>
     </div>
   </div>
 </footer>

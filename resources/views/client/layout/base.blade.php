@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<div class="cssload-preloader">
+<!-- <div class="cssload-preloader">
   <div class="cssload-preloader-box">
     <div>L</div>
     <div>o</div>
@@ -25,7 +25,7 @@
     <div>n</div>
     <div>g</div>
   </div>
-</div>
+</div> -->
 
 @yield('body')
 
