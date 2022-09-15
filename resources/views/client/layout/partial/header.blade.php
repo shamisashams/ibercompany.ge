@@ -2,9 +2,17 @@
     <button id="open_navigation">
         <div></div>
     </button>
-    <a href="{{locale_route('client.home.index')}}" class="logo">
-        <img src="/img/logo/1.png" alt=""/>
-    </a>
+@if (app()->getLocale() == "ge")
+<a href="{{locale_route('client.home.index')}}" class="logo">
+    <img src="{{asset('img/logo/ge.png')}}" alt="">
+</a>
+@else
+<a href="{{locale_route('client.home.index')}}" class="logo">
+    <img src="{{asset('img/logo/en.png')}}" alt="">
+
+</a>
+@endif
+
     <div class="navbar">
 
         <a class="dark-text font18 {{request()->routeIs('client.home.index')?"active":""}}"

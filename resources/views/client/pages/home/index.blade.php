@@ -6,7 +6,6 @@
 @endsection
 @section('wrapper')
 <div class="homePage">
-
     <section id="hero">
         <div class="wrapper">
             <div id="hero_slider">
@@ -276,7 +275,8 @@
         </div>
     </section>
 </div>
- @if ($subsuccess)
+ {{-- @if ($subsuccess) --}}
+ @if (Session::get('subsuccess'))
   <script>
     Swal.fire({
   title: @lang('client.subscriberEmail'),
