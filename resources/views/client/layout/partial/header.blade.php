@@ -16,7 +16,7 @@
     <div class="navbar">
 
         <a class="dark-text font18 {{request()->routeIs('client.home.index')?"active":""}}"
-           href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+           href="{{locale_route('client.home.index')}}">@lang('client.homee')</a>
         <a class="dark-text font18 {{str_contains(request()->path(),'about')?"active":""}}"
            href="{{locale_route('client.about.index')}}">@lang('client.about')</a>
         <a class="dark-text font18 {{str_contains(request()->path(),'blog')?"active":""}}"

@@ -72,7 +72,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+span {
+    color: inherit !important;
+    background-color: transparent !important;
+}
 input,
 textarea,
 button,
@@ -823,10 +826,16 @@ img {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
 .team_member .flip_card_front {
 }
-
+.team_member .caption {
+    background-color: #fff;
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+.team_member p {
+    color: #3d3d3d;
+}
 .team_member .flip_card_back .blue {
     font-size: 14px;
     margin-right: 10px;
@@ -2461,13 +2470,6 @@ img {
     }
 }
 
-/* team page */
-@media screen and (max-width: 1700px) {
-    .our_team_page .team_grid .team_member .img {
-        height: 50%;
-    }
-}
-
 @media screen and (max-width: 1500px) {
     .our_team_page .team_grid {
         margin-right: 0;
@@ -2486,7 +2488,7 @@ img {
     }
 
     .team_member .img {
-        height: 65%;
+        height: 80%;
     }
 }
 

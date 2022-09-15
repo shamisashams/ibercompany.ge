@@ -10,7 +10,7 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <a href="{{locale_route('client.home.index')}}">@lang('client.homee')</a>
                 <span>|</span> @lang('client.companies')
             </div>
         </div>
@@ -18,14 +18,14 @@
     <section class="single_news single_project">
         <div class="wrapper pad48 flex">
             <div class="single_news_content">
-                <div class="font25 bold dark-text uppercase">
+                <div class="font25 bold  uppercase">
                     {{$company->title}}
                 </div>
                 <div class="flex font18 light-text">
-                    <p>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$company->created_at)->format('d.m.Y')}}</p>
+                    <p>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$company->created_at)->format('d.m.Y')}} </p>
                 </div>
-                <div class="light-text paragraph">
-                    {!! $company->content_1 !!}
+                <div class="light-text paragraph" style="color: #fff;">
+                    {!! $company->content_1 !!} 
                 </div>
                 <section class="social_media companies">
                     <div class="wrapper pad48 flex">
@@ -111,7 +111,7 @@
                 </a>
             </div>
             <div class="other_news">
-                <div class="font25 bold dark-text uppercase">@lang('client.company_photos')</div>
+                <div class="font25 bold  uppercase">@lang('client.company_photos')</div>
                 <div class="project_grid">
                     @foreach($company->files as $file)
                         @if($file)

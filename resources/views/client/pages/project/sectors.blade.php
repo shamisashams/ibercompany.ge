@@ -11,13 +11,13 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.sectors')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.homee')</a> <span>|</span> @lang('client.sectors')
             </div>
         </div>
     </section>
     <section class="projects_page">
         <div class="wrapper pad48">
-            <div class="sector_head flex dark-text">
+            <div class="sector_head flex">
                 <div class="font20 bold uppercase">@lang('client.current_projects')</div>
 {{--                <a href="{{locale_route('client.project-type.index','current')}}"--}}
 {{--                   class="font20 bold">@lang('client.view_all')</a>--}}
@@ -40,7 +40,7 @@
                     </a>
                 @endforeach
             </div>
-{{--            <div class="sector_head flex dark-text">--}}
+{{--            <div class="sector_head flex">--}}
 {{--                <div class="font20 bold uppercase">@lang('client.finished_projects')</div>--}}
 {{--                <a href="{{locale_route('client.project-type.index','finished')}}"--}}
 {{--                   class="font20 bold">@lang('client.view_all')</a>--}}
