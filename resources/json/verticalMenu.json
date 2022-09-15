@@ -76,6 +76,13 @@
             "i18n": "translation",
             "icon": "g_translate",
             "slug": "translation"
+        },
+        {
+            "url": "subscribers.index",
+            "name": "subscribers",
+            "i18n": "translation",
+            "icon": "g_translate",
+            "slug": "translation"
         }
     ]
 }
