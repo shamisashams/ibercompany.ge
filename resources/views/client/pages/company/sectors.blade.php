@@ -11,7 +11,7 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a> <span>|</span> @lang('client.sectors')
+                <a href="{{locale_route('client.home.index')}}">@lang('client.homee')</a> <span>|</span> @lang('client.sectors')
             </div>
         </div>
     </section>

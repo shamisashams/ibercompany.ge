@@ -10,7 +10,7 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <a href="{{locale_route('client.home.index')}}">@lang('client.homee')</a>
                 <span>|</span> @lang('client.projects')
             </div>
         </div>
@@ -18,7 +18,7 @@
     <section class="single_news single_project">
         <div class="wrapper pad48 flex">
             <div class="single_news_content">
-                <div class="font25 bold dark-text uppercase">
+                <div class="font25 bold  uppercase">
                     {{$project->title}}
                 </div>
                 <div class="flex font18 light-text">
@@ -37,7 +37,7 @@
                 </a>
             </div>
             <div class="other_news">
-                <div class="font25 bold dark-text uppercase">@lang('client.project_photos')</div>
+                <div class="font25 bold  uppercase">@lang('client.project_photos')</div>
                 <div class="project_grid">
                     @foreach($project->files as $file)
                         @if($file)

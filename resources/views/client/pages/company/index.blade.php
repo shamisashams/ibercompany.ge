@@ -10,7 +10,7 @@
     <section id="page_path">
         <div class="wrapper flex pp_wrapper pad48 font20">
             <div class="light-text">
-                <a href="{{locale_route('client.home.index')}}">@lang('client.home')</a>
+                <a href="{{locale_route('client.home.index')}}">@lang('client.homee')</a>
                 <span>|</span> @lang('client.sectors')
                 <span>|</span>@lang('client.'.$type)
             </div>
@@ -18,7 +18,7 @@
     </section>
     <section class="projects_page">
         <div class="wrapper pad48">
-            <div class="sector_head flex dark-text">
+            <div class="sector_head flex ">
                 <div class="font20 bold uppercase">@lang('client.'.$type)</div>
             </div>
             <div class="project_grid">
