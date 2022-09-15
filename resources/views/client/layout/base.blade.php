@@ -30,10 +30,10 @@
 
 <script>
     window.addEventListener("load", function(){
-	var loader = document.querySelector(".cssload-preloader")
-	// loader.className += " hidden";
-	// changecolor.style.display = "none";
-	loader.style.display = "none";
+    var loader = document.querySelector(".cssload-preloader")
+    // loader.className += " hidden";
+    // changecolor.style.display = "none";
+    loader.style.display = "none";
 });
 </script>
 </body>
