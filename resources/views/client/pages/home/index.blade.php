@@ -23,7 +23,7 @@
                                     {!!$slider->description!!}
                                 </div>
                                 <button
-                                onclick="window.location.href='{{route('client.about.index')}}'"
+                                onclick="window.location.href='{{locale_route('client.about.index')}}'"
                                         class="main-button main-border white bold">
                                     @lang('client.learn_more')
                                 </button>
